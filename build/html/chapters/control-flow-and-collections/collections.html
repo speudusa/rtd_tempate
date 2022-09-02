@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.3. Collections &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3.4. List" href="list.html" />
+    <link rel="prev" title="3.2. Loops" href="loops.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">3. Control Flow and Collections</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="conditionals.html">3.1. Conditionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loops.html">3.2. Loops</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.3. Collections</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data-structures">3.3.1. Data Structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#c-collections-namespace">3.3.2. C# Collections Namespace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gradebook-three-ways">3.3.3. Gradebook, Three Ways</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">3.4. List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html">3.5. Array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionary.html">3.6. Dictionary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html">3.7. Exercises: Control Flow and Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html">3.8. Studio: Counting Characters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">3. </span>Control Flow and Collections</a> &raquo;</li>
+      <li><span class="section-number">3.3. </span>Collections</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/control-flow-and-collections/collections.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="collections">
+<span id="index-0"></span><h1><span class="section-number">3.3. </span>Collections<a class="headerlink" href="#collections" title="Permalink to this headline"></a></h1>
+<div class="section" id="data-structures">
+<h2><span class="section-number">3.3.1. </span>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this headline"></a></h2>
+<p>A <strong>data structure</strong> lets us hold on to lots of data in a single place. It
+is a programming construct to aggregate many values into one value. Many
+types of data structures exist in various languages. A few examples are
+lists, dictionaries, arrays, tuples, etc.</p>
+</div>
+<div class="section" id="c-collections-namespace">
+<span id="index-1"></span><h2><span class="section-number">3.3.2. </span>C# Collections Namespace<a class="headerlink" href="#c-collections-namespace" title="Permalink to this headline"></a></h2>
+<p>C# provides powerful and flexible structures to store data, known as
+<strong>collections</strong>. The <strong>C# collections namespace</strong> refers to the various interfaces
+the language provides for implementing collection types.</p>
+<p>Here, we’ll discuss a collection called <code class="docutils literal notranslate"><span class="pre">List</span></code> and compare it to the
+<code class="docutils literal notranslate"><span class="pre">Array</span></code> class. We’ll then introduce a third collection type called <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code>.
+These three collection types will be sufficient for our basic C# needs.
+For more, refer to the official C# documentation on <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/collections" target="_blank">collections<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</div>
+<div class="section" id="gradebook-three-ways">
+<h2><span class="section-number">3.3.3. </span>Gradebook, Three Ways<a class="headerlink" href="#gradebook-three-ways" title="Permalink to this headline"></a></h2>
+<p>We’ll explore collections in C# by looking at different versions of
+the same program. The program functions as a gradebook, allowing a
+user (a professor or teacher) to enter the class roster for a course,
+along with each student’s grade. It then prints the class roster along
+with the average grade. In each variation of this program, the grading
+system could be anything numeric, such as a 0.0-4.0 point scale, or a
+0-100 percentage scale.</p>
+<p>A test run of the program might yield the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">your</span> <span class="n">students</span> <span class="p">(</span><span class="ow">or</span> <span class="n">ENTER</span> <span class="n">to</span> <span class="n">finish</span><span class="p">):</span>
+<span class="n">Chris</span>
+<span class="n">Jesse</span>
+<span class="n">Sally</span>
+
+<span class="n">Grade</span> <span class="k">for</span> <span class="n">Chris</span><span class="p">:</span> <span class="mf">3.0</span>
+<span class="n">Grade</span> <span class="k">for</span> <span class="n">Jesse</span><span class="p">:</span> <span class="mf">4.0</span>
+<span class="n">Grade</span> <span class="k">for</span> <span class="n">Sally</span><span class="p">:</span> <span class="mf">3.5</span>
+
+<span class="n">Class</span> <span class="n">roster</span><span class="p">:</span>
+<span class="n">Chris</span> <span class="p">(</span><span class="mf">3.0</span><span class="p">)</span>
+<span class="n">Jesse</span> <span class="p">(</span><span class="mf">4.0</span><span class="p">)</span>
+<span class="n">Sally</span> <span class="p">(</span><span class="mf">3.5</span><span class="p">)</span>
+
+<span class="n">Average</span> <span class="n">grade</span><span class="p">:</span> <span class="mf">3.5</span>
+</pre></div>
+</div>
+<p>We’ll look at the gradebook using a <code class="docutils literal notranslate"><span class="pre">List</span></code> first.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="loops.html" class="btn btn-neutral float-left" title="3.2. Loops" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="list.html" class="btn btn-neutral float-right" title="3.4. List" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

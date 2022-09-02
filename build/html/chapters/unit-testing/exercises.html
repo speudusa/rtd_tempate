@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6.3. Exercises: Unit Testing &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6.4. Studio: Unit Testing" href="studio.html" />
+    <link rel="prev" title="6.2. MSTest" href="mstest.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">6. Unit Testing</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="testing-in-csharp.html">6.1. Testing in C#</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mstest.html">6.2. MSTest</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.3. Exercises: Unit Testing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#testgastankafterdriving">6.3.1. <code class="docutils literal notranslate"><span class="pre">TestGasTankAfterDriving()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testgastankafterexceedingtankrange">6.3.2. <code class="docutils literal notranslate"><span class="pre">TestGasTankAfterExceedingTankRange()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testgasoverfillexception">6.3.3. <code class="docutils literal notranslate"><span class="pre">TestGasOverfillException()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html">6.4. Studio: Unit Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">6. </span>Unit Testing</a> &raquo;</li>
+      <li><span class="section-number">6.3. </span>Exercises: Unit Testing</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/unit-testing/exercises.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="exercises-unit-testing">
+<h1><span class="section-number">6.3. </span>Exercises: Unit Testing<a class="headerlink" href="#exercises-unit-testing" title="Permalink to this headline"></a></h1>
+<p>Work on these exercises in your local copy of the <a class="reference external" href="https://github.com/LaunchCodeEducation/csharp-web-dev-unittesting" target="_blank">csharp-web-dev-unittesting<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> repo.
+You were directed to fork and clone this repo earlier in the chapter. If you have not done so, do so now!
+Before starting work on the exercises, check out the <code class="docutils literal notranslate"><span class="pre">exercises-start</span></code> branch.</p>
+<div class="admonition-tip admonition">
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Earlier in the chapter, we instantiated an object of the <code class="docutils literal notranslate"><span class="pre">Car</span></code> class called <code class="docutils literal notranslate"><span class="pre">test_car</span></code>.
+Be sure to take note of the values of the <code class="docutils literal notranslate"><span class="pre">make</span></code>, <code class="docutils literal notranslate"><span class="pre">model</span></code>, <code class="docutils literal notranslate"><span class="pre">gasTankSize</span></code>, and <code class="docutils literal notranslate"><span class="pre">milesPerGallon</span></code> fields!
+Having a note you can quickly reference of how big the gas tank is will you help you decide on values to use in your tests!</p>
+</div>
+<div class="section" id="testgastankafterdriving">
+<span id="unit-testing-exercises1"></span><h2><span class="section-number">6.3.1. </span><code class="docutils literal notranslate"><span class="pre">TestGasTankAfterDriving()</span></code><a class="headerlink" href="#testgastankafterdriving" title="Permalink to this headline"></a></h2>
+<p>Add a test for the third TODO, “GasTankLevel is accurate after driving within tank range”.</p>
+<ol class="arabic">
+<li><p>Your test must use the <code class="docutils literal notranslate"><span class="pre">Car</span></code> method <code class="docutils literal notranslate"><span class="pre">Drive()</span></code></p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">test_car</span><span class="p">.</span><span class="n">Drive</span><span class="p">(</span><span class="m">50</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>With a value of <code class="docutils literal notranslate"><span class="pre">50</span></code> miles passed into <code class="docutils literal notranslate"><span class="pre">Drive()</span></code>, we expect
+<code class="docutils literal notranslate"><span class="pre">test_car</span></code> to have a <code class="docutils literal notranslate"><span class="pre">GasTankLevel</span></code> of <code class="docutils literal notranslate"><span class="pre">9</span></code>.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">Assert</span><span class="p">.</span><span class="n">AreEqual</span><span class="p">(</span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="n">test_car</span><span class="p">.</span><span class="n">GasTankLevel</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="m">001</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="../../appendices/exercise-solutions/unit-testing.html#unit-testing-solution-1"><span class="std std-ref">Check your solution</span></a></p>
+</li>
+</ol>
+</div>
+<div class="section" id="testgastankafterexceedingtankrange">
+<span id="unit-testing-exercises2"></span><h2><span class="section-number">6.3.2. </span><code class="docutils literal notranslate"><span class="pre">TestGasTankAfterExceedingTankRange()</span></code><a class="headerlink" href="#testgastankafterexceedingtankrange" title="Permalink to this headline"></a></h2>
+<p>Add a test for the fourth TODO, “GasTankLevel is accurate after attempting to drive past tank range”.</p>
+<ol class="arabic">
+<li><p>You’re on your own for this one. You’ll need to simulate the <code class="docutils literal notranslate"><span class="pre">Car</span></code>
+travelling farther than it’s <code class="docutils literal notranslate"><span class="pre">gasTankLevel</span></code> allows.</p>
+<p><a class="reference internal" href="../../appendices/exercise-solutions/unit-testing.html#unit-testing-solution-2"><span class="std std-ref">Check your solution</span></a></p>
+</li>
+</ol>
+</div>
+<div class="section" id="testgasoverfillexception">
+<span id="unit-testing-exercises3"></span><h2><span class="section-number">6.3.3. </span><code class="docutils literal notranslate"><span class="pre">TestGasOverfillException()</span></code><a class="headerlink" href="#testgasoverfillexception" title="Permalink to this headline"></a></h2>
+<p>The test for our last TODO is a little different. We are going to
+perform an action on our car object, and we are expecting the object
+to throw an error. In this case, we are going to attempt to add gas
+to our car that exceeds the gas tank size.</p>
+<ol class="arabic">
+<li><p>First, we’ll add our <code class="docutils literal notranslate"><span class="pre">[TestMethod]</span></code> annotation to tell MSTest
+this is a test.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="c1">//TODO: can&#39;t have more gas than tank size, expect an exception</span>
+<span class="na">[TestMethod]</span><span class="w"></span>
+<span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">TestGasOverfillException</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>Now we need to tell MSTest the test passes if an exception is thrown. We will use a new attribute <code class="docutils literal notranslate"><span class="pre">[ExpectedException]</span></code>.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="c1">//TODO: can&#39;t have more gas than tank size, expect an exception</span>
+<span class="na">[TestMethod]</span><span class="w"></span>
+<span class="na">[ExpectedException(typeof(ArgumentOutOfRangeException))]</span><span class="w"></span>
+<span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">TestGasOverfillException</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p><a class="reference internal" href="../../appendices/exercise-solutions/unit-testing.html#unit-testing-solution-3"><span class="std std-ref">Check your solution</span></a></p>
+<ol class="arabic" start="3">
+<li><p>Update the <code class="docutils literal notranslate"><span class="pre">Car</span></code> class to include an <code class="docutils literal notranslate"><span class="pre">AddGas()</span></code> method.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">AddGas</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">gas</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">GasTankLevel</span><span class="w"> </span><span class="p">+=</span><span class="w"> </span><span class="n">gas</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>Back in <code class="docutils literal notranslate"><span class="pre">CarTests</span></code>, implement the new <code class="docutils literal notranslate"><span class="pre">AddGas()</span></code> method and a
+<code class="docutils literal notranslate"><span class="pre">Assert.Fail()</span></code> scenario.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">test_car</span><span class="p">.</span><span class="n">AddGas</span><span class="p">(</span><span class="m">5</span><span class="p">);</span><span class="w"></span>
+<span class="n">Assert</span><span class="p">.</span><span class="n">Fail</span><span class="p">(</span><span class="s">&quot;Shouldn&#39;t get here, car cannot have more gas in tank than the size of the tank&quot;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p><a class="reference internal" href="../../appendices/exercise-solutions/unit-testing.html#unit-testing-solution-3"><span class="std std-ref">Check your solution</span></a></p>
+<ol class="arabic" start="5">
+<li><p>Run the test. It should fail! In the output log, we can see our
+<code class="docutils literal notranslate"><span class="pre">Assert.Fail()</span></code> statement about not being able to add more gas printed out.</p></li>
+<li><p>We need to refactor <code class="docutils literal notranslate"><span class="pre">Car</span></code> to throw an exception when too much
+gas is added to the tank. Find the <code class="docutils literal notranslate"><span class="pre">AddGas()</span></code> method and
+modify it by adding the following code in the appropriate place.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">GasTankLevel</span><span class="w"> </span><span class="p">&gt;</span><span class="w"> </span><span class="n">GasTankSize</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">ArgumentOutOfRangeException</span><span class="p">(</span><span class="s">&quot;Can&#39;t exceed tank size&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p><a class="reference internal" href="../../appendices/exercise-solutions/unit-testing.html#unit-testing-solution-3"><span class="std std-ref">Check your solution</span></a></p>
+<ol class="arabic simple" start="7">
+<li><p>Now, run the test - it should pass!</p></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mstest.html" class="btn btn-neutral float-left" title="6.2. MSTest" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="studio.html" class="btn btn-neutral float-right" title="6.4. Studio: Unit Testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

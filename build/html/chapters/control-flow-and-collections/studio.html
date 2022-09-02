@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.8. Studio: Counting Characters &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4. Classes in C#, Part 1" href="../classes/index.html" />
+    <link rel="prev" title="3.7. Exercises: Control Flow and Collections" href="exercises.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">3. Control Flow and Collections</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="conditionals.html">3.1. Conditionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loops.html">3.2. Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collections.html">3.3. Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">3.4. List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html">3.5. Array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionary.html">3.6. Dictionary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html">3.7. Exercises: Control Flow and Collections</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.8. Studio: Counting Characters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getting-started">3.8.1. Getting Started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#some-items-to-ponder-before-coding">3.8.2. Some Items to Ponder Before Coding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sample-input">3.8.3. Sample Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sample-output">3.8.4. Sample Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bonus-missions">3.8.5. Bonus Missions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">3. </span>Control Flow and Collections</a> &raquo;</li>
+      <li><span class="section-number">3.8. </span>Studio: Counting Characters</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/control-flow-and-collections/studio.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="studio-counting-characters">
+<span id="counting-characters-studio"></span><h1><span class="section-number">3.8. </span>Studio: Counting Characters<a class="headerlink" href="#studio-counting-characters" title="Permalink to this headline"></a></h1>
+<p>In this studio, you will write a program to count the number of times each
+character occurs in a string and then print the results to the console.</p>
+<div class="section" id="getting-started">
+<h2><span class="section-number">3.8.1. </span>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline"></a></h2>
+<p>Create your own project from scratch. Review <a class="reference internal" href="../introduction-and-setup/creating-a-csharp-project.html#create-new-csharp-project"><span class="std std-ref">Creating a C# Project</span></a>
+if you need to.</p>
+</div>
+<div class="section" id="some-items-to-ponder-before-coding">
+<h2><span class="section-number">3.8.2. </span>Some Items to Ponder Before Coding<a class="headerlink" href="#some-items-to-ponder-before-coding" title="Permalink to this headline"></a></h2>
+<ol class="arabic simple">
+<li><p>There are multiple ways to approach this task, but one way involves the
+following steps:</p>
+<ol class="loweralpha simple">
+<li><p>Loop through the string one character at a time,</p></li>
+<li><p>Store and/or update the count for a given character using an appropriate
+data structure.</p></li>
+<li><p>Loop through the data structure to print the results (one character and its
+count per line).</p></li>
+</ol>
+</li>
+<li><p>Which type of data structure (<code class="docutils literal notranslate"><span class="pre">List</span></code>, <code class="docutils literal notranslate"><span class="pre">array</span></code>, or <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code>)
+should you use to store character counts? Any of these options would work,
+but using one of these data structures will optimize your code’s efficiency.</p></li>
+<li><p>You’ll need to <em>initialize</em> the counts for the characters in some fashion.
+It’s probably better to do this as you go through the string instead of
+doing so before you loop through it. (<em>WHY?</em>)</p></li>
+<li><p>If you need to review how to create a new class, revisit the
+<a class="reference internal" href="../data-types/objects-primer.html#hello-methods"><span class="std std-ref">Hello Methods</span></a> program.</p></li>
+<li><p>Don’t forget to check out the <em>Bonus Missions</em> below.</p></li>
+</ol>
+<div class="admonition-tip admonition">
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Remember, you can turn a <code class="docutils literal notranslate"><span class="pre">string</span></code> object into an array of characters
+using:</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span><span class="p">[]</span><span class="w"> </span><span class="n">charactersInString</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">myString</span><span class="p">.</span><span class="n">ToCharArray</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="sample-input">
+<h2><span class="section-number">3.8.3. </span>Sample Input<a class="headerlink" href="#sample-input" title="Permalink to this headline"></a></h2>
+<p>Feel free to prompt the user for a string. However, for the sake of simplicity,
+you might want to start by hard-coding some text and storing it in a variable.
+For your convenience, here is some <a class="reference external" href="https://loremipsum.io/" target="_blank">lorem ipsum<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> text:</p>
+<blockquote>
+<div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc accumsan sem ut
+ligula scelerisque sollicitudin. Ut at sagittis augue. Praesent quis rhoncus justo.
+Aliquam erat volutpat. Donec sit amet suscipit metus, non lobortis massa. Vestibulum
+augue ex, dapibus ac suscipit vel, volutpat eget massa. Donec nec velit non ligula
+efficitur luctus.</p>
+</div></blockquote>
+</div>
+<div class="section" id="sample-output">
+<h2><span class="section-number">3.8.4. </span>Sample Output<a class="headerlink" href="#sample-output" title="Permalink to this headline"></a></h2>
+<p>For the example string above, your output should look something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">L</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">o</span><span class="p">:</span> <span class="mi">15</span>
+<span class="n">r</span><span class="p">:</span> <span class="mi">9</span>
+<span class="n">e</span><span class="p">:</span> <span class="mi">26</span>
+<span class="n">m</span><span class="p">:</span> <span class="mi">11</span>
+ <span class="p">:</span> <span class="mi">50</span>
+<span class="n">i</span><span class="p">:</span> <span class="mi">27</span>
+<span class="n">p</span><span class="p">:</span> <span class="mi">7</span>
+<span class="n">s</span><span class="p">:</span> <span class="mi">29</span>
+<span class="n">u</span><span class="p">:</span> <span class="mi">28</span>
+<span class="n">d</span><span class="p">:</span> <span class="mi">4</span>
+<span class="n">l</span><span class="p">:</span> <span class="mi">17</span>
+<span class="n">t</span><span class="p">:</span> <span class="mi">29</span>
+<span class="n">a</span><span class="p">:</span> <span class="mi">22</span>
+<span class="p">,:</span> <span class="mi">4</span>
+<span class="n">c</span><span class="p">:</span> <span class="mi">17</span>
+<span class="n">n</span><span class="p">:</span> <span class="mi">14</span>
+<span class="n">g</span><span class="p">:</span> <span class="mi">7</span>
+<span class="o">.</span><span class="p">:</span> <span class="mi">8</span>
+<span class="n">N</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">q</span><span class="p">:</span> <span class="mi">3</span>
+<span class="n">U</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">P</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">h</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">j</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">A</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">v</span><span class="p">:</span> <span class="mi">4</span>
+<span class="n">D</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">b</span><span class="p">:</span> <span class="mi">3</span>
+<span class="n">V</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">x</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">f</span><span class="p">:</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bonus-missions">
+<h2><span class="section-number">3.8.5. </span>Bonus Missions<a class="headerlink" href="#bonus-missions" title="Permalink to this headline"></a></h2>
+<p>Try these modifications on your code:</p>
+<ol class="arabic simple">
+<li><p>Prompt the user to enter the string in the command line.</p></li>
+<li><p>Make the character counts case-insensitive.</p></li>
+<li><p>Exclude non-alphabetic characters.</p></li>
+</ol>
+<div class="section" id="super-bonus">
+<h3><span class="section-number">3.8.5.1. </span>Super Bonus<a class="headerlink" href="#super-bonus" title="Permalink to this headline"></a></h3>
+<p>Read the string in from a file.</p>
+<div class="admonition-note admonition">
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>This is a hard one. We won’t talk about reading from files in C# in this
+course, so be ready for a tough challenge if you accept this mission.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="exercises.html" class="btn btn-neutral float-left" title="3.7. Exercises: Control Flow and Collections" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../classes/index.html" class="btn btn-neutral float-right" title="4. Classes in C#, Part 1" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

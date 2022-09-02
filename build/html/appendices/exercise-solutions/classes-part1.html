@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercise Solutions: Classes and Objects &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Exercise Solutions: Classes Part 2" href="classes-2.html" />
+    <link rel="prev" title="Exercise Solutions: Control Flow &amp; Collections" href="control-flow.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Exercise Solutions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="data-types.html">Exercise Solutions: Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control-flow.html">Exercise Solutions: Control Flow &amp; Collections</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Exercise Solutions: Classes and Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classes-2.html">Exercise Solutions: Classes Part 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unit-testing.html">Exercise Solutions: Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inheritance.html">Exercise Solutions: Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfaces.html">Exercise Solutions: Interfaces and Polymorphism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controllers-routes.html">Exercise Solutions: Controllers and Routes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html">Exercise Solutions: Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="razor-views.html">Exercise Solutions: Razor Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">Exercises Solutions: Edit Model Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model-validation.html">Exercises Solutions:  ViewModels and Model Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orm-1.html">Exercise Solutions: OMG the ORM!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web-api.html">Exercise Solutions:  Web APIs and REST</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Exercise Solutions</a> &raquo;</li>
+      <li>Exercise Solutions: Classes and Objects</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/appendices/exercise-solutions/classes-part1.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="exercise-solutions-classes-and-objects">
+<h1>Exercise Solutions: Classes and Objects<a class="headerlink" href="#exercise-solutions-classes-and-objects" title="Permalink to this headline"></a></h1>
+<ol class="arabic simple" id="classes-part1-solution-1">
+<li><p>Open up the file, <code class="docutils literal notranslate"><span class="pre">Student.cs</span></code>, and update the starter code to make use of auto-implemented properties.</p></li>
+</ol>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Student</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="w">      </span><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">nextStudentId</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="w">      </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">      </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">StudentId</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">      </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">NumberOfCredits</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">      </span><span class="k">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">Gpa</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="m">0.0</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="w">      </span><span class="k">public</span><span class="w"> </span><span class="nf">Student</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">studentId</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numberOfCredits</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">gpa</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">11</span><span class="w">         </span><span class="n">Name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">12</span><span class="w">         </span><span class="n">StudentId</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">studentId</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">13</span><span class="w">         </span><span class="n">NumberOfCredits</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">numberOfCredits</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">14</span><span class="w">         </span><span class="n">Gpa</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">gpa</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">15</span><span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="w">      </span><span class="k">public</span><span class="w"> </span><span class="nf">Student</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">studentId</span><span class="p">):</span><span class="w"> </span><span class="k">this</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">studentId</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="w">      </span><span class="k">public</span><span class="w"> </span><span class="nf">Student</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">):</span><span class="w"> </span><span class="k">this</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">nextStudentId</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">20</span><span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">21</span><span class="w">         </span><span class="n">nextStudentId</span><span class="p">++;</span><span class="w"></span>
+<span class="linenos">22</span><span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">23</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="../../chapters/classes/exercises.html#classes-part1-exercises1"><span class="std std-ref">Back to the exercises</span></a></p>
+<ol class="arabic simple" id="classes-part1-solution-2" start="2">
+<li><p>In <code class="docutils literal notranslate"><span class="pre">Program.cs</span></code>, instantiate the <code class="docutils literal notranslate"><span class="pre">Student</span></code> class using yourself as the student. For the
+<code class="docutils literal notranslate"><span class="pre">NumberOfCredits</span></code> give yourself <code class="docutils literal notranslate"><span class="pre">1</span></code> for this class and a GPA of <code class="docutils literal notranslate"><span class="pre">4.0</span></code>
+because you are a C# superstar!</p></li>
+</ol>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">2</span><span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">3</span><span class="w">   </span><span class="c1">// TODO: Instantiate your objects and test your exercise solutions with print statements here.</span>
+<span class="linenos">4</span><span class="w">   </span><span class="n">Student</span><span class="w"> </span><span class="n">kimberly</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">(</span><span class="s">&quot;Kimberly&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">4.0</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">5</span><span class="w">   </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;The Student class works! &quot;</span><span class="w"> </span><span class="p">+</span><span class="w"> </span><span class="n">kimberly</span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="p">+</span><span class="w"> </span><span class="s">&quot; is a student!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">6</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="../../chapters/classes/exercises.html#classes-part1-exercises2"><span class="std std-ref">Back to the exercises</span></a></p>
+<ol class="arabic simple" id="classes-part1-solution-3" start="3">
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">SchoolPractice</span></code> project, create a class <code class="docutils literal notranslate"><span class="pre">Course</span></code> with at least three
+fields. Before diving into Visual Studio, try using pen and paper to work through
+what these might be. At least one of your fields should be a <code class="docutils literal notranslate"><span class="pre">List</span></code>
+or <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code>, and you should use your <code class="docutils literal notranslate"><span class="pre">Student</span></code> class.</p></li>
+</ol>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="w">   </span><span class="c1">// Create a new file Course.cs</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="w">   </span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="w">   </span><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="w">   </span><span class="k">namespace</span><span class="w"> </span><span class="nn">SchoolPractice</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">      </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Course</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">         </span><span class="k">private</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">topic</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">11</span><span class="w">         </span><span class="k">private</span><span class="w"> </span><span class="n">Teacher</span><span class="w"> </span><span class="n">instructor</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">12</span><span class="w">         </span><span class="k">private</span><span class="w"> </span><span class="n">List</span><span class="p">&lt;</span><span class="n">Student</span><span class="p">&gt;</span><span class="w"> </span><span class="n">enrolledStudents</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">13</span><span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">14</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="../../chapters/classes/exercises.html#classes-part1-exercises3"><span class="std std-ref">Back to the exercises</span></a></p>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="control-flow.html" class="btn btn-neutral float-left" title="Exercise Solutions: Control Flow &amp; Collections" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="classes-2.html" class="btn btn-neutral float-right" title="Exercise Solutions: Classes Part 2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

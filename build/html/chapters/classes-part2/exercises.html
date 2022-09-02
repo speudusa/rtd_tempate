@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5.5. Exercises: Objects and Classes, Part 2 &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5.6. Studio: Restaurant Menu Continued" href="studio.html" />
+    <link rel="prev" title="5.4. Visual Studio Generator Shortcut" href="equals-shortcut.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">5. Classes and Objects, Part 2</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="customize-fields.html">5.1. Customizing Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instance-and-static-methods.html">5.2. Instance and Static Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="special-methods.html">5.3. Special Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="equals-shortcut.html">5.4. Visual Studio Generator Shortcut</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.5. Exercises: Objects and Classes, Part 2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-getgradelevel-method">5.5.1. The <code class="docutils literal notranslate"><span class="pre">GetGradeLevel</span></code> Method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-addgrade-method">5.5.2. The <code class="docutils literal notranslate"><span class="pre">AddGrade</span></code> Method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tostring-and-equals">5.5.3. <code class="docutils literal notranslate"><span class="pre">ToString</span></code> and <code class="docutils literal notranslate"><span class="pre">Equals</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html">5.6. Studio: Restaurant Menu Continued</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">5. </span>Classes and Objects, Part 2</a> &raquo;</li>
+      <li><span class="section-number">5.5. </span>Exercises: Objects and Classes, Part 2</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/classes-part2/exercises.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="exercises-objects-and-classes-part-2">
+<span id="classes-part-2-exercises"></span><h1><span class="section-number">5.5. </span>Exercises: Objects and Classes, Part 2<a class="headerlink" href="#exercises-objects-and-classes-part-2" title="Permalink to this headline"></a></h1>
+<p>Work on these exercises in your
+<a class="reference external" href="https://github.com/LaunchCodeEducation/csharp-web-dev-classespart1and2/tree/classes2-exercises-start" target="_blank">csharp-web-dev-classespart1and2<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
+project. Be sure to checkout the <code class="docutils literal notranslate"><span class="pre">classes2-exercises-start</span></code> branch.
+You will update your <code class="docutils literal notranslate"><span class="pre">Student.cs</span></code> file by implementing the <code class="docutils literal notranslate"><span class="pre">AddGrade</span></code> and
+<code class="docutils literal notranslate"><span class="pre">GetGradeLevel</span></code> methods that were sketched out in the
+<a class="reference internal" href="instance-and-static-methods.html#instance-methods"><span class="std std-ref">Instance Methods</span></a> section.</p>
+<div class="section" id="the-getgradelevel-method">
+<h2><span class="section-number">5.5.1. </span>The <code class="docutils literal notranslate"><span class="pre">GetGradeLevel</span></code> Method<a class="headerlink" href="#the-getgradelevel-method" title="Permalink to this headline"></a></h2>
+<p>This method returns the student’s level based on the number of credits they
+have earned: Freshman (0-29 credits), Sophomore (30-59 credits), Junior (60-89
+credits), or Senior (90+ credits).</p>
+<p><a class="reference internal" href="../../appendices/exercise-solutions/classes-2.html#classes-2-solution-1"><span class="std std-ref">Check your solutions</span></a></p>
+</div>
+<div class="section" id="the-addgrade-method">
+<h2><span class="section-number">5.5.2. </span>The <code class="docutils literal notranslate"><span class="pre">AddGrade</span></code> Method<a class="headerlink" href="#the-addgrade-method" title="Permalink to this headline"></a></h2>
+<p>This method accepts two parameters—a number of course credits and a
+numerical grade (0.0-4.0). With this data, you need to update the student’s
+GPA.</p>
+<div class="section" id="gpa-information">
+<h3><span class="section-number">5.5.2.1. </span>GPA Information<a class="headerlink" href="#gpa-information" title="Permalink to this headline"></a></h3>
+<p>GPA is computed via the formula:</p>
+<blockquote>
+<div><p>gpa = (total quality score) / (total number of credits)</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>The <em>quality score</em> for a class is found by multiplying the letter grade
+score (0.0-4.0) by the number of credits.</p></li>
+<li><p>The <em>total quality score</em> is the sum of the quality scores for all classes.</p></li>
+</ol>
+<p>For example, if a student received an “A” (worth 4 points) in a 3-credit course
+and a “B” (worth 3 points) in a 4-credit course, their total quality score
+would be: 4.0 * 3 + 3.0 * 4 = 24. Their GPA would then be 24 / 7 = 3.43.</p>
+</div>
+<div class="section" id="determine-the-new-gpa">
+<h3><span class="section-number">5.5.2.2. </span>Determine the New GPA<a class="headerlink" href="#determine-the-new-gpa" title="Permalink to this headline"></a></h3>
+<p>To update the student’s GPA:</p>
+<ol class="arabic simple">
+<li><p>Calculate their <em>current</em> total quality score by using the formula
+<code class="docutils literal notranslate"><span class="pre">gpa</span> <span class="pre">*</span> <span class="pre">numberOfCredits</span></code>.</p></li>
+<li><p>Use the new course grade and course credits to update their total quality
+score.</p></li>
+<li><p>Update the student’s total <code class="docutils literal notranslate"><span class="pre">numberOfCredits</span></code>.</p></li>
+<li><p>Compute their new GPA.</p></li>
+</ol>
+<p><a class="reference internal" href="../../appendices/exercise-solutions/classes-2.html#classes-2-solution-2"><span class="std std-ref">Check your solutions</span></a></p>
+</div>
+</div>
+<div class="section" id="tostring-and-equals">
+<h2><span class="section-number">5.5.3. </span><code class="docutils literal notranslate"><span class="pre">ToString</span></code> and <code class="docutils literal notranslate"><span class="pre">Equals</span></code><a class="headerlink" href="#tostring-and-equals" title="Permalink to this headline"></a></h2>
+<ol class="arabic simple">
+<li><p>Add custom <code class="docutils literal notranslate"><span class="pre">Equals()</span></code> and <code class="docutils literal notranslate"><span class="pre">ToString()</span></code> methods to the <code class="docutils literal notranslate"><span class="pre">Student</span></code>
+class.</p></li>
+<li><p>Add custom <code class="docutils literal notranslate"><span class="pre">Equals()</span></code> and <code class="docutils literal notranslate"><span class="pre">ToString()</span></code> methods to the <code class="docutils literal notranslate"><span class="pre">Course</span></code>
+class which you started in the exercises for the <a class="reference internal" href="../classes/exercises.html#classes-part1-exercises1"><span class="std std-ref">previous chapter</span></a>.</p></li>
+</ol>
+<p><a class="reference internal" href="../../appendices/exercise-solutions/classes-2.html#classes-2-solution-3"><span class="std std-ref">Check your solutions</span></a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="equals-shortcut.html" class="btn btn-neutral float-left" title="5.4. Visual Studio Generator Shortcut" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="studio.html" class="btn btn-neutral float-right" title="5.6. Studio: Restaurant Menu Continued" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

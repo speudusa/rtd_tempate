@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>19.1. Introduction to Authentication &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="19.2. Hashing Passwords" href="hashing-passwords.html" />
+    <link rel="prev" title="19. Authentication" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">19. Authentication</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">19.1. Introduction to Authentication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-authentication">19.1.1. What Is Authentication?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flow-for-simple-authentication">19.1.2. Flow for Simple Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-note-on-authentication-in-asp-net">19.1.3. A Note On Authentication In ASP.NET</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-your-understanding">19.1.4. Check Your Understanding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hashing-passwords.html">19.2. Hashing Passwords</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scaffolding.html">19.3. Getting Started with Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="users.html">19.4. Registrations and Logins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">19.5. Configuring Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authorization.html">19.6. Identity and Authorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="identity-management.html">19.7. Identity Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html">19.8. Studio: TechJobs Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">19. </span>Authentication</a> &raquo;</li>
+      <li><span class="section-number">19.1. </span>Introduction to Authentication</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/auth/intro.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="introduction-to-authentication">
+<h1><span class="section-number">19.1. </span>Introduction to Authentication<a class="headerlink" href="#introduction-to-authentication" title="Permalink to this headline"></a></h1>
+<p>We log into many, many websites every day. The process has become so routine that we expect it to work flawlessly every time.
+How surprised would you be if you logged into a website and saw a different user’s account info?
+What if you entered the wrong password and were still let in?
+What we have come to expect as routine is anything but when we consider the code needed to make it happen.</p>
+<div class="section" id="what-is-authentication">
+<h2><span class="section-number">19.1.1. </span>What Is Authentication?<a class="headerlink" href="#what-is-authentication" title="Permalink to this headline"></a></h2>
+<p id="index-0"><strong>Authentication</strong> is the process of determining a user’s <em>identity</em>. In other words, are they who they say they are?</p>
+<p>This is typically done by asking a user to provide a <em>secret</em> piece of data, which theoretically only they should know.
+Passwords are the most commonly used secrets, but there are others such as RSA keys and physical authentication tokens.
+Authentication relies on the ability of the user to keep their secret data, well, <em>secret</em>.
+If we are given as user’s secret data, we assume that only one person could have provided it.</p>
+<p id="index-1">A related, but different, concept is <strong>authorization</strong>. Authorization is the process of determining if a user is allowed to carry out a specific action.</p>
+<div class="admonition-example admonition">
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>I can share a Google doc with my coworker with read-only permission. They are then <em>authorized</em> to view the document, but not to make changes.</p>
+</div>
+<p>Most applications that store personal data use authentication and authorization together.
+In this book, however, we will focus on authentication.</p>
+</div>
+<div class="section" id="flow-for-simple-authentication">
+<h2><span class="section-number">19.1.2. </span>Flow for Simple Authentication<a class="headerlink" href="#flow-for-simple-authentication" title="Permalink to this headline"></a></h2>
+<p>Using authentication allows a web application to restrict access to certain pages to known users only.
+The simplest form of authentication treats all users the same.
+If a user is signed in, then they are allowed to view <em>all</em> restricted pages.
+Otherwise, they may not view any.
+With simple authentication, it is not possible to restrict a page to some users while allowing access by others.</p>
+<p>Simple authentication requires that for <em>every</em> request, the application answers two questions before the request is handled by a controller:</p>
+<ul class="simple">
+<li><p>Is the user asking for a restricted page?</p></li>
+<li><p>If so, do we know who they are?</p></li>
+</ul>
+<p>The answers to these questions determine whether or not the user is allowed to view the page.</p>
+<p>The logical flow of simple authentication looks like this:</p>
+<div class="figure align-default" id="id1">
+<img alt="A diagram showing the the flow of a username and password through the authentication process." src="../../_images/authenticationflowdiagram.png" />
+<p class="caption"><span class="caption-text">General authentication flow</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</div>
+<div class="section" id="sessions-and-cookies">
+<h3><span class="section-number">19.1.2.1. </span>Sessions and Cookies<a class="headerlink" href="#sessions-and-cookies" title="Permalink to this headline"></a></h3>
+<p id="index-2">The second question above—“Do we know who they are?”—sounds simple enough. However, to determine <em>which</em> user is making <em>which</em> request turns out to be more complicated. To do this, simple authentication relies on two standard web tools, <strong>sessions</strong> and <strong>cookies</strong>.</p>
+<p>A <strong>session</strong> is a collection of temporary data stored <em>on the server</em> that corresponds to a specific user. Sessions are often used to store data that an app wants to keep track of in the short term, but not permanently.</p>
+<div class="admonition-examples admonition">
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<p>Some types of data that might be stored in a session:</p>
+<ul class="simple">
+<li><p>Items in a shopping cart</p></li>
+<li><p>Whether or not a user is logged in</p></li>
+<li><p>Data from a multi-page form, such as a checkout process</p></li>
+</ul>
+</div>
+<p>A <strong>cookie</strong> is a piece of temporary data stored <em>in the user’s browser</em>. Cookies are also used to keep short-term data. While a session can hold lots of data entries, a cookie contains only a single key/value pair. However, a browser may hold a large number of cookies.</p>
+<div class="admonition-note admonition">
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>A detailed discussion of cookies is beyond the scope of this book. For more info, read <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies" target="_blank">“HTTP Cookies” on MDN<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</div>
+<p>Cookies and sessions work together to enable simple authentication in the following way:</p>
+<ol class="arabic simple" id="index-3">
+<li><p>When a user is authenticated—that is, they provide a valid username/password pair—a session containing their user ID is created on the server. The session has a unique <strong>session ID</strong>, such as <code class="docutils literal notranslate"><span class="pre">81LfWG9</span></code>.</p></li>
+<li><p>In order to associate the user with their session, the server creates a <strong>session cookie</strong> and returns the cookie to the browser within an HTTP response. The session cookie contains the session ID, and looks something like this: <code class="docutils literal notranslate"><span class="pre">session_id:</span> <span class="pre">81LfWG9</span></code>.</p></li>
+<li><p>For each subsequent request to the server, the browser passes the session cookie along with the request.</p></li>
+<li><p>When the server receives a request for a restricted resource, it checks for a session cookie. It then looks for a session with the given session ID. If such a session exists, then the server knows who the user is since their user ID is stored in the session. If the session does NOT exist, then the server does not know the user and they must authenticate themselves.</p></li>
+</ol>
+<p>The following diagram shows the initial creation (steps 1-2) of the session and cookie after a user signs in.</p>
+<div class="figure align-default" id="id2">
+<img alt="A flow diagram showing the session and subsequent cookie being created so the user can access a restricted page." src="../../_images/simplifiedsessionsandcookies.png" />
+<p class="caption"><span class="caption-text">A flow diagram showing the session and subsequent cookie being created so the user can access a restricted page.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</div>
+<p>As the user navigates the site, sessions and cookies are used to validate whether users can access restricted pages.
+The next diagram shows the flow of steps 1-2 in black and the flow of steps 3-4 in blue.</p>
+<div class="figure align-default" id="id3">
+<img alt="A flow diagram showing how sessions and cookies are used to validate an initial request to the server and any subsequent requests to the server." src="../../_images/sessionsandcookiesdiagram.png" />
+<p class="caption"><span class="caption-text">A flow diagram showing how sessions and cookies are used to validate an initial request to the server and any subsequent requests to the server.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</div>
+<div class="admonition-note admonition">
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>At some point, you may have cleared all of the cookies from your browser only to find that you were suddenly logged out of every website on the Internet. This is because those cookies stored the session IDs that allowed the various sites to know who you were.</p>
+</div>
+<p>A logout request to a web app simply destroys the user’s session, erasing any memory of who they are. Even if they pass a session cookie in their subsequent requests, the old session and session ID will no longer exist.</p>
+</div>
+</div>
+<div class="section" id="a-note-on-authentication-in-asp-net">
+<h2><span class="section-number">19.1.3. </span>A Note On Authentication In ASP.NET<a class="headerlink" href="#a-note-on-authentication-in-asp-net" title="Permalink to this headline"></a></h2>
+<p>Before we proceed, we want to point out something important about authentication in ASP.NET.
+ASP.NET contains a Razor Class library, <a class="reference external" href="https://docs.microsoft.com/en-us/aspnet/identity/overview/getting-started/introduction-to-aspnet-identity" target="_blank">Identity<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, that provides extensive support for authentication <em>and</em> authorization.
+In addition to supporting simple authentication, Identity also supports more sophisticated authorization flows/processes like <a class="reference external" href="https://oauth.net/2/" target="_blank">OAuth 2<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
+Professional developers working with ASP.NET use ASP.NET Core Identity for authentication.</p>
+<p>In this book, three notes before we dive into using Identity:</p>
+<ol class="arabic simple">
+<li><p>Identity handles many aspects of the authentication process for you. This may hide steps that are important to understand as you learn about authentication.</p></li>
+<li><p>Some of the inner workings of Identity are beyond the scope of this course. Do not fear when troubleshooting!</p></li>
+<li><p>Identity has lots of different configuration options and can handle complex authentication setups.</p></li>
+</ol>
+<p>That said, the authentication approach outlined in this chapter is sufficient for use in your personal projects.
+When you begin working with a team on professional applications, a senior developer will likely be on hand to help with authentication setup.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">19.1.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline"></a></h2>
+<div class="admonition-question admonition">
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which of the following are true:</p>
+<ol class="arabic simple">
+<li><p>A session is stored on the server.</p></li>
+<li><p>A session is stored in the browser.</p></li>
+<li><p>A cookie is stored on the server.</p></li>
+<li><p>A cookie is stored in the browser.</p></li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What is the difference between authentication and authorization?</p>
+<ol class="arabic simple">
+<li><p>Authentication handles user permissions, authorization handles user restrictions.</p></li>
+<li><p>Authentication handles user identity, authorization handles user permissions.</p></li>
+<li><p>There is no difference, they are synonymous terms.</p></li>
+<li><p>User authorization can be changed in a request, authentication cannot.</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="19. Authentication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="hashing-passwords.html" class="btn btn-neutral float-right" title="19.2. Hashing Passwords" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

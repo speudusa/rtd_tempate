@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2.3. Strings, Characters, and Arrays &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2.4. Objects and Methods, A Primer" href="objects-primer.html" />
+    <link rel="prev" title="2.2. Some C# Practice" href="some-csharp-practice.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Data Types</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="data-types.html">2.1. Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="some-csharp-practice.html">2.2. Some C# Practice</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.3. Strings, Characters, and Arrays</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#strings-and-characters">2.3.1. Strings and Characters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arrays">2.3.2. Arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-your-understanding">2.3.3. Check Your Understanding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="objects-primer.html">2.4. Objects and Methods, A Primer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html">2.5. Exercises: Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html">2.6. Studio: Area of a Circle</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">2. </span>Data Types</a> &raquo;</li>
+      <li><span class="section-number">2.3. </span>Strings, Characters, and Arrays</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/data-types/strings-chars-and-arrays.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="strings-characters-and-arrays">
+<h1><span class="section-number">2.3. </span>Strings, Characters, and Arrays<a class="headerlink" href="#strings-characters-and-arrays" title="Permalink to this headline"></a></h1>
+<div class="section" id="strings-and-characters">
+<h2><span class="section-number">2.3.1. </span>Strings and Characters<a class="headerlink" href="#strings-and-characters" title="Permalink to this headline"></a></h2>
+<div class="section" id="immutability">
+<h3><span class="section-number">2.3.1.1. </span>Immutability<a class="headerlink" href="#immutability" title="Permalink to this headline"></a></h3>
+<p>Strings in C# are <em>immutable</em>, which means that the characters within a
+string cannot be changed.</p>
+</div>
+<div class="section" id="single-vs-double-quotation-marks">
+<span id="index-0"></span><h3><span class="section-number">2.3.1.2. </span>Single vs. Double Quotation Marks<a class="headerlink" href="#single-vs-double-quotation-marks" title="Permalink to this headline"></a></h3>
+<p>C# syntax requires double quotation marks when declaring strings.</p>
+<p>C# has another variable type, <code class="docutils literal notranslate"><span class="pre">char</span></code>, which is used for a single character.
+<code class="docutils literal notranslate"><span class="pre">char</span></code> uses single quotation marks. The single character can be a letter,
+digit, punctuation, or whitespace like tab (<code class="docutils literal notranslate"><span class="pre">'\t'</span></code>).</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kt">string</span><span class="w"> </span><span class="n">staticVariable</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;dog&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">2</span><span class="kt">char</span><span class="w"> </span><span class="n">charVariable</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="sc">&#39;d&#39;</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="string-manipulation">
+<span id="string-methods"></span><h3><span class="section-number">2.3.1.3. </span>String Manipulation<a class="headerlink" href="#string-manipulation" title="Permalink to this headline"></a></h3>
+<p>The table below summarizes some of the most common string methods available in
+C#. For these examples, we use the string variable
+<code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">&quot;Rutabaga&quot;</span></code>.</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">String methods and properties in C#</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>C# Syntax</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">str.Substring(3,1)</span></code></p></td>
+<td><p>Returns the character in 3rd position, (<code class="docutils literal notranslate"><span class="pre">a</span></code>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">str.Substring(2,3)</span></code></p></td>
+<td><p>Return substring from 2nd to 4th, i.e. substring starting at
+index 2 and 3 characters long, (<code class="docutils literal notranslate"><span class="pre">tab</span></code>).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">str.Length</span></code></p></td>
+<td><p>Tells us the length of the string, (<code class="docutils literal notranslate"><span class="pre">8</span></code>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">str.IndexOf('a')</span></code></p></td>
+<td><p>Returns the index for the first occurrence of ‘a’, (<code class="docutils literal notranslate"><span class="pre">3</span></code>).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">str.Split('a')</span></code></p></td>
+<td><p>Splits the string into sections at each <code class="docutils literal notranslate"><span class="pre">delimiter</span></code> and stores the
+sections as elements in an array, ({<code class="docutils literal notranslate"><span class="pre">Rut</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">g</span></code>}).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">+</span> <span class="pre">str</span></code></p></td>
+<td><p>Concatenate two strings together, (<code class="docutils literal notranslate"><span class="pre">RutabagaRutabaga</span></code>).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">str.Trim()</span></code></p></td>
+<td><p>Removes any whitespace at the beginning or end of the string, (<code class="docutils literal notranslate"><span class="pre">Rutabaga</span></code> — there’s not whitespace here).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">str.ToUpper(),</span> <span class="pre">str.ToLower()</span></code></p></td>
+<td><p>Changes all alphabetic characters in the string to UPPERCASE or
+lowercase, respectively,(<code class="docutils literal notranslate"><span class="pre">RUTABAGA</span></code>, <code class="docutils literal notranslate"><span class="pre">rutabaga</span></code>).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="arrays">
+<span id="array"></span><span id="index-1"></span><h2><span class="section-number">2.3.2. </span>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline"></a></h2>
+<p>Like a lot of programming languages, C# has multiple ways of storing
+ordered data. The most basic type of list in C# is that of the <code class="docutils literal notranslate"><span class="pre">array</span></code>.</p>
+<p>An array is an ordered, fixed-size collection of elements. Since C# is
+statically typed, arrays may only store one type of object. We can
+create an array of integers or an array of strings, but we may not
+create an array that holds both integers and strings.</p>
+<p>The syntax for creating an array capable of holding 10 integers is:</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">someInts</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="m">10</span><span class="p">];</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Note the square brackets next to <code class="docutils literal notranslate"><span class="pre">int</span></code>. This indicates that we want
+<code class="docutils literal notranslate"><span class="pre">someInts</span></code> to store a collection of integers instead of a single number.</p>
+<p>To create an array of a different size, replace the number <code class="docutils literal notranslate"><span class="pre">10</span></code> in the
+brackets with the desired size. To create an array holding a different type,
+replace <code class="docutils literal notranslate"><span class="pre">int</span></code> (on both sides of the assignment) with the desired type, like
+<code class="docutils literal notranslate"><span class="pre">double</span></code> or <code class="docutils literal notranslate"><span class="pre">string</span></code>.</p>
+<p>In addition to the technique above, we can initialize an array using a
+literal expression:</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">someOtherInts</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Here, the size is implicit in the number of elements in the literal
+expression <code class="docutils literal notranslate"><span class="pre">{1,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">5,</span> <span class="pre">8}</span></code>. Also note the use of curly braces <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code>
+instead of square brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>.</p>
+<p>To access array elements, we use square brackets and <em>zero-based indexing</em>.</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">anInt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">someOtherInts</span><span class="p">[</span><span class="m">4</span><span class="p">];</span><span class="w"></span>
+<span class="c1">// anInt stores the integer 5.</span>
+</pre></div>
+</div>
+<p>It is important to note that arrays in C# <em>may not</em> change size once created. This
+turns out to be not very practical, so thankfully C# provides more
+flexible ways to store data — objects that allow us to rearrange, add
+to, or remove data — which we’ll explore in a later lesson.</p>
+<p>Aside from using arrays to build some simple loop examples, we’ll only use them in
+special cases. However, they are ubiquitous in C# programming, so it’s good to know
+how they work.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">2.3.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline"></a></h2>
+<div class="admonition-question admonition">
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Name the C# method or property responsible for removing whitespace from a string value:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.Length</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.Trim()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.Split()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.Strip()</span></code></p></li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Assume that we declare the following C# array:</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">someWords</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">string</span><span class="p">[</span><span class="m">5</span><span class="p">];</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Which of the following shows a correct initialization for the array?</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">someWords</span> <span class="pre">=</span> <span class="pre">{'hello',</span> <span class="pre">'world',</span> <span class="pre">'123',</span> <span class="pre">'LaunchCode</span> <span class="pre">ROCKS!'}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">someWords</span> <span class="pre">=</span> <span class="pre">{&quot;hello&quot;,</span> <span class="pre">&quot;world&quot;,</span> <span class="pre">&quot;123&quot;,</span> <span class="pre">&quot;LaunchCode</span> <span class="pre">ROCKS!&quot;,</span> <span class="pre">&quot;Java&quot;}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">someWords</span> <span class="pre">=</span> <span class="pre">{&quot;hello&quot;,</span> <span class="pre">&quot;world&quot;,</span> <span class="pre">'a',</span> <span class="pre">&quot;LaunchCode</span> <span class="pre">ROCKS!&quot;,</span> <span class="pre">&quot;Java&quot;}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">someWords</span> <span class="pre">=</span> <span class="pre">{&quot;hello&quot;,</span> <span class="pre">&quot;world&quot;,</span> <span class="pre">&quot;avocado&quot;,</span> <span class="pre">&quot;LaunchCode</span> <span class="pre">ROCKS!&quot;}</span></code></p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="some-csharp-practice.html" class="btn btn-neutral float-left" title="2.2. Some C# Practice" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="objects-primer.html" class="btn btn-neutral float-right" title="2.4. Objects and Methods, A Primer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

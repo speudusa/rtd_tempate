@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>14.6. Studio: Spa User Signup &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="15. ViewModels and Model Validation" href="../aspdotnet-model-validation/index.html" />
+    <link rel="prev" title="14.5. Exercises: Edit Model Classes" href="exercises.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">14. Models and Model Binding</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="model-intro.html">14.1. Models in MVC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model-class.html">14.2. Create a Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-layer.html">14.3. Models and Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model-binding.html">14.4. Model-Binding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html">14.5. Exercises: Edit Model Classes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">14.6. Studio: Spa User Signup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getting-ready">14.6.1. Getting Ready</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-the-model">14.6.2. Creating the Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rendering-the-add-user-form">14.6.3. Rendering the Add User Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#processing-form-submission">14.6.4. Processing Form Submission</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#refining-form-submission">14.6.5. Refining Form Submission</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bonus-missions">14.6.6. Bonus Missions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">14. </span>Models and Model Binding</a> &raquo;</li>
+      <li><span class="section-number">14.6. </span>Studio: Spa User Signup</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/aspdotnet-model-classes/studio.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="studio-spa-user-signup">
+<span id="user-signup-studio"></span><h1><span class="section-number">14.6. </span>Studio: Spa User Signup<a class="headerlink" href="#studio-spa-user-signup" title="Permalink to this headline"></a></h1>
+<p>For this studio you will add functionality to allow users to sign up for your <code class="docutils literal notranslate"><span class="pre">SpaDay</span></code> app.</p>
+<p>The starter code has been modified from where you left off last class. Grab the refactored code
+on the <a class="reference external" href="https://github.com/LaunchCodeEducation/SpaDay/tree/user-signup-starter" target="_blank">user-signup-starter branch<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<p>You’ll notice in this branch that the name has been removed from the service selection form. Once we
+implement user-signup functionality, we can use a given user’s name to identify the spa client. We’ve also
+moved data into a <code class="docutils literal notranslate"><span class="pre">Client</span></code> model and out of the <code class="docutils literal notranslate"><span class="pre">SpaController</span></code> class.</p>
+<p>In this studio, we’ll ask you to write another model, <code class="docutils literal notranslate"><span class="pre">User</span></code>. <code class="docutils literal notranslate"><span class="pre">User</span></code> and <code class="docutils literal notranslate"><span class="pre">Client</span></code> may at first
+appear redundant, but in the future as you develop your spa application, you may find a scenario where
+a user is logging in who is not also <code class="docutils literal notranslate"><span class="pre">Client</span></code>.</p>
+<div class="section" id="getting-ready">
+<h2><span class="section-number">14.6.1. </span>Getting Ready<a class="headerlink" href="#getting-ready" title="Permalink to this headline"></a></h2>
+<p>Within <code class="docutils literal notranslate"><span class="pre">SpaDay</span></code>, create the following files.</p>
+<ol class="arabic simple">
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">UserController</span></code> in <code class="docutils literal notranslate"><span class="pre">Controllers</span></code>.</p></li>
+<li><p>Create a new folder, <code class="docutils literal notranslate"><span class="pre">User</span></code>, within <code class="docutils literal notranslate"><span class="pre">Views</span></code>.</p></li>
+<li><p>Create <code class="docutils literal notranslate"><span class="pre">Index.cshtml</span></code> and <code class="docutils literal notranslate"><span class="pre">Add.cshtml</span></code> templates within <code class="docutils literal notranslate"><span class="pre">Views/User/</span></code>.</p></li>
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">User</span></code> class within <code class="docutils literal notranslate"><span class="pre">Models</span></code>.</p></li>
+</ol>
+</div>
+<div class="section" id="creating-the-model">
+<h2><span class="section-number">14.6.2. </span>Creating the Model<a class="headerlink" href="#creating-the-model" title="Permalink to this headline"></a></h2>
+<p>Your <code class="docutils literal notranslate"><span class="pre">User</span></code> class should have a few properties: <code class="docutils literal notranslate"><span class="pre">Username</span></code>, <code class="docutils literal notranslate"><span class="pre">Email</span></code>, and <code class="docutils literal notranslate"><span class="pre">Password</span></code>.</p>
+</div>
+<div class="section" id="rendering-the-add-user-form">
+<h2><span class="section-number">14.6.3. </span>Rendering the Add User Form<a class="headerlink" href="#rendering-the-add-user-form" title="Permalink to this headline"></a></h2>
+<ol class="arabic">
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">UserController</span></code>, create an action method <code class="docutils literal notranslate"><span class="pre">Add()</span></code> to
+render the form. This action method should correspond to the path
+<code class="docutils literal notranslate"><span class="pre">/user/add</span></code>, and for now, it can just return the <code class="docutils literal notranslate"><span class="pre">Add.cshtml</span></code> view.</p>
+<div class="admonition-tip admonition">
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Don’t forget to add <code class="docutils literal notranslate"><span class="pre">/user/add</span></code> to your path when you test your new features.</p>
+</div>
+</li>
+<li><p>Within the <code class="docutils literal notranslate"><span class="pre">Add.cshtml</span></code> template, create a form that accepts inputs for
+each of the <code class="docutils literal notranslate"><span class="pre">User</span></code> class properties. Include an additional password input field to verify
+the password input. The form should be set up to <code class="docutils literal notranslate"><span class="pre">POST</span></code> to <code class="docutils literal notranslate"><span class="pre">/user</span></code>.</p></li>
+<li><p>Be sure to set <code class="docutils literal notranslate"><span class="pre">type=&quot;password&quot;</span></code> for the password and verify inputs,
+to ensure the passwords are not visible when being typed into the form.
+You can also set <code class="docutils literal notranslate"><span class="pre">type=&quot;email&quot;</span></code> on the email input, which will enable
+some basic client-side validation. We’ll tackle validation in more detail
+in the next lesson.</p></li>
+</ol>
+</div>
+<div class="section" id="processing-form-submission">
+<h2><span class="section-number">14.6.4. </span>Processing Form Submission<a class="headerlink" href="#processing-form-submission" title="Permalink to this headline"></a></h2>
+<ol class="arabic">
+<li><p>Within the <code class="docutils literal notranslate"><span class="pre">UserController</span></code>, create an action method with this signature:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="n">IActionResult</span><span class="w"> </span><span class="nf">SubmitAddUserForm</span><span class="p">(</span><span class="n">User</span><span class="w"> </span><span class="n">newUser</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">verify</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="c1">// add form submission handling code here</span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This will use model binding to create a new user object, <code class="docutils literal notranslate"><span class="pre">newUser</span></code>, and
+pass it into your action method.</p>
+<div class="admonition-note admonition">
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>You don’t need to store the <code class="docutils literal notranslate"><span class="pre">User</span></code> object anywhere for this studio.
+We’re focusing on form handling and validation in this exercise. If you
+want to keep track of users using the method we employed in the models
+lesson video, check out the Bonus Missions below.</p>
+</div>
+</li>
+<li><p>Check that the <code class="docutils literal notranslate"><span class="pre">verify</span></code> parameter matches the
+password within the <code class="docutils literal notranslate"><span class="pre">newUser</span></code> object.</p>
+<ol class="loweralpha simple">
+<li><p>If it does, store the user’s name in a <code class="docutils literal notranslate"><span class="pre">ViewBag</span></code> property and render the <code class="docutils literal notranslate"><span class="pre">User/Index.cshtml</span></code> view by returning <code class="docutils literal notranslate"><span class="pre">View(&quot;Index&quot;)</span></code>.</p></li>
+<li><p>If the passwords don’t match, render the form again.</p></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="refining-form-submission">
+<h2><span class="section-number">14.6.5. </span>Refining Form Submission<a class="headerlink" href="#refining-form-submission" title="Permalink to this headline"></a></h2>
+<ol class="arabic simple">
+<li><p>Once registered, we want the user to access the form selecting their spa services and see a personalized welcome message!</p>
+<ol class="loweralpha simple">
+<li><p>In <code class="docutils literal notranslate"><span class="pre">User/Index.cshtml</span></code>, add an <code class="docutils literal notranslate"><span class="pre">h1</span></code> element with a welcome message. Use the <code class="docutils literal notranslate"><span class="pre">ViewBag</span></code> property containing the user’s name to personalize the message!</p></li>
+<li><p>Also in <code class="docutils literal notranslate"><span class="pre">User/Index.cshtml</span></code>, add an <code class="docutils literal notranslate"><span class="pre">a</span></code> element to take the user back to the path, <code class="docutils literal notranslate"><span class="pre">/spa</span></code>, where the <code class="docutils literal notranslate"><span class="pre">Spa/Index.cshtml</span></code> template will be rendered.</p></li>
+</ol>
+</li>
+<li><p>If the form is re-rendered when a password is not verified, we should let the user know that their form
+was not properly submitted. Add an <code class="docutils literal notranslate"><span class="pre">error</span></code> property to <code class="docutils literal notranslate"><span class="pre">ViewBag</span></code> letting the user know
+that their passwords should match. This property will need to correspond to an element in the template that will only render the error text when the passwords do not match.</p></li>
+<li><p>If we send a user back to re-populate the form, it would be nice to not clear their previous
+submission. We won’t need to save the password entries in this fashion.</p>
+<ol class="loweralpha simple">
+<li><p>In the form submission action method, add the <code class="docutils literal notranslate"><span class="pre">username</span></code> and <code class="docutils literal notranslate"><span class="pre">email</span></code> fields of the submitted user as
+<code class="docutils literal notranslate"><span class="pre">ViewBag</span></code> properties.</p></li>
+<li><p>Back in the form, add a value attribute to these form fields and make them equal to the
+<code class="docutils literal notranslate"><span class="pre">ViewBag</span></code> properties.</p></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="bonus-missions">
+<h2><span class="section-number">14.6.6. </span>Bonus Missions<a class="headerlink" href="#bonus-missions" title="Permalink to this headline"></a></h2>
+<ol class="arabic simple">
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">Date</span></code> property in <code class="docutils literal notranslate"><span class="pre">User</span></code>, and initialize it to the time the
+user joined (i.e. when the <code class="docutils literal notranslate"><span class="pre">User</span></code> object was created).</p></li>
+<li><p>At the bottom of <code class="docutils literal notranslate"><span class="pre">User/Index.cshtml</span></code>, add a <code class="docutils literal notranslate"><span class="pre">div</span></code>.
+Inside that element, add account details such as the user’s email and the date they joined.</p></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="exercises.html" class="btn btn-neutral float-left" title="14.5. Exercises: Edit Model Classes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../aspdotnet-model-validation/index.html" class="btn btn-neutral float-right" title="15. ViewModels and Model Validation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

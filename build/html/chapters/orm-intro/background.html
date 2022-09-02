@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>17.1. Object-Relational Mapping &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="17.2. Accessing Data" href="accessingdata.html" />
+    <link rel="prev" title="17. Introduction to Object-Relational Mapping" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">17. Introduction to Object-Relational Mapping</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">17.1. Object-Relational Mapping</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#orm-in-asp-net">17.1.1. ORM in ASP.NET</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-your-understanding">17.1.2. Check Your Understanding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="accessingdata.html">17.2. Accessing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-stores.html">17.3. Working with Data Stores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html">17.4. Exercises: OMG the ORM!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html">17.5. Studio: OMG More ORM!</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">17. </span>Introduction to Object-Relational Mapping</a> &raquo;</li>
+      <li><span class="section-number">17.1. </span>Object-Relational Mapping</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/orm-intro/background.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="object-relational-mapping">
+<h1><span class="section-number">17.1. </span>Object-Relational Mapping<a class="headerlink" href="#object-relational-mapping" title="Permalink to this headline"></a></h1>
+<p id="index-0">We are now ready to connect our MVC application to a relational database and add persistent data storage to our apps. To do so, we need to use <em>object-relational mapping</em>.</p>
+<p><strong>Object-Relational Mapping</strong> or <strong>ORM</strong> is a technique for converting data between C# objects and relational databases.
+ORM converts data between two incompatible type systems (C# and MySQL), such that each model class becomes a table in our database and each instance a row of the table.</p>
+<div class="admonition-example admonition">
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Let’s say we have a C# class called <code class="docutils literal notranslate"><span class="pre">ContactInfo</span></code>. <code class="docutils literal notranslate"><span class="pre">ContactInfo</span></code> has three properties: an integer <code class="docutils literal notranslate"><span class="pre">Id</span></code>, a string <code class="docutils literal notranslate"><span class="pre">Name</span></code>, and a string <code class="docutils literal notranslate"><span class="pre">Email</span></code>.
+Now we want to store this information in a MySQL database.
+We can use ORM so that the database of our application has a table to contain all objects instantiated from the <code class="docutils literal notranslate"><span class="pre">ContactInfo</span></code> class.
+The table called <code class="docutils literal notranslate"><span class="pre">contactinfo</span></code> has three columns: an integer <code class="docutils literal notranslate"><span class="pre">Id</span></code>, a varchar <code class="docutils literal notranslate"><span class="pre">Name</span></code>, and a varchar <code class="docutils literal notranslate"><span class="pre">Email</span></code>.</p>
+<p>Now, let’s instantiate a C# object:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="n">ContactInfo</span><span class="w"> </span><span class="n">frank</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ContactInfo</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="s">&quot;Frank&quot;</span><span class="p">,</span><span class="s">&quot;frank@email.com&quot;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Having set up our application, we can add Frank’s info to our <code class="docutils literal notranslate"><span class="pre">contactinfo</span></code> table.
+While we will write the code to add Frank’s info to our database in C#, the frameworks and APIs that make ORM happen will run the following MySQL query for us.</p>
+<div class="highlight-mysql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">contactinfo</span><span class="w"> </span><span class="p">(</span><span class="n">Id</span><span class="p">,</span><span class="k">Name</span><span class="p">,</span><span class="n">Email</span><span class="p">)</span><span class="w"></span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;Frank&quot;</span><span class="p">,</span><span class="s2">&quot;frank@email.com&quot;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Now Frank’s info is stored in our MySQL database in the <code class="docutils literal notranslate"><span class="pre">contactinfo</span></code> table!</p>
+</div>
+<p>To make ORM work in our C# applications, we need an <strong>object-relational mapper</strong> to convert between C# and MySQL.
+When we create a new model class and configure it to be stored in a database, a mapper creates a MySQL query to make the corresponding table. In our example above, the query to create the <code class="docutils literal notranslate"><span class="pre">contactinfo</span></code> table from the <code class="docutils literal notranslate"><span class="pre">ContactInfo</span></code> class would be:</p>
+<div class="highlight-mysql notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">contactinfo</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="linenos">2</span><span class="w">   </span><span class="kt">INT</span><span class="w"> </span><span class="n">Id</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">3</span><span class="w">   </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">Name</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">4</span><span class="w">   </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="n">Email</span><span class="w"></span>
+<span class="linenos">5</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>One of the most widely used object-relational mappers available for C# and ASP.NET Core is <strong>EntityFrameworkCore</strong>. This framework makes use of <strong>data layers</strong>. When we learned about models, we learned that <a class="reference internal" href="../aspdotnet-model-classes/data-layer.html#data-layer-dev"><span class="std std-ref">data layers</span></a> add abstraction between models and the data we want to store. With EntityFrameworkCore, data layers take the form of classes that extend <code class="docutils literal notranslate"><span class="pre">DbContext</span></code>. Models are NOT persistent data stores and relational databases do NOT shape the C# objects we will be using. We want to make sure that the two remain separate.</p>
+<div class="admonition-note admonition">
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>We’ll often shorten EntityFrameworkCore to EntityFramework or just EF. The “Core” in the name indicates that we’re talking about the version of EF that is compatible with ASP.NET Core.</p>
+</div>
+<div class="section" id="orm-in-asp-net">
+<span id="index-1"></span><h2><span class="section-number">17.1.1. </span>ORM in ASP.NET<a class="headerlink" href="#orm-in-asp-net" title="Permalink to this headline"></a></h2>
+<p>To enable ORM in our apps, we need to connect our mapper, EntityFrameworkCore, to a MySQL database. Let’s do this with <code class="docutils literal notranslate"><span class="pre">CodingEvents</span></code>!</p>
+<div class="section" id="setting-up-a-persistent-database-video">
+<span id="setup-orm-database"></span><h3><span class="section-number">17.1.1.1. </span>Setting up a Persistent Database - Video<a class="headerlink" href="#setting-up-a-persistent-database-video" title="Permalink to this headline"></a></h3>
+<p>The following video explains how we can add a MySQL database to our <code class="docutils literal notranslate"><span class="pre">CodingEvents</span></code> application and configure our app to connect to the database.</p>
+<div class="admonition-note admonition">
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>If you want to verify what code this video starts with, check out the <a class="reference external" href="https://github.com/LaunchCodeEducation/CodingEventsDemo/tree/enums" target="_blank">enums<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> branch. If you want to verify what code this video ends with, check out the <a class="reference external" href="https://github.com/LaunchCodeEducation/CodingEventsDemo/tree/db-setup" target="_blank">db-setup<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> branch.</p>
+</div>
+
+<div style="text-align:center;"><iframe width="800" height="450" src="https://www.youtube.com/embed/RJ0NRG1FjIA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<p></p>
+</div>
+<div class="section" id="setting-up-a-persistent-database-text">
+<h3><span class="section-number">17.1.1.2. </span>Setting up a Persistent Database - Text<a class="headerlink" href="#setting-up-a-persistent-database-text" title="Permalink to this headline"></a></h3>
+<p>To get started with using a relational database with our MVC applications, we need to first go to MySQL Workbench.</p>
+<p>In MySQL Workbench, do the following:</p>
+<ol class="arabic simple">
+<li><p>Create a new schema, <code class="docutils literal notranslate"><span class="pre">coding_events</span></code>.</p></li>
+<li><p>Add a new user, <code class="docutils literal notranslate"><span class="pre">coding_events</span></code>, with a new password. Give the user all privileges to modify your new schema.</p></li>
+</ol>
+<p>Now, attach MySQL to your project in <code class="docutils literal notranslate"><span class="pre">appsettings.json</span></code> by adding the following property.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;ConnectionStrings&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;DefaultConnection&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;server=localhost;userid=coding_events;password=PASSWORD;database=coding_events;&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">DefaultConnection</span></code> property contains key/value pairs for each piece of information needed for our app to connect to the database created above. Be sure to replace <code class="docutils literal notranslate"><span class="pre">PASSWORD</span></code> with the password that you used when creating the <code class="docutils literal notranslate"><span class="pre">coding_events</span></code> user above.</p>
+<p>We now need to add a couple of NuGet packages to support our database connection. This process differs slightly for Windows and MacOS users.</p>
+<div class="section" id="install-mysql-dependency">
+<h4><span class="section-number">17.1.1.2.1. </span>Install MySQL Dependency<a class="headerlink" href="#install-mysql-dependency" title="Permalink to this headline"></a></h4>
+<p>Open the NuGet Package Manager in Visual Studio:</p>
+<ul class="simple">
+<li><p><strong>Windows</strong> - <em>Tools &gt; NuGet Package Manager &gt; Manage NuGet Packages for Solution</em></p></li>
+<li><p><strong>Mac</strong> - <em>Project &gt; Manage NuGet Dependencies</em></p></li>
+</ul>
+<p>Search for <code class="docutils literal notranslate"><span class="pre">Pomelo.EntityFrameworkCore.MySql</span></code>. Select the package and install. This dependency provides code that is able to connect to a MySQL database from within an ASP.NET Core application using EF. Note that this package itself depends on the main EntityFrameworkCore package, <code class="docutils literal notranslate"><span class="pre">Microsoft.EntityFrameworkCore.Relational</span></code>, so it is also installed.</p>
+<div class="admonition">
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>You can view installed packages and their dependencies by navigating to <em>Dependencies &gt; NuGet</em> in the Solution Explorer (or the Solution pane on Mac) and expanding a given package.</p>
+</div>
+</div>
+<div class="section" id="install-ef-core-tools">
+<h4><span class="section-number">17.1.1.2.2. </span>Install EF Core Tools<a class="headerlink" href="#install-ef-core-tools" title="Permalink to this headline"></a></h4>
+<p>In this section, “terminal” refers to the Terminal app in MacOS and Powershell in Windows (use <em>Tools &gt; Command Line &gt; Developer Powershell</em> to open).</p>
+<p>Open a terminal and run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ dotnet tool install -g dotnet-ef
+</pre></div>
+</div>
+<p>This command installs a set of command-line tools for working with EntityFrameworkCore <em>globally</em>, which means it will be available for any ASP.NET project we use in the future. We will use the tools provided by this package to update our database schema after adding or changing model classes.</p>
+<div class="admonition-note admonition">
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>This note applies to <em>Mac users only</em>.</p>
+<p>For these tools to be accessible from the command line, they must be within your user path. Open <code class="docutils literal notranslate"><span class="pre">~/.bash_profile</span></code> with this command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>code ~/.bash_profile
+</pre></div>
+</div>
+<p>Add the following line to the very bottom (recall that <code class="docutils literal notranslate"><span class="pre">~</span></code> is shorthand for your home directory, which is the directory you are in when you open a new terminal window).</p>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$PATH</span><span class="s2">:</span><span class="nv">$HOME</span><span class="s2">/.dotnet/tools/&quot;</span>
+</pre></div>
+</div>
+<p>This will append the location of the EF tools to your user path. Save and close the file. Then close your terminal window and open a new one, so that the changes can take effect.</p>
+</div>
+<p>To test that this install worked, run <code class="docutils literal notranslate"><span class="pre">dotnet</span> <span class="pre">ef</span></code>. The output should be a message displaying basic EF tool commands and options.</p>
+<p>Once you have taken these steps, you are ready to set up the appropriate models and controllers for the application. We’ll do that in the next section.</p>
+</div>
+</div>
+<div class="section" id="ensuring-connection-success-and-security">
+<span id="index-2"></span><h3><span class="section-number">17.1.1.3. </span>Ensuring Connection Success and Security<a class="headerlink" href="#ensuring-connection-success-and-security" title="Permalink to this headline"></a></h3>
+<p>Before we can get into the ins and outs of using ORM, we need to make sure that our application has a corresponding database and that our application is ready to connect to MySQL. We can start to do this by creating new schemas and setting user privileges in MySQL Workbench. We also <em>must</em> make sure that the MVC application has the correct dependencies, username, and password to access the schema.</p>
+<p>If we do not do these steps, then our application will not be able to use a persistent data source.</p>
+<p>Setting the value of the <code class="docutils literal notranslate"><span class="pre">DefaultConnection</span></code> property using the values of the username and password is NOT a best practice. We regularly commit our code to Github, meaning anyone who reads the code in our repository can see the username and password. While you can do it for the applications in this class, you do not want to do it in the future.</p>
+<div class="admonition-note admonition">
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>To avoid this in the future, you can configure your <code class="docutils literal notranslate"><span class="pre">DefaultConnection</span></code> string to reference <strong>environment variables</strong>. You then hide the appropriate info by setting the environment variable’s value equal to the password, for example.</p>
+</div>
+<p>See Microsoft <a class="reference external" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.1#environment-variables" target="_blank">documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> to learn how to keep the username and password to your database safe and secure.</p>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">17.1.2. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline"></a></h2>
+<div class="admonition-question admonition">
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p><strong>True/False:</strong> Writing usernames and passwords in plain text in a file is a GREAT idea!</p>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p><strong>True/False:</strong> An ORM converts data between C# objects and relational databases.</p>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p><strong>True/False:</strong> We need EntityFrameworkCore AND a MySQL provider to successfully use ORM.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="17. Introduction to Object-Relational Mapping" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="accessingdata.html" class="btn btn-neutral float-right" title="17.2. Accessing Data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>16.1. Introduction to Enums &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="16.2. Enums in Model Classes" href="enums-in-models.html" />
+    <link rel="prev" title="16. Enumeration Types" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">16. Enumeration Types</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">16.1. Introduction to Enums</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-an-enum-type">16.1.1. Creating an Enum Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enum-examples">16.1.2. Enum Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-your-understanding">16.1.3. Check Your Understanding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enums-in-models.html">16.2. Enums in Model Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">16. </span>Enumeration Types</a> &raquo;</li>
+      <li><span class="section-number">16.1. </span>Introduction to Enums</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/enums/intro.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="introduction-to-enums">
+<h1><span class="section-number">16.1. </span>Introduction to Enums<a class="headerlink" href="#introduction-to-enums" title="Permalink to this headline"></a></h1>
+<p id="index-0">Many statically-typed programming languages provide a feature called
+<strong>enumeration types</strong>, or <strong>enum types</strong> for short. Enum types are special
+classes that can have only one of a set of fixed values, such as days of the
+week.</p>
+<p>Imagine that we wanted to add a property to <code class="docutils literal notranslate"><span class="pre">Event</span></code> to specify which day of the
+week an event takes place. You might start by creating a new field:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="na">[Required]</span><span class="w"></span>
+<span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">DayOfWeek</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>As defined here, a user could submit any of the following values representing Wednesday:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Wednesday&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;wednesday&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Wed&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;WED&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;W&quot;</span></code></p></li>
+</ol>
+<p>Accepting data like this leads to many complications.
+For example, searching for all events taking place on Wednesday would need to account for all of these variations.
+And what happens if a user misspells “Wednesday”?</p>
+<p id="index-1">When filling out forms on the web, you are used to seeing dropdown menus with prefilled values restricting the possible inputs.
+For example, in the United States, when filling out a shipping address form, a <code class="docutils literal notranslate"><span class="pre">select</span></code> element may be used to create a list of the states to insure that users select the correct abbreviation for their state of residence.</p>
+<p>Limiting the values that the user can select drastically reduces complexity and
+ensures that our application data remains clean and standardized. Enum types
+are one way to model fields like this.</p>
+<div class="section" id="creating-an-enum-type">
+<h2><span class="section-number">16.1.1. </span>Creating an Enum Type<a class="headerlink" href="#creating-an-enum-type" title="Permalink to this headline"></a></h2>
+<p>Let’s see how we can create an enum type, or enum class.</p>
+<div class="admonition-note admonition">
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Recall that a class defines a new <em>data type</em>.
+Thus, the term “data type” can be used in place of “class”.
+We’ll typically call enum classes “enum types” since this is what most C# developers do.</p>
+</div>
+<p>The simplest enum type that we can define to represent days of the week looks
+like this:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">enum</span><span class="w"> </span><span class="n">Day</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="w">   </span><span class="n">Sunday</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="w">   </span><span class="n">Monday</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">   </span><span class="n">Tuesday</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">   </span><span class="n">Wednesday</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">   </span><span class="n">Thursday</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">   </span><span class="n">Friday</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">   </span><span class="n">Saturday</span><span class="w"></span>
+<span class="linenos">10</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">enum</span></code> keyword specifies that this class should be an enum type. In
+other words, it should only be able to take on one of a fixed set of values.
+Within the body of the class, we list the valid names (<code class="docutils literal notranslate"><span class="pre">Sunday</span></code>, <code class="docutils literal notranslate"><span class="pre">Monday</span></code>,
+etc.). Unless otherwise specified, each name refers to a value.By default, the values of
+an enum type will be integers beginning with <code class="docutils literal notranslate"><span class="pre">0</span></code>. In fact, the
+enum above is very similar to this class:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">DayConst</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Sunday</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Monday</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Tuesday</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="m">2</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Wednesday</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="m">3</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Thursday</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="m">4</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Friday</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="m">5</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Saturday</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="m">6</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">10</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>To refer to Thursday, you can use the value <code class="docutils literal notranslate"><span class="pre">DayConst.Thursday</span></code>. Recall our
+<code class="docutils literal notranslate"><span class="pre">switch</span></code> <a class="reference internal" href="../control-flow-and-collections/conditionals.html#switch-statements"><span class="std std-ref">example from earlier</span></a>.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Enter an integer: &quot;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="kt">string</span><span class="w"> </span><span class="n">dayString</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="kt">int</span><span class="w"> </span><span class="n">dayNum</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kt">int</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">dayString</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="kt">string</span><span class="w"> </span><span class="n">day</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">dayNum</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="m">0</span><span class="p">:</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">      </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Sunday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">11</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="m">1</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">12</span><span class="w">      </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Monday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">13</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">14</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="m">2</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">15</span><span class="w">      </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Tuesday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">16</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">17</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="m">3</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">18</span><span class="w">      </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Wednesday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">19</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">20</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="m">4</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">21</span><span class="w">      </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Thursday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">22</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">23</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="m">5</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">24</span><span class="w">      </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Friday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">25</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">26</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="m">6</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">27</span><span class="w">      </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Saturday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">28</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">29</span><span class="w">   </span><span class="k">default</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">30</span><span class="w">      </span><span class="c1">// in this example, this block runs if none of the above blocks match</span>
+<span class="linenos">31</span><span class="w">      </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Int does not correspond to a day of the week&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">32</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">33</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">34</span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">day</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This code can be refactored using <code class="docutils literal notranslate"><span class="pre">DayConst</span></code>:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Enter an integer: &quot;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="kt">string</span><span class="w"> </span><span class="n">dayString</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="kt">int</span><span class="w"> </span><span class="n">dayNum</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kt">int</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">dayString</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="kt">string</span><span class="w"> </span><span class="n">day</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">dayNum</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="n">DayConst</span><span class="p">.</span><span class="n">Sunday</span><span class="p">:</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">      </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Sunday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">11</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="n">DayConst</span><span class="p">.</span><span class="n">Monday</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">12</span><span class="w">      </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Monday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">13</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">14</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="n">DayConst</span><span class="p">.</span><span class="n">Tuesday</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">15</span><span class="w">      </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Tuesday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">16</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">17</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="n">DayConst</span><span class="p">.</span><span class="n">Wednesday</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">18</span><span class="w">      </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Wednesday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">19</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">20</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="n">DayConst</span><span class="p">.</span><span class="n">Thursday</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">21</span><span class="w">      </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Thursday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">22</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">23</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="n">DayConst</span><span class="p">.</span><span class="n">Friday</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">24</span><span class="w">      </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Friday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">25</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">26</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="n">DayConst</span><span class="p">.</span><span class="n">Saturday</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">27</span><span class="w">      </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Saturday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">28</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">29</span><span class="w">   </span><span class="k">default</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">30</span><span class="w">      </span><span class="c1">// in this example, this block runs if none of the above blocks match</span>
+<span class="linenos">31</span><span class="w">      </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Int does not correspond to a day of the week&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">32</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">33</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">34</span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">day</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>In essence, this code represents days of the week as fixed integer values, one
+for each day. Enum types are essentially a more robust version of this
+approach.</p>
+<p>Let’s revisit our <code class="docutils literal notranslate"><span class="pre">Day</span></code> enum type:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">enum</span><span class="w"> </span><span class="n">Day</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="w">   </span><span class="n">Sunday</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="w">   </span><span class="n">Monday</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">   </span><span class="n">Tuesday</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">   </span><span class="n">Wednesday</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">   </span><span class="n">Thursday</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">   </span><span class="n">Friday</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">   </span><span class="n">Saturday</span><span class="w"></span>
+<span class="linenos">10</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>We can declare a variable of type <code class="docutils literal notranslate"><span class="pre">Day</span></code> and it will only be allowed to take
+on one of the 7 defined values.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1">// This works</span>
+<span class="linenos">2</span><span class="n">Day</span><span class="w"> </span><span class="n">workWeekStart</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Day</span><span class="p">.</span><span class="n">Monday</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="c1">// This does not, throwing a compiler error</span>
+<span class="linenos">5</span><span class="n">Day</span><span class="w"> </span><span class="n">workWeekEnd</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;TGIF&quot;</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Enums are important because they provide <em>type safety</em> in situations where we
+want to restrict possible values. In other words, they eliminate the
+possibility of bad, or dirty, values.</p>
+</div>
+<div class="section" id="enum-examples">
+<h2><span class="section-number">16.1.2. </span>Enum Examples<a class="headerlink" href="#enum-examples" title="Permalink to this headline"></a></h2>
+<p>The world is filled with examples ripe for representation by enums. Here are a
+few from both the real world and the world of programming.</p>
+<div class="admonition-example admonition">
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Months of the year.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">enum</span><span class="w"> </span><span class="n">Month</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="w">   </span><span class="n">January</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="w">   </span><span class="n">February</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">   </span><span class="n">March</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">   </span><span class="n">April</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">   </span><span class="n">May</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">   </span><span class="n">June</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">   </span><span class="n">July</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">   </span><span class="n">August</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">11</span><span class="w">   </span><span class="n">September</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">12</span><span class="w">   </span><span class="n">October</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">13</span><span class="w">   </span><span class="n">November</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">14</span><span class="w">   </span><span class="n">December</span><span class="w"></span>
+<span class="linenos">15</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Given a model type like our <code class="docutils literal notranslate"><span class="pre">Event</span></code> class, enums can represent categories that model objects can fall into.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">enum</span><span class="w"> </span><span class="n">EventCategory</span><span class="w"></span>
+<span class="linenos">2</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">3</span><span class="w">   </span><span class="n">Conference</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">4</span><span class="w">   </span><span class="n">Meetup</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">5</span><span class="w">   </span><span class="n">Workshop</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">6</span><span class="w">   </span><span class="n">Social</span><span class="w"></span>
+<span class="linenos">7</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-example admonition" id="index-2">
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>A common use of enums in programming is to set the log level of an
+application. The <strong>log level</strong> represents the types of log messages that
+should be displayed as the application runs.</p>
+<p>You might only want to see critical error messages when running an application on a production server, but you may want to see many more messages, such as warnings and informational messages, when developing the application locally.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">enum</span><span class="w"> </span><span class="n">LogLevel</span><span class="w"></span>
+<span class="linenos">2</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">3</span><span class="w">   </span><span class="n">Debug</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">4</span><span class="w">   </span><span class="n">Info</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">5</span><span class="w">   </span><span class="n">Warning</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">6</span><span class="w">   </span><span class="n">Error</span><span class="w"></span>
+<span class="linenos">7</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>An application can change the way it logs messages by changing the log level.</p>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">16.1.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline"></a></h2>
+<div class="admonition-question admonition">
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>We mentioned above that all classes define a data type.
+Is the inverse of this statement true?
+In other words, do all data types correspond to a class? (<em>Hint:</em> Try to think of a data type that is NOT a class.)</p>
+<ol class="arabic simple">
+<li><p>Yes, everything in C# is a class.</p></li>
+<li><p>No, there are data types that do not correspond to a class. (Be sure to provide an example.)</p></li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which of the following would NOT be a good choice for an enum type?</p>
+<ol class="arabic simple">
+<li><p>States in the US</p></li>
+<li><p>Shoe sizes (using the American scale)</p></li>
+<li><p>Price of a gallon of milk</p></li>
+<li><p>Sections in a bookstore</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="16. Enumeration Types" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="enums-in-models.html" class="btn btn-neutral float-right" title="16.2. Enums in Model Classes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

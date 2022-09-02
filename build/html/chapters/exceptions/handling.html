@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>11.2. Handling Exceptions &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="11.3. Common Exception Objects" href="common-exceptions.html" />
+    <link rel="prev" title="11.1. Exceptions" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">11. Rules to the Exceptions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">11.1. Exceptions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">11.2. Handling Exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#try-catch-finally">11.2.1. Try/Catch/Finally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-avoid-exceptions">11.2.2. How to Avoid Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-your-understanding">11.2.3. Check Your Understanding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="common-exceptions.html">11.3. Common Exception Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html">11.4. Exercises: Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">11. </span>Rules to the Exceptions</a> &raquo;</li>
+      <li><span class="section-number">11.2. </span>Handling Exceptions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/exceptions/handling.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="handling-exceptions">
+<span id="index-0"></span><h1><span class="section-number">11.2. </span>Handling Exceptions<a class="headerlink" href="#handling-exceptions" title="Permalink to this headline"></a></h1>
+<p>When you include exceptions in your C# programs, you must decide what should take place once one is thrown. Some
+languages, like Java, require exceptions to be handled at the time of compiling. These are <strong>checked exceptions</strong>. When an exception is
+not handled in compiling, it is passed to runtime and called an <strong>unchecked exception</strong>. All exceptions in C#
+are unchecked. Therefore it is up to you, the programmer, to decide what to do to handle one when the need arises
+in runtime.</p>
+<p>Here’s some advice to consider when contemplating when to handle an exception. This comes from Karl Seguin’s
+<a class="reference external" href="https://www.openmymind.net/FoundationsOfProgramming.pdf" target="_blank">Foundations of Programming<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<ol class="arabic simple">
+<li><p>Only handle exceptions that you can actually do something about.</p></li>
+<li><p>You can’t do anything about the vast majority of exceptions.</p></li>
+</ol>
+<p>For example, if your code cannot connect to a database, there is probably nothing your program can
+do about it. However, as we allude to on the previous page, if you receive invalid input from a user, you can still throw an
+exception and re-prompt them to refine their input with an error message to help them get it right the next time.</p>
+<div class="section" id="try-catch-finally">
+<span id="index-1"></span><h2><span class="section-number">11.2.1. </span>Try/Catch/Finally<a class="headerlink" href="#try-catch-finally" title="Permalink to this headline"></a></h2>
+<p>To handle exceptions in C#, we use the <strong>try/catch/finally</strong> construction. This functions very similarly
+to exception handling tooling in other languages. If you expect that a method might return an exception, the method call should
+be wrapped in a <code class="docutils literal notranslate"><span class="pre">try</span></code> statement. This could be because you threw the exception in the method yourself. Or you are in one of
+the common exception scenarios we outlined on the previous page.</p>
+<p>If the code runs without throwing an exception, then the program continues as usual. However, if the <code class="docutils literal notranslate"><span class="pre">try</span></code> block results in an
+exception, then a later <code class="docutils literal notranslate"><span class="pre">catch</span></code> statement will be called. <code class="docutils literal notranslate"><span class="pre">catch</span></code> gives the program instructions on what to do in the
+event of an exception. The <code class="docutils literal notranslate"><span class="pre">catch</span></code> block prevents the program from stopping when it reaches the exception.</p>
+<p>Here’s how we can update our Temperature constructor with a <code class="docutils literal notranslate"><span class="pre">try/catch</span></code> to handle the exception:</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">public</span><span class="w"> </span><span class="nf">Temperature</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">fahrenheit</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="w">   </span><span class="k">try</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">      </span><span class="n">Fahrenheit</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">fahrenheit</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">   </span><span class="k">catch</span><span class="p">(</span><span class="n">ArgumentOutOfRangeException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">      </span><span class="n">Fahrenheit</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">-</span><span class="m">459.67</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">11</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The first action the constructor method does is call the <code class="docutils literal notranslate"><span class="pre">Fahrenheit</span></code>’s setter method. If invoking the
+setter does not result in an exception being thrown, then the new <code class="docutils literal notranslate"><span class="pre">Temperature</span></code> object is created and
+given an initial Fahrenheit value. If the action inside the <code class="docutils literal notranslate"><span class="pre">try</span></code> block results in an exception,
+or specifically an <code class="docutils literal notranslate"><span class="pre">ArgumentOutOfRange</span></code> instance, then the <code class="docutils literal notranslate"><span class="pre">catch</span></code> block runs and the initial
+value of a new <code class="docutils literal notranslate"><span class="pre">Temperature</span></code> object’s <code class="docutils literal notranslate"><span class="pre">fahrenheit</span></code> field is set to absolute zero.</p>
+<p>In this example, we don’t explicitly do anything with the argument e (“e” for exception). However,
+there are scenarios where you may wish to display the exception or it’s message in the view of your
+running app. It also an option to rethrow an exception after it has been caught. You won’t need to rethrow
+exceptions in this course, but just know that it can be done.</p>
+<p>Now, running the same sample input from the previous page does not output an exception:</p>
+<div class="admonition-example admonition">
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p><em>Input:</em></p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">Temperature</span><span class="w"> </span><span class="n">insideTemp</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Temperature</span><span class="p">(</span><span class="m">73</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">2</span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">insideTemp</span><span class="p">.</span><span class="n">Fahrenheit</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="n">Temperature</span><span class="w"> </span><span class="n">outsideTemp</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Temperature</span><span class="p">(-</span><span class="m">8200</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">5</span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">outsideTemp</span><span class="p">.</span><span class="n">Fahrenheit</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p><em>Output:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">73</span>
+<span class="o">-</span><span class="mf">459.67</span>
+</pre></div>
+</div>
+</div>
+<p>Although the exception has still been thrown, the <code class="docutils literal notranslate"><span class="pre">try/catch</span></code> construction diverts the program from
+terminating when it’s met.</p>
+<p>Some <code class="docutils literal notranslate"><span class="pre">try/catch</span></code> blocks can also contain a <code class="docutils literal notranslate"><span class="pre">finally</span></code> statement that will run whether or not an
+exception was thrown. In this example, perhaps we want to communicate that if a Fahrenheit value is
+passed into the constructor that is less than absolute zero, then the <code class="docutils literal notranslate"><span class="pre">fahrenheit</span></code> field will be
+set to absolute zero.</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">public</span><span class="w"> </span><span class="nf">Temperature</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">fahrenheit</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="w">   </span><span class="k">try</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">      </span><span class="n">Fahrenheit</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">fahrenheit</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">   </span><span class="k">catch</span><span class="p">(</span><span class="n">ArgumentOutOfRangeException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">      </span><span class="n">Fahrenheit</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">-</span><span class="m">459.67</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">11</span><span class="w">   </span><span class="k">finally</span><span class="w"></span>
+<span class="linenos">12</span><span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">13</span><span class="w">      </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Fahrenheit cannot be less than -459.67.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">14</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">15</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This <code class="docutils literal notranslate"><span class="pre">finally</span></code> statement is a tad redundant, since presumably a user will know this before trying
+to set the value. A more likely scenario to use a <code class="docutils literal notranslate"><span class="pre">finally</span></code> block might be in connecting to a database
+or other external service. For example, if a connection is opened within a try block and an exception is
+still caught, we’ll want to close the connection no matter what happens next.</p>
+<div class="section" id="what-to-catch">
+<span id="index-2"></span><h3><span class="section-number">11.2.1.1. </span>What to Catch<a class="headerlink" href="#what-to-catch" title="Permalink to this headline"></a></h3>
+<p>When working with a <code class="docutils literal notranslate"><span class="pre">try/catch</span></code> statement, in statically-type languages like C#, you can declare the type of exception you wish
+to catch. Given inheritance and polymorphism, catching the base <code class="docutils literal notranslate"><span class="pre">System.Exception</span></code> type will result in <em>all</em> exceptions being
+caught. This is not advised. Be specific about the types of exceptions you want to catch, as we have in the example above.</p>
+<p>If you have reason to believe that a given method may return an exception but you are unsure which type exactly, <code class="docutils literal notranslate"><span class="pre">try/catch</span></code>
+can — and should — include more than one <code class="docutils literal notranslate"><span class="pre">catch</span></code> block. Rather than catching one abstract exception type, you want to
+attempt to catch the exception with specificity so that the resulting decisions are meaningful. It is also important to note
+that order matters when it comes to catching. If the thrown exception matches the first <code class="docutils literal notranslate"><span class="pre">catch</span></code> block, then that block executes
+and any remaining <code class="docutils literal notranslate"><span class="pre">catch</span></code> blocks are ignored. If that exception thrown doesn’t match the first <code class="docutils literal notranslate"><span class="pre">catch</span></code> argument, then it goes on
+to the next statement to check for a type match.</p>
+<p>Catching the base class <code class="docutils literal notranslate"><span class="pre">Exception</span></code> – that is, all exceptions – is sometimes referred to as <strong>exception swallowing</strong>.
+In these cases, exceptions are simply absorbed and not re-thrown or logged. If your program has a bug, or reaches an
+undesirable state, you want to know about it! Don’t swallow exceptions.</p>
+</div>
+</div>
+<div class="section" id="how-to-avoid-exceptions">
+<h2><span class="section-number">11.2.2. </span>How to Avoid Exceptions<a class="headerlink" href="#how-to-avoid-exceptions" title="Permalink to this headline"></a></h2>
+<p>For some types of exceptions, there’s little you can do. If a database goes down, it’s down. However, many situations that
+result in exceptions are avoidable.</p>
+<div class="section" id="validate-user-input">
+<h3><span class="section-number">11.2.2.1. </span>Validate User Input<a class="headerlink" href="#validate-user-input" title="Permalink to this headline"></a></h3>
+<p>Validate user input to ensure that it is of the type your code expects, and satisfies any other implicit constraints
+(such as numeric input falling within a certain range).</p>
+<p>If you’re working within a framework such as ASP.NET, use the built-in validation capabilities to make this easier. We’ll cover
+these in detail when we discuss model validation.</p>
+<p>Perhaps the most important thing to keep in mind here is that you should never assume that input given to your program is safe
+and valid. This is the case even when you’re providing browser-based validation. Clever (or malicious) users can bypass most
+forms of client-side validation.</p>
+</div>
+<div class="section" id="check-for-null-references">
+<h3><span class="section-number">11.2.2.2. </span>Check For <code class="docutils literal notranslate"><span class="pre">null</span></code> References<a class="headerlink" href="#check-for-null-references" title="Permalink to this headline"></a></h3>
+<p>If your code depends on an input parameter not being <code class="docutils literal notranslate"><span class="pre">null</span></code> to work properly, and it’s possible to gracefully handle the
+situation – for example, by re-prompting the user – then you should do so.</p>
+<p>As with exceptions above, if there is no way to reasonably recover from a <code class="docutils literal notranslate"><span class="pre">null</span></code> pointer, then you shouldn’t swallow it.
+Furthermore, it’s generally a bad idea to catch a <code class="docutils literal notranslate"><span class="pre">null</span></code> pointer exception (<code class="docutils literal notranslate"><span class="pre">NullReferenceException</span></code> in C#). Read more
+on why this is the case.</p>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">11.2.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline"></a></h2>
+<div class="admonition-question admonition">
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Select an anomalous event when you may choose to not <code class="docutils literal notranslate"><span class="pre">catch</span></code> a thrown exception.</p>
+<ol class="arabic simple">
+<li><p>None. All exceptions should be handled with <code class="docutils literal notranslate"><span class="pre">catch</span></code>.</p></li>
+<li><p>A database responsible for providing all of the image data on your site cannot be reached.</p></li>
+<li><p>A user inputs string data into a form designed to handle integers.</p></li>
+<li><p>It’s the bottom of the ninth and you just want the game to be over.</p></li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>True/False: Exception swallowing is a good choice to ensure no exceptions break your code.</p>
+<ol class="arabic simple">
+<li><p>True</p></li>
+<li><p>False</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="introduction.html" class="btn btn-neutral float-left" title="11.1. Exceptions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="common-exceptions.html" class="btn btn-neutral float-right" title="11.3. Common Exception Objects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

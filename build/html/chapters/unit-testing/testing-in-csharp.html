@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6.1. Testing in C# &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6.2. MSTest" href="mstest.html" />
+    <link rel="prev" title="6. Unit Testing" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">6. Unit Testing</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.1. Testing in C#</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#why-we-test">6.1.1. Why We Test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testing-best-practices">6.1.2. Testing Best Practices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-your-understanding">6.1.3. Check Your Understanding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mstest.html">6.2. MSTest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html">6.3. Exercises: Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html">6.4. Studio: Unit Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">6. </span>Unit Testing</a> &raquo;</li>
+      <li><span class="section-number">6.1. </span>Testing in C#</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/unit-testing/testing-in-csharp.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="testing-in-c">
+<h1><span class="section-number">6.1. </span>Testing in C#<a class="headerlink" href="#testing-in-c" title="Permalink to this headline"></a></h1>
+<p id="index-0">Testing your code is a crucial practice for every developer.
+<strong>Automated testing</strong> ensures that your code works as expected every
+time it runs. Tests also function as internal documentation, giving a
+fellow programmer instructions on how to properly execute your classes
+and methods. While these purposes are the same for C# as any other language,
+the implementation of tests will look a bit different.</p>
+<p>This course covers <strong>unit testing</strong> in C# with a test framework called
+<strong>MSTest</strong>. Unit testing is based on breaking down the codebase into its
+smallest building blocks, individual statements and methods, and testing
+those building blocks.</p>
+<div class="admonition">
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>If you would like to review the benefits of automated testing, take a peek
+at
+<a class="reference external" href="https://education.launchcode.org/intro-to-professional-web-dev/chapters/unit-testing/why-test.html" target="_blank">this section<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+in another LaunchCode text.</p>
+</div>
+<div class="section" id="why-we-test">
+<h2><span class="section-number">6.1.1. </span>Why We Test<a class="headerlink" href="#why-we-test" title="Permalink to this headline"></a></h2>
+<div class="section" id="refactoring">
+<span id="index-1"></span><h3><span class="section-number">6.1.1.1. </span>Refactoring<a class="headerlink" href="#refactoring" title="Permalink to this headline"></a></h3>
+<p>When we <strong>refactor</strong> code, we rewrite it without adding new features. Refactoring can
+increase efficiency at runtime, but it may also mean inadvertently introducing some bugs in the process.
+Unit tests verify the most basic functionality of your code, thus safeguarding against
+bugs introduced in refactoring.</p>
+<p>Imagine this common workflow:</p>
+<ol class="arabic simple">
+<li><p>You practice <strong>test-driven development (TDD)</strong>, writing your tests to stipulate
+how your class’s code should behave.</p></li>
+<li><p>You write your class’s code to pass the tests.</p></li>
+<li><p>Later, a stakeholder in the project requests that you refactor your code using
+different syntax.</p></li>
+</ol>
+<p>The features of the application will be the same, but the implementation of those features will change.
+Because the changes in implementation do not effect change in the application features, unit tests can
+help with refactoring the codebase. If your tests continue
+to pass after the refactor, you can move on, knowing you have not
+inadvertently introduced a bug. Writing tests just once provides innumerable
+benefits for the whole lifetime of the codebase.</p>
+</div>
+<div class="section" id="documentation">
+<h3><span class="section-number">6.1.1.2. </span>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline"></a></h3>
+<p>In addition to assisting with refactoring, unit tests serve as vital documentation
+for fellow programmers. Again, because unit tests address the most fundamental tasks of your classes,
+they serve as live-code use-cases. You may also have an
+external documentation directory with examples of how to run your
+project, or perhaps you have been writing comments within your code
+to best communicate with your teammates about your changes. Both of
+these are great choices and should be done when possible. However, these choices
+also require more forethought to maintain. Each time you update
+your code, you might not remember to update the documentation and
+comments. With unit testing, however, you have a more obvious reminder
+that a change has been made if a previously-passing test fails.</p>
+</div>
+</div>
+<div class="section" id="testing-best-practices">
+<span id="id1"></span><h2><span class="section-number">6.1.2. </span>Testing Best Practices<a class="headerlink" href="#testing-best-practices" title="Permalink to this headline"></a></h2>
+<p>Below are some best practices to keep in mind when writing unit tests, in any language.</p>
+<ol class="arabic">
+<li><p>The AAAs</p>
+<p>The AAAs of unit testing refers to the pattern to follow when
+writing your unit tests.</p>
+<ol class="loweralpha simple">
+<li><p>Arrange the variables your test requires</p></li>
+<li><p>Act on the methods your test requires</p></li>
+<li><p>Assert the anticipated comparison of the expected and actual values</p></li>
+</ol>
+</li>
+<li><p>Deterministic</p>
+<p><em>Every</em> time a test is run, it should produce the same outcome.
+A test that passes only most of the time is a worthless test.</p>
+</li>
+<li><p>Relevant</p>
+<p>Group tests by related class and function.</p>
+</li>
+<li><p>Meaningful</p>
+<p>There is no need to test trivial code. For example, unless a getter or setter contains some
+additional functionality, you do not need to write a test for those methods.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">6.1.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline"></a></h2>
+<div class="admonition-question admonition">
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>True or False: Comments are the best tool to make your code readable.</p>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Unit tests are a form of:</p>
+<ol class="arabic simple">
+<li><p>Manual testing</p></li>
+<li><p>Automated testing</p></li>
+<li><p>Integration testing</p></li>
+<li><p>Documentation testing</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="6. Unit Testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mstest.html" class="btn btn-neutral float-right" title="6.2. MSTest" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

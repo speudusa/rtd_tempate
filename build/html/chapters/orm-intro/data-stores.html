@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>17.3. Working with Data Stores &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="17.4. Exercises: OMG the ORM!" href="exercises.html" />
+    <link rel="prev" title="17.2. Accessing Data" href="accessingdata.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">17. Introduction to Object-Relational Mapping</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="background.html">17.1. Object-Relational Mapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessingdata.html">17.2. Accessing Data</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">17.3. Working with Data Stores</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data-stores-in-the-controller-video">17.3.1. Data Stores in the Controller - Video</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-stores-in-the-controller-text">17.3.2. Data Stores in the Controller - Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-your-understanding">17.3.3. Check Your Understanding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html">17.4. Exercises: OMG the ORM!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html">17.5. Studio: OMG More ORM!</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">17. </span>Introduction to Object-Relational Mapping</a> &raquo;</li>
+      <li><span class="section-number">17.3. </span>Working with Data Stores</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/orm-intro/data-stores.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="working-with-data-stores">
+<h1><span class="section-number">17.3. </span>Working with Data Stores<a class="headerlink" href="#working-with-data-stores" title="Permalink to this headline"></a></h1>
+<p>With our data store and persistent class configured, we are ready to realize the full power of ORM.</p>
+<div class="section" id="data-stores-in-the-controller-video">
+<h2><span class="section-number">17.3.1. </span>Data Stores in the Controller - Video<a class="headerlink" href="#data-stores-in-the-controller-video" title="Permalink to this headline"></a></h2>
+<p>Since our data store, <code class="docutils literal notranslate"><span class="pre">EventDbContext</span></code>, extends <code class="docutils literal notranslate"><span class="pre">DbContext</span></code>, we have access to all of the methods defined by <code class="docutils literal notranslate"><span class="pre">DbContext</span></code>. There are quite a few such methods (see <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontext?view=efcore-3.1#methods" target="_blank">the documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> for details), but we will only use <code class="docutils literal notranslate"><span class="pre">SaveChanges</span></code>.</p>
+<p>We will make more extensive use of the <code class="docutils literal notranslate"><span class="pre">Events</span></code> property of <code class="docutils literal notranslate"><span class="pre">EventDbContext</span></code>, which is of type <code class="docutils literal notranslate"><span class="pre">DbSet</span></code>. As mentioned in the previous section, this property allows us to query for objects directly from the database. It too <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbset-1?view=efcore-3.1#methods" target="_blank">has quite a few methods<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, and we will demonstrate usage of <code class="docutils literal notranslate"><span class="pre">Add</span></code>, <code class="docutils literal notranslate"><span class="pre">Remove</span></code>, <code class="docutils literal notranslate"><span class="pre">ToList</span></code>, and <code class="docutils literal notranslate"><span class="pre">Find</span></code>.</p>
+
+<div style="text-align:center;"><iframe width="800" height="450" src="https://www.youtube.com/embed/eHnDr9nwBek" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<p></p>
+</div>
+<div class="section" id="data-stores-in-the-controller-text">
+<h2><span class="section-number">17.3.2. </span>Data Stores in the Controller - Text<a class="headerlink" href="#data-stores-in-the-controller-text" title="Permalink to this headline"></a></h2>
+<div class="section" id="adding-the-data-store">
+<h3><span class="section-number">17.3.2.1. </span>Adding the Data Store<a class="headerlink" href="#adding-the-data-store" title="Permalink to this headline"></a></h3>
+<p>To access data from the database in a controller, we’ll need an instance of <code class="docutils literal notranslate"><span class="pre">EventDbContext</span></code>. Adding the following code to the top of <code class="docutils literal notranslate"><span class="pre">EventsController</span></code> will make one available as an instance variable of the controller.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos">17</span><span class="k">private</span><span class="w"> </span><span class="n">EventDbContext</span><span class="w"> </span><span class="n">context</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="k">public</span><span class="w"> </span><span class="nf">EventsController</span><span class="p">(</span><span class="n">EventDbContext</span><span class="w"> </span><span class="n">dbContext</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">20</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">21</span><span class="w">   </span><span class="n">context</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">dbContext</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">22</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>We can now reference <code class="docutils literal notranslate"><span class="pre">context</span></code> anywhere within our controller in order to query the database.</p>
+<div class="admonition-note admonition" id="index-0">
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>It may not be obvious how this code works, since we never explicitly call the constructor for <code class="docutils literal notranslate"><span class="pre">EventsController</span></code>. When we run our application, ASP.NET will call this constructor for us, and will pass in an instance of <code class="docutils literal notranslate"><span class="pre">EventDbContext</span></code>. This is an example of the concept of <strong>dependency injection</strong>, a topic which is fairly complex and beyond the scope of this course.</p>
+</div>
+</div>
+<div class="section" id="using-data-store-methods">
+<h3><span class="section-number">17.3.2.2. </span>Using Data Store Methods<a class="headerlink" href="#using-data-store-methods" title="Permalink to this headline"></a></h3>
+<p>Let’s refactor our controller to replace each usage of the in-memory store <code class="docutils literal notranslate"><span class="pre">EventData</span></code> with our instance of <code class="docutils literal notranslate"><span class="pre">EventDbContext</span></code>.</p>
+<p>The first such usage is in the <code class="docutils literal notranslate"><span class="pre">Index</span></code> method, which displays a listing of all of the events. We are currently calling <code class="docutils literal notranslate"><span class="pre">EventData.GetAll()</span></code>. To carry out the equivalent action on <code class="docutils literal notranslate"><span class="pre">context</span></code>, we can use its <code class="docutils literal notranslate"><span class="pre">Events</span></code> property. Modify <code class="docutils literal notranslate"><span class="pre">Index</span></code> to look like the code below.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos">25</span><span class="k">public</span><span class="w"> </span><span class="n">IActionResult</span><span class="w"> </span><span class="nf">Index</span><span class="p">()</span><span class="w"></span>
+<span class="linenos">26</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">27</span><span class="w">   </span><span class="n">List</span><span class="p">&lt;</span><span class="n">Event</span><span class="p">&gt;</span><span class="w"> </span><span class="n">events</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="n">Events</span><span class="p">.</span><span class="n">ToList</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">28</span>
+<span class="linenos">29</span><span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="nf">View</span><span class="p">(</span><span class="n">events</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">30</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>We use the <code class="docutils literal notranslate"><span class="pre">ToList</span></code> method of <code class="docutils literal notranslate"><span class="pre">context.Events</span></code> (recall that this property is a <code class="docutils literal notranslate"><span class="pre">DbSet</span></code>) to fetch a list of <em>all</em> <code class="docutils literal notranslate"><span class="pre">Event</span></code> objects stored in the database.</p>
+<p>Our next usage of <code class="docutils literal notranslate"><span class="pre">EventData</span></code> that needs to be replaced is in the <code class="docutils literal notranslate"><span class="pre">Add</span></code> method that handles POST requests. That method is currently calling <code class="docutils literal notranslate"><span class="pre">EventData.Add(newEvent)</span></code> to store a newly created <code class="docutils literal notranslate"><span class="pre">Event</span></code> object. Replace this line with the following.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos">53</span><span class="n">context</span><span class="p">.</span><span class="n">Events</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">newEvent</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">54</span><span class="n">context</span><span class="p">.</span><span class="n">SaveChanges</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Line 53 adds the object to <code class="docutils literal notranslate"><span class="pre">context.Events</span></code>, which only stores it within that <code class="docutils literal notranslate"><span class="pre">DbSet</span></code> object. For this change to be pushed to the database, we must also call <code class="docutils literal notranslate"><span class="pre">context.SaveChanges()</span></code>.</p>
+<div class="admonition-note admonition" id="index-1">
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>An instance of a persistent class, such as <code class="docutils literal notranslate"><span class="pre">Event</span></code>, that has not been stored in the database is called a <strong>transient</strong> object.</p>
+</div>
+<p>The next usage of <code class="docutils literal notranslate"><span class="pre">EventData</span></code> is in the <code class="docutils literal notranslate"><span class="pre">Delete</span></code> method that handles GET requests. As in <code class="docutils literal notranslate"><span class="pre">Index</span></code>, this method is calling <code class="docutils literal notranslate"><span class="pre">EventData.GetAll()</span></code>, which we can replace with <code class="docutils literal notranslate"><span class="pre">context.Events.ToList()</span></code>.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos">62</span><span class="k">public</span><span class="w"> </span><span class="n">IActionResult</span><span class="w"> </span><span class="nf">Delete</span><span class="p">()</span><span class="w"></span>
+<span class="linenos">63</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">64</span><span class="w">   </span><span class="n">ViewBag</span><span class="p">.</span><span class="n">events</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="n">Events</span><span class="p">.</span><span class="n">ToList</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">65</span>
+<span class="linenos">66</span><span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="nf">View</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">67</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The final usage of <code class="docutils literal notranslate"><span class="pre">EventData</span></code> is in the <code class="docutils literal notranslate"><span class="pre">Delete</span></code> method that handles POST requests. That method currently looks like this:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos">61</span><span class="na">[HttpPost]</span><span class="w"></span>
+<span class="linenos">62</span><span class="k">public</span><span class="w"> </span><span class="n">IActionResult</span><span class="w"> </span><span class="nf">Delete</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">eventIds</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">63</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">64</span><span class="w">   </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">eventId</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">eventIds</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">65</span><span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">66</span><span class="w">      </span><span class="n">EventData</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="n">eventId</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">67</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">68</span>
+<span class="linenos">69</span><span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="nf">Redirect</span><span class="p">(</span><span class="s">&quot;/Events&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">70</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The method takes in an array of IDs corresponding to objects that should be deleted. It then loops through the array and deletes the corresponding objects one-by-one.</p>
+<p>Line 66 can be replaced with the following:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos">66</span><span class="n">Event</span><span class="w"> </span><span class="n">theEvent</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="n">Events</span><span class="p">.</span><span class="n">Find</span><span class="p">(</span><span class="n">eventId</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">67</span><span class="n">context</span><span class="p">.</span><span class="n">Events</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="n">theEvent</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The first line searches <code class="docutils literal notranslate"><span class="pre">context.Events</span></code> for an object with the given ID using its <code class="docutils literal notranslate"><span class="pre">Find</span></code> method. It returns the given object or <code class="docutils literal notranslate"><span class="pre">null</span></code> (if none is found). We can then delete the object by calling the <code class="docutils literal notranslate"><span class="pre">Remove</span></code> method of <code class="docutils literal notranslate"><span class="pre">context.Events</span></code> and passing in the object we want to delete.</p>
+<p>Since we have changed the state of <code class="docutils literal notranslate"><span class="pre">context</span></code>, we must also call <code class="docutils literal notranslate"><span class="pre">context.SaveChanges()</span></code> to make sure these changes get reflected in the database. However, we need only do this after the loop. Since each call to <code class="docutils literal notranslate"><span class="pre">SaveChanges</span></code> results in a database query, this makes our code much more efficient than calling <code class="docutils literal notranslate"><span class="pre">SaveChanges</span></code> <em>within</em> the loop. Instead of several database queries, we have only one.</p>
+<p>Our final refactored method looks like this:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos">70</span><span class="na">[HttpPost]</span><span class="w"></span>
+<span class="linenos">71</span><span class="k">public</span><span class="w"> </span><span class="n">IActionResult</span><span class="w"> </span><span class="nf">Delete</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">eventIds</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">72</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">73</span><span class="w">   </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">eventId</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">eventIds</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">74</span><span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">75</span><span class="w">         </span><span class="n">Event</span><span class="w"> </span><span class="n">theEvent</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="n">Events</span><span class="p">.</span><span class="n">Find</span><span class="p">(</span><span class="n">eventId</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">76</span><span class="w">         </span><span class="n">context</span><span class="p">.</span><span class="n">Events</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="n">theEvent</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">77</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">78</span>
+<span class="linenos">79</span><span class="w">   </span><span class="n">context</span><span class="p">.</span><span class="n">SaveChanges</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">80</span>
+<span class="linenos">81</span><span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="nf">Redirect</span><span class="p">(</span><span class="s">&quot;/Events&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">82</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Now that we are no longer using <code class="docutils literal notranslate"><span class="pre">EventData</span></code>, we can delete it from our application. And as always, be sure to start your app and test after refactoring.</p>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">17.3.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline"></a></h2>
+<div class="admonition-question admonition">
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p><strong>True/False:</strong> The only methods available for querying objects within a <code class="docutils literal notranslate"><span class="pre">DbSet</span></code> are <code class="docutils literal notranslate"><span class="pre">Add</span></code>, <code class="docutils literal notranslate"><span class="pre">Remove</span></code>, <code class="docutils literal notranslate"><span class="pre">ToList</span></code>, and <code class="docutils literal notranslate"><span class="pre">Find</span></code>.</p>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which <code class="docutils literal notranslate"><span class="pre">DbContext</span></code> method must be called in order to push changes to the database?</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Save</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SaveAll</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PushChanges</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SaveChanges</span></code></p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="accessingdata.html" class="btn btn-neutral float-left" title="17.2. Accessing Data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="exercises.html" class="btn btn-neutral float-right" title="17.4. Exercises: OMG the ORM!" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

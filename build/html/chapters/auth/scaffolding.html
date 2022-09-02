@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>19.3. Getting Started with Identity &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="19.4. Registrations and Logins" href="users.html" />
+    <link rel="prev" title="19.2. Hashing Passwords" href="hashing-passwords.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">19. Authentication</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">19.1. Introduction to Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hashing-passwords.html">19.2. Hashing Passwords</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">19.3. Getting Started with Identity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#before-you-start">19.3.1. Before You Start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scaffolding-identity-in-an-exisiting-project">19.3.2. Scaffolding Identity in an Exisiting Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="users.html">19.4. Registrations and Logins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">19.5. Configuring Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authorization.html">19.6. Identity and Authorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="identity-management.html">19.7. Identity Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html">19.8. Studio: TechJobs Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">19. </span>Authentication</a> &raquo;</li>
+      <li><span class="section-number">19.3. </span>Getting Started with Identity</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/auth/scaffolding.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="getting-started-with-identity">
+<span id="user-auth-walkthrough"></span><span id="index-0"></span><h1><span class="section-number">19.3. </span>Getting Started with Identity<a class="headerlink" href="#getting-started-with-identity" title="Permalink to this headline"></a></h1>
+<p>As a developer, you may find yourself wanting to add Identity in one of the two following situations:</p>
+<ol class="arabic simple">
+<li><p>You are creating a new project and you know that you need Identity in the project.</p></li>
+<li><p>You are working with an existing project and need to add Identity to continue your work.</p></li>
+</ol>
+<p>For this chapter, we are going to focus on the second situation and how we might add Identity to <code class="docutils literal notranslate"><span class="pre">CodingEvents</span></code>.
+The process of adding Identity to an existing code base is called <strong>scaffolding</strong>.</p>
+<div class="admonition-note admonition">
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Try and code along as you read more about Identity!
+This page starts off with the code in the <a class="reference external" href="https://github.com/LaunchCodeEducation/CodingEventsDemo/tree/display-tag-items" target="_blank">display-tag-items<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> branch in <code class="docutils literal notranslate"><span class="pre">CodingEventsDemo</span></code>.
+The final code for this page is in the <a class="reference external" href="https://github.com/LaunchCodeEducation/CodingEventsDemo/tree/identity-scaffolding" target="_blank">identity-scaffolding<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> branch in <code class="docutils literal notranslate"><span class="pre">CodingEventsDemo</span></code>.</p>
+</div>
+<div class="section" id="before-you-start">
+<h2><span class="section-number">19.3.1. </span>Before You Start<a class="headerlink" href="#before-you-start" title="Permalink to this headline"></a></h2>
+<p>Before getting started, you need to make note of the version of .NET Core SDK your project is using.
+Inside the project directory, run the following command:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>dotnet --info
+</pre></div>
+</div>
+<p>When you run this command, the output may look something like the following:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="o">.</span><span class="n">NET</span><span class="w"> </span><span class="n">Core</span><span class="w"> </span><span class="n">SDK</span><span class="w"> </span><span class="p">(</span><span class="n">reflecting</span><span class="w"> </span><span class="n">any</span><span class="w"> </span><span class="n">global</span><span class="o">.</span><span class="n">json</span><span class="p">):</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="n">Version</span><span class="p">:</span><span class="w">   </span><span class="mf">3.1</span><span class="o">.</span><span class="mi">101</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="n">Commit</span><span class="p">:</span><span class="w">    </span><span class="n">b377529961</span><span class="w"></span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="n">Runtime</span><span class="w"> </span><span class="n">Environment</span><span class="p">:</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="n">OS</span><span class="w"> </span><span class="n">Name</span><span class="p">:</span><span class="w">     </span><span class="n">Mac</span><span class="w"> </span><span class="n">OS</span><span class="w"> </span><span class="n">X</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="n">OS</span><span class="w"> </span><span class="n">Version</span><span class="p">:</span><span class="w">  </span><span class="mf">10.15</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="n">OS</span><span class="w"> </span><span class="n">Platform</span><span class="p">:</span><span class="w"> </span><span class="n">Darwin</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="nb nb-Type">RID</span><span class="p">:</span><span class="w">         </span><span class="n">osx</span><span class="o">.</span><span class="mf">10.15</span><span class="o">-</span><span class="n">x64</span><span class="w"></span>
+<span class="linenos">10</span><span class="n">Base</span><span class="w"> </span><span class="n">Path</span><span class="p">:</span><span class="w">   </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">dotnet</span><span class="o">/</span><span class="n">sdk</span><span class="o">/</span><span class="mf">3.1</span><span class="o">.</span><span class="mi">101</span><span class="o">/</span><span class="w"></span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="n">Host</span><span class="w"> </span><span class="p">(</span><span class="n">useful</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">support</span><span class="p">):</span><span class="w"></span>
+<span class="linenos">13</span><span class="n">Version</span><span class="p">:</span><span class="w"> </span><span class="mf">5.0</span><span class="o">.</span><span class="mi">5</span><span class="w"></span>
+<span class="linenos">14</span><span class="n">Commit</span><span class="p">:</span><span class="w">  </span><span class="mi">2</span><span class="n">f740adc14</span><span class="w"></span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="o">.</span><span class="n">NET</span><span class="w"> </span><span class="n">SDKs</span><span class="w"> </span><span class="n">installed</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">17</span><span class="mf">3.1</span><span class="o">.</span><span class="mi">101</span><span class="w"> </span><span class="p">[</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">dotnet</span><span class="o">/</span><span class="n">sdk</span><span class="p">]</span><span class="w"></span>
+<span class="linenos">18</span><span class="mf">5.0</span><span class="o">.</span><span class="mi">202</span><span class="w"> </span><span class="p">[</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">dotnet</span><span class="o">/</span><span class="n">sdk</span><span class="p">]</span><span class="w"></span>
+<span class="linenos">19</span>
+<span class="linenos">20</span><span class="o">.</span><span class="n">NET</span><span class="w"> </span><span class="n">runtimes</span><span class="w"> </span><span class="n">installed</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">21</span><span class="n">Microsoft</span><span class="o">.</span><span class="n">AspNetCore</span><span class="o">.</span><span class="n">App</span><span class="w"> </span><span class="mf">3.1</span><span class="o">.</span><span class="mi">1</span><span class="w"> </span><span class="p">[</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">dotnet</span><span class="o">/</span><span class="n">shared</span><span class="o">/</span><span class="n">Microsoft</span><span class="o">.</span><span class="n">AspNetCore</span><span class="o">.</span><span class="n">App</span><span class="p">]</span><span class="w"></span>
+<span class="linenos">22</span><span class="n">Microsoft</span><span class="o">.</span><span class="n">AspNetCore</span><span class="o">.</span><span class="n">App</span><span class="w"> </span><span class="mf">5.0</span><span class="o">.</span><span class="mi">5</span><span class="w"> </span><span class="p">[</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">dotnet</span><span class="o">/</span><span class="n">shared</span><span class="o">/</span><span class="n">Microsoft</span><span class="o">.</span><span class="n">AspNetCore</span><span class="o">.</span><span class="n">App</span><span class="p">]</span><span class="w"></span>
+<span class="linenos">23</span><span class="n">Microsoft</span><span class="o">.</span><span class="n">NETCore</span><span class="o">.</span><span class="n">App</span><span class="w"> </span><span class="mf">2.1</span><span class="o">.</span><span class="mi">15</span><span class="w"> </span><span class="p">[</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">dotnet</span><span class="o">/</span><span class="n">shared</span><span class="o">/</span><span class="n">Microsoft</span><span class="o">.</span><span class="n">NETCore</span><span class="o">.</span><span class="n">App</span><span class="p">]</span><span class="w"></span>
+<span class="linenos">24</span><span class="n">Microsoft</span><span class="o">.</span><span class="n">NETCore</span><span class="o">.</span><span class="n">App</span><span class="w"> </span><span class="mf">2.1</span><span class="o">.</span><span class="mi">23</span><span class="w"> </span><span class="p">[</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">dotnet</span><span class="o">/</span><span class="n">shared</span><span class="o">/</span><span class="n">Microsoft</span><span class="o">.</span><span class="n">NETCore</span><span class="o">.</span><span class="n">App</span><span class="p">]</span><span class="w"></span>
+<span class="linenos">25</span><span class="n">Microsoft</span><span class="o">.</span><span class="n">NETCore</span><span class="o">.</span><span class="n">App</span><span class="w"> </span><span class="mf">3.1</span><span class="o">.</span><span class="mi">1</span><span class="w"> </span><span class="p">[</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">dotnet</span><span class="o">/</span><span class="n">shared</span><span class="o">/</span><span class="n">Microsoft</span><span class="o">.</span><span class="n">NETCore</span><span class="o">.</span><span class="n">App</span><span class="p">]</span><span class="w"></span>
+<span class="linenos">26</span><span class="n">Microsoft</span><span class="o">.</span><span class="n">NETCore</span><span class="o">.</span><span class="n">App</span><span class="w"> </span><span class="mf">5.0</span><span class="o">.</span><span class="mi">5</span><span class="w"> </span><span class="p">[</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">dotnet</span><span class="o">/</span><span class="n">shared</span><span class="o">/</span><span class="n">Microsoft</span><span class="o">.</span><span class="n">NETCore</span><span class="o">.</span><span class="n">App</span><span class="p">]</span><span class="w"></span>
+<span class="linenos">27</span>
+<span class="linenos">28</span><span class="n">To</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">additional</span><span class="w"> </span><span class="o">.</span><span class="n">NET</span><span class="w"> </span><span class="n">runtimes</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">SDKs</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">29</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">aka</span><span class="o">.</span><span class="n">ms</span><span class="o">/</span><span class="n">dotnet</span><span class="o">-</span><span class="n">download</span><span class="w"></span>
+</pre></div>
+</div>
+<p>If the .NET Core SDK listed on line 2 does not match the SDK specified in your <code class="docutils literal notranslate"><span class="pre">csproj</span></code> file, you need to open up your <code class="docutils literal notranslate"><span class="pre">global.json</span></code> and edit it so that the SDK used by the project matches.</p>
+<p>You need to install five NuGet packages before getting started with this process:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Microsoft.AspNetCore.Identity</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Microsoft.AspNetCore.Identity.UI</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Microsoft.AspNetCore.Identity.EntityFrameworkCore</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Microsoft.EntityFrameworkCore.SqlServer</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Microsoft.VisualStudio.Web.CodeGeneration.Design</span></code></p></li>
+</ol>
+<p>When installing these packages, make sure that the versions are the same as the .NET Core version your project is using. You can confirm this is the case by reviewing the code in your <code class="docutils literal notranslate"><span class="pre">csproj</span></code> file.</p>
+<p>With these packages installed, you are ready to go!</p>
+</div>
+<div class="section" id="scaffolding-identity-in-an-exisiting-project">
+<h2><span class="section-number">19.3.2. </span>Scaffolding Identity in an Exisiting Project<a class="headerlink" href="#scaffolding-identity-in-an-exisiting-project" title="Permalink to this headline"></a></h2>
+<p>In both Visual Studio for Mac and Visual Studio for Windows, you have the option to add new scaffolded items through the UI and through the terminal.</p>
+<div class="section" id="adding-identity-through-the-ui">
+<h3><span class="section-number">19.3.2.1. </span>Adding Identity Through the UI<a class="headerlink" href="#adding-identity-through-the-ui" title="Permalink to this headline"></a></h3>
+<ol class="arabic simple">
+<li><p>Right click on the project folder at the top of the solution.</p></li>
+<li><p>Select <em>Add</em> &gt; <em>New Scaffolded Item</em>.</p></li>
+<li><p>From the menu, select <em>Identity</em>.</p></li>
+</ol>
+<p>This approach is the simpler of the two approaches. However, for some Mac users, you may not find Identity as an option when you use this approach.
+If that is the case, use the terminal method.</p>
+</div>
+<div class="section" id="adding-identity-through-the-command-line">
+<h3><span class="section-number">19.3.2.2. </span>Adding Identity through the Command Line<a class="headerlink" href="#adding-identity-through-the-command-line" title="Permalink to this headline"></a></h3>
+<p>All of these commmands should be run in the project directory <em>inside</em> of the solution.</p>
+<ol class="arabic">
+<li><p>Use the following command to make sure you have the necessary code generator tools installed.</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">dotnet</span><span class="w"> </span><span class="k">tool</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="o">-</span><span class="n">g</span><span class="w"> </span><span class="n">dotnet</span><span class="o">-</span><span class="n">aspnet</span><span class="o">-</span><span class="n">codegenerator</span><span class="w"></span>
+</pre></div>
+</div>
+<p>If the tool is installed, you are ready to proceed.</p>
+</li>
+<li><p>Use the following command to add the full package necessary to generate the actual Identity code.</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+</pre></div>
+</div>
+</li>
+<li><p>Now you are ready to add Identity to your project! You can configure Identity in any number of ways to fit the project requirements. To see all of the options use this command:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>dotnet aspnet-codegenerator identity -h
+</pre></div>
+</div>
+<p>When you use this command, you will see a menu of options in your terminal and can configure from there.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span> <span class="n">aspnet</span><span class="o">-</span><span class="n">codegenerator</span> <span class="p">[</span><span class="n">arguments</span><span class="p">]</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span>
+
+<span class="n">Arguments</span><span class="p">:</span>
+   <span class="n">generator</span>  <span class="n">Name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">generator</span><span class="o">.</span> <span class="n">Check</span> <span class="n">available</span> <span class="n">generators</span> <span class="n">below</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+   <span class="o">-</span><span class="n">p</span><span class="o">|--</span><span class="n">project</span>             <span class="n">Path</span> <span class="n">to</span> <span class="o">.</span><span class="n">csproj</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">project</span><span class="o">.</span>
+   <span class="o">-</span><span class="n">n</span><span class="o">|--</span><span class="n">nuget</span><span class="o">-</span><span class="n">package</span><span class="o">-</span><span class="nb">dir</span>
+   <span class="o">-</span><span class="n">c</span><span class="o">|--</span><span class="n">configuration</span>       <span class="n">Configuration</span> <span class="k">for</span> <span class="n">the</span> <span class="n">project</span> <span class="p">(</span><span class="n">Possible</span> <span class="n">values</span><span class="p">:</span> <span class="n">Debug</span><span class="o">/</span> <span class="n">Release</span><span class="p">)</span>
+   <span class="o">-</span><span class="n">tfm</span><span class="o">|--</span><span class="n">target</span><span class="o">-</span><span class="n">framework</span>  <span class="n">Target</span> <span class="n">Framework</span> <span class="n">to</span> <span class="n">use</span><span class="o">.</span> <span class="p">(</span><span class="n">Short</span> <span class="n">folder</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">tfm</span><span class="o">.</span> <span class="n">eg</span><span class="o">.</span> <span class="n">net46</span><span class="p">)</span>
+   <span class="o">-</span><span class="n">b</span><span class="o">|--</span><span class="n">build</span><span class="o">-</span><span class="n">base</span><span class="o">-</span><span class="n">path</span>
+   <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">build</span>
+
+<span class="n">Selected</span> <span class="n">Code</span> <span class="n">Generator</span><span class="p">:</span> <span class="n">identity</span>
+
+<span class="n">Generator</span> <span class="n">Options</span><span class="p">:</span>
+   <span class="o">--</span><span class="n">dbContext</span><span class="o">|-</span><span class="n">dc</span>       <span class="p">:</span> <span class="n">Name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">DbContext</span> <span class="n">to</span> <span class="n">use</span><span class="p">,</span> <span class="ow">or</span> <span class="n">generate</span> <span class="p">(</span><span class="k">if</span> <span class="n">it</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span><span class="p">)</span><span class="o">.</span>
+   <span class="o">--</span><span class="n">files</span><span class="o">|-</span><span class="n">fi</span>           <span class="p">:</span> <span class="n">List</span> <span class="n">of</span> <span class="n">semicolon</span> <span class="n">separated</span> <span class="n">files</span> <span class="n">to</span> <span class="n">scaffold</span><span class="o">.</span> <span class="n">Use</span> <span class="n">the</span> <span class="o">--</span><span class="n">listFiles</span> <span class="n">option</span> <span class="n">to</span> <span class="n">see</span> <span class="n">the</span> <span class="n">available</span> <span class="n">options</span><span class="o">.</span>
+   <span class="o">--</span><span class="n">listFiles</span><span class="o">|-</span><span class="n">lf</span>       <span class="p">:</span> <span class="n">Lists</span> <span class="n">the</span> <span class="n">files</span> <span class="n">that</span> <span class="n">can</span> <span class="n">be</span> <span class="n">scaffolded</span> <span class="n">by</span> <span class="n">using</span> <span class="n">the</span> <span class="s1">&#39;--files&#39;</span> <span class="n">option</span><span class="o">.</span>
+   <span class="o">--</span><span class="n">userClass</span><span class="o">|-</span><span class="n">u</span>        <span class="p">:</span> <span class="n">Name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">User</span> <span class="k">class</span> <span class="nc">to</span> <span class="n">generate</span><span class="o">.</span>
+   <span class="o">--</span><span class="n">useSqLite</span><span class="o">|-</span><span class="n">sqlite</span>   <span class="p">:</span> <span class="n">Flag</span> <span class="n">to</span> <span class="n">specify</span> <span class="k">if</span> <span class="n">DbContext</span> <span class="n">should</span> <span class="n">use</span> <span class="n">SQLite</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">SQL</span> <span class="n">Server</span><span class="o">.</span>
+   <span class="o">--</span><span class="n">force</span><span class="o">|-</span><span class="n">f</span>            <span class="p">:</span> <span class="n">Use</span> <span class="n">this</span> <span class="n">option</span> <span class="n">to</span> <span class="n">overwrite</span> <span class="n">existing</span> <span class="n">files</span><span class="o">.</span>
+   <span class="o">--</span><span class="n">useDefaultUI</span><span class="o">|-</span><span class="n">udui</span>  <span class="p">:</span> <span class="n">Use</span> <span class="n">this</span> <span class="n">option</span> <span class="n">to</span> <span class="n">setup</span> <span class="n">identity</span> <span class="ow">and</span> <span class="n">to</span> <span class="n">use</span> <span class="n">Default</span> <span class="n">UI</span><span class="o">.</span>
+   <span class="o">--</span><span class="n">layout</span><span class="o">|-</span><span class="n">l</span>           <span class="p">:</span> <span class="n">Specify</span> <span class="n">a</span> <span class="n">custom</span> <span class="n">layout</span> <span class="n">file</span> <span class="n">to</span> <span class="n">use</span><span class="o">.</span>
+   <span class="o">--</span><span class="n">generateLayout</span><span class="o">|-</span><span class="n">gl</span>  <span class="p">:</span> <span class="n">Use</span> <span class="n">this</span> <span class="n">option</span> <span class="n">to</span> <span class="n">generate</span> <span class="n">a</span> <span class="n">new</span> <span class="n">_Layout</span><span class="o">.</span><span class="n">cshtml</span>
+   <span class="o">--</span><span class="n">bootstrapVersion</span><span class="o">|-</span><span class="n">b</span> <span class="p">:</span> <span class="n">Specify</span> <span class="n">the</span> <span class="n">bootstrap</span> <span class="n">version</span><span class="o">.</span> <span class="n">Valid</span> <span class="n">values</span><span class="p">:</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="o">.</span> <span class="n">Default</span> <span class="ow">is</span> <span class="mf">4.</span>
+</pre></div>
+</div>
+</li>
+<li><p>Configuration of Identity is dependent on you and your project requirements. In the case of <code class="docutils literal notranslate"><span class="pre">CodingEvents</span></code>, you would want to continue to use <code class="docutils literal notranslate"><span class="pre">EventDbContext</span></code>.
+This is how your final generation command would look:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>dotnet aspnet-codegenerator identity --dbContext EventDbContext --files &quot;Account.Register;Account.Login;Account.Logout;Account.RegisterConfirmation&quot;
+</pre></div>
+</div>
+<div class="admonition-note admonition">
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>In the above command, we used the option for <code class="docutils literal notranslate"><span class="pre">files</span></code>.
+Identity is a Razor Class Library so it comes with Razor pages preconfigured for registration, login, etc.
+This option means that we want the scaffolder to generate these files and add them to the solution, making it easier for us to customize these files in the future.
+The option for <code class="docutils literal notranslate"><span class="pre">defaultUI</span></code> means that we have no need to have these files in the solution and so we won’t have the ability to customize them.</p>
+</div>
+</li>
+<li><p>Once we run this series of commands, we will have successfully scaffolded Identity code onto our existing project.</p></li>
+</ol>
+<div class="admonition-note admonition">
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>If you do not see any new scaffolding, try using the command <code class="docutils literal notranslate"><span class="pre">dotnet</span> <span class="pre">restore</span></code>. This will restore our NuGet packages manually as opposed to them automatically restoring.</p>
+</div>
+</div>
+<div class="section" id="dbcontext">
+<h3><span class="section-number">19.3.2.3. </span><code class="docutils literal notranslate"><span class="pre">DbContext</span></code><a class="headerlink" href="#dbcontext" title="Permalink to this headline"></a></h3>
+<p>If you tried to run the application right now, you would encounter some build errors.
+While we specified in our scaffolding commands that we wanted to use <code class="docutils literal notranslate"><span class="pre">EventDbContext</span></code>, we need to open up two files to make sure that Identity is properly using <code class="docutils literal notranslate"><span class="pre">EventDbContext</span></code>: <code class="docutils literal notranslate"><span class="pre">Startup.cs</span></code> and <code class="docutils literal notranslate"><span class="pre">IdentityHostingStartup.cs</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">IdentityHostingStartup.cs</span></code> can be found in the <code class="docutils literal notranslate"><span class="pre">Areas/Identity</span></code> directory.
+You should update this file to make sure that it uses MySQL and the <code class="docutils literal notranslate"><span class="pre">&quot;DefaultConnection&quot;</span></code> string:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos">14</span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">IdentityHostingStartup</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IHostingStartup</span><span class="w"></span>
+<span class="linenos">15</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">16</span><span class="w">     </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Configure</span><span class="p">(</span><span class="n">IWebHostBuilder</span><span class="w"> </span><span class="n">builder</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">17</span><span class="w">     </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">18</span><span class="w">         </span><span class="n">builder</span><span class="p">.</span><span class="n">ConfigureServices</span><span class="p">((</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">services</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">19</span><span class="w">             </span><span class="n">services</span><span class="p">.</span><span class="n">AddDbContext</span><span class="p">&lt;</span><span class="n">EventDbContext</span><span class="p">&gt;(</span><span class="n">options</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"></span>
+<span class="linenos">20</span><span class="w">                 </span><span class="n">options</span><span class="p">.</span><span class="n">UseMySql</span><span class="p">(</span><span class="w"></span>
+<span class="linenos">21</span><span class="w">                     </span><span class="n">context</span><span class="p">.</span><span class="n">Configuration</span><span class="p">.</span><span class="n">GetConnectionString</span><span class="p">(</span><span class="s">&quot;DefaultConnection&quot;</span><span class="p">)));</span><span class="w"></span>
+<span class="linenos">22</span>
+<span class="linenos">23</span><span class="w">             </span><span class="n">services</span><span class="p">.</span><span class="n">AddDefaultIdentity</span><span class="p">&lt;</span><span class="n">IdentityUser</span><span class="p">&gt;(</span><span class="n">options</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="n">options</span><span class="p">.</span><span class="n">SignIn</span><span class="p">.</span><span class="n">RequireConfirmedAccount</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">true</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">24</span><span class="w">                 </span><span class="p">.</span><span class="n">AddEntityFrameworkStores</span><span class="p">&lt;</span><span class="n">EventDbContext</span><span class="p">&gt;();</span><span class="w"></span>
+<span class="linenos">25</span><span class="w">         </span><span class="p">});</span><span class="w"></span>
+<span class="linenos">26</span><span class="w">     </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">27</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Now go to <code class="docutils literal notranslate"><span class="pre">Startup.cs</span></code> and comment out the following lines in <code class="docutils literal notranslate"><span class="pre">ConfigureServices()</span></code>:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos">29</span><span class="n">services</span><span class="p">.</span><span class="n">AddDbContext</span><span class="p">&lt;</span><span class="n">EventDbContext</span><span class="p">&gt;(</span><span class="n">options</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"></span>
+<span class="linenos">30</span><span class="w">   </span><span class="n">options</span><span class="p">.</span><span class="n">UseMySql</span><span class="p">(</span><span class="n">Configuration</span><span class="p">.</span><span class="n">GetConnectionString</span><span class="p">(</span><span class="s">&quot;DefaultConnection&quot;</span><span class="p">)));</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Add one line to <code class="docutils literal notranslate"><span class="pre">ConfigureServices()</span></code> in <code class="docutils literal notranslate"><span class="pre">Startup.cs</span></code> for the use of the Razor pages in Identity:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">services</span><span class="p">.</span><span class="n">AddRazorPages</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Add an additional line to <code class="docutils literal notranslate"><span class="pre">app.UseEndpoints()</span></code> inside of <code class="docutils literal notranslate"><span class="pre">Configure()</span></code> in <code class="docutils literal notranslate"><span class="pre">Startup.cs</span></code>:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos">62</span><span class="n">app</span><span class="p">.</span><span class="n">UseEndpoints</span><span class="p">(</span><span class="n">endpoints</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"></span>
+<span class="linenos">63</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">64</span><span class="w">   </span><span class="n">endpoints</span><span class="p">.</span><span class="n">MapControllerRoute</span><span class="p">(</span><span class="w"></span>
+<span class="linenos">65</span><span class="w">      </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;default&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">66</span><span class="w">      </span><span class="n">pattern</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{controller=Home}/{action=Index}/{id?}&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="hll"><span class="linenos">67</span><span class="w">   </span><span class="n">endpoints</span><span class="p">.</span><span class="n">MapRazorPages</span><span class="p">();</span><span class="w"></span>
+</span><span class="linenos">68</span><span class="p">});</span><span class="w"></span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">endpoints.MapRazorPages()</span></code> specifies to the app that the Identity pages should follow the routing laid out in <code class="docutils literal notranslate"><span class="pre">_LoginPartial.cshtml</span></code>.</p>
+<p>These initial steps were to make sure that the application is still using <code class="docutils literal notranslate"><span class="pre">EventDbContext</span></code> for its connection to the database now that we have added Identity.
+However, if you take a look inside the <code class="docutils literal notranslate"><span class="pre">Areas/Identity/Data</span></code> directory, you will find a file also called <code class="docutils literal notranslate"><span class="pre">EventDbContext</span></code>. Delete that generated file and continue to use the one we initially created for <code class="docutils literal notranslate"><span class="pre">CodingEvents</span></code>.
+Now we just need to dive into our copy of <code class="docutils literal notranslate"><span class="pre">EventDbContext</span></code> and do the following:</p>
+<ol class="arabic">
+<li><p><code class="docutils literal notranslate"><span class="pre">EventDbContext</span></code> should now extend <code class="docutils literal notranslate"><span class="pre">IdentityDbContext&lt;IdentityUser&gt;</span></code>.</p></li>
+<li><p>We need to add an additional line to <code class="docutils literal notranslate"><span class="pre">OnModelCreating()</span></code>:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">base</span><span class="p">.</span><span class="n">OnModelCreating</span><span class="p">(</span><span class="n">modelBuilder</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>With these changes made, <code class="docutils literal notranslate"><span class="pre">EventDbContext</span></code> will look like the following:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos">13</span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">EventDbContext</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IdentityDbContext</span><span class="p">&lt;</span><span class="n">IdentityUser</span><span class="p">&gt;</span><span class="w"></span>
+<span class="linenos">14</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">15</span><span class="w">     </span><span class="k">public</span><span class="w"> </span><span class="n">DbSet</span><span class="p">&lt;</span><span class="n">Event</span><span class="p">&gt;</span><span class="w"> </span><span class="n">Events</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">16</span><span class="w">     </span><span class="k">public</span><span class="w"> </span><span class="n">DbSet</span><span class="p">&lt;</span><span class="n">EventCategory</span><span class="p">&gt;</span><span class="w"> </span><span class="n">Categories</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">17</span><span class="w">     </span><span class="k">public</span><span class="w"> </span><span class="n">DbSet</span><span class="p">&lt;</span><span class="n">Tag</span><span class="p">&gt;</span><span class="w"> </span><span class="n">Tags</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">18</span><span class="w">     </span><span class="k">public</span><span class="w"> </span><span class="n">DbSet</span><span class="p">&lt;</span><span class="n">EventTag</span><span class="p">&gt;</span><span class="w"> </span><span class="n">EventTags</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">19</span>
+<span class="linenos">20</span><span class="w">     </span><span class="k">public</span><span class="w"> </span><span class="nf">EventDbContext</span><span class="p">(</span><span class="n">DbContextOptions</span><span class="p">&lt;</span><span class="n">EventDbContext</span><span class="p">&gt;</span><span class="w"> </span><span class="n">options</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">21</span><span class="w">         </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="n">options</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">22</span><span class="w">     </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">23</span><span class="w">     </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">24</span>
+<span class="linenos">25</span><span class="w">     </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnModelCreating</span><span class="p">(</span><span class="n">ModelBuilder</span><span class="w"> </span><span class="n">modelBuilder</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">26</span><span class="w">     </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">27</span><span class="w">         </span><span class="n">modelBuilder</span><span class="p">.</span><span class="n">Entity</span><span class="p">&lt;</span><span class="n">EventTag</span><span class="p">&gt;().</span><span class="n">HasKey</span><span class="p">(</span><span class="n">et</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">et</span><span class="p">.</span><span class="n">EventId</span><span class="p">,</span><span class="w"> </span><span class="n">et</span><span class="p">.</span><span class="n">TagId</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<span class="linenos">28</span>
+<span class="linenos">29</span><span class="w">         </span><span class="k">base</span><span class="p">.</span><span class="n">OnModelCreating</span><span class="p">(</span><span class="n">modelBuilder</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">30</span><span class="w">     </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">31</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>You may note that we didn’t add any <code class="docutils literal notranslate"><span class="pre">DbSet</span></code> for <code class="docutils literal notranslate"><span class="pre">IdentityUser</span></code> like we did for other models in the application.
+This is not an oversight! With <code class="docutils literal notranslate"><span class="pre">EventDbContext</span></code> properly set up, we can run a migration and the database will add the appropriate tables for our authentication data.</p>
+</div>
+<div class="section" id="views">
+<h3><span class="section-number">19.3.2.4. </span>Views<a class="headerlink" href="#views" title="Permalink to this headline"></a></h3>
+<p>In your solution, you will find a new view inside the <code class="docutils literal notranslate"><span class="pre">Views/Shared</span></code> directory called <code class="docutils literal notranslate"><span class="pre">_LoginPartial.cshtml</span></code>.
+This partial view contains the logic for the links to actions that the users need, such as registration forms, login forms, sign out actions, and so on.
+If you peek inside the file, you will find these links live inside a conditional.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">@using</span><span class="w"> </span><span class="n">Microsoft</span><span class="p">.</span><span class="n">AspNetCore</span><span class="p">.</span><span class="n">Identity</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="n">@using</span><span class="w"> </span><span class="n">CodingEventsDemo</span><span class="p">.</span><span class="n">Areas</span><span class="p">.</span><span class="n">Identity</span><span class="p">.</span><span class="n">Data</span><span class="w"></span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="n">@inject</span><span class="w"> </span><span class="n">SignInManager</span><span class="p">&lt;</span><span class="n">IdentityUser</span><span class="p">&gt;</span><span class="w"> </span><span class="n">SignInManager</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="n">@inject</span><span class="w"> </span><span class="n">UserManager</span><span class="p">&lt;</span><span class="n">IdentityUser</span><span class="p">&gt;</span><span class="w"> </span><span class="n">UserManager</span><span class="w"></span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="p">&lt;</span><span class="n">ul</span><span class="w"> </span><span class="n">class</span><span class="p">=</span><span class="s">&quot;navbar-nav&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="n">@if</span><span class="w"> </span><span class="p">(</span><span class="n">SignInManager</span><span class="p">.</span><span class="n">IsSignedIn</span><span class="p">(</span><span class="n">IdentityUser</span><span class="p">))</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">   </span><span class="p">&lt;</span><span class="n">li</span><span class="w"> </span><span class="n">class</span><span class="p">=</span><span class="s">&quot;nav-item&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="linenos">11</span><span class="w">      </span><span class="p">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="p">=</span><span class="s">&quot;manage&quot;</span><span class="w"> </span><span class="n">class</span><span class="p">=</span><span class="s">&quot;nav-link text-dark&quot;</span><span class="w"> </span><span class="n">asp</span><span class="p">-</span><span class="n">area</span><span class="p">=</span><span class="s">&quot;Identity&quot;</span><span class="w"> </span><span class="n">asp</span><span class="p">-</span><span class="n">page</span><span class="p">=</span><span class="s">&quot;/Account/Manage/Index&quot;</span><span class="w"> </span><span class="n">title</span><span class="p">=</span><span class="s">&quot;Manage&quot;</span><span class="p">&gt;</span><span class="n">Hello</span><span class="w"> </span><span class="n">@UserManager</span><span class="p">.</span><span class="n">GetUserName</span><span class="p">(</span><span class="n">IdentityUser</span><span class="p">)!&lt;/</span><span class="n">a</span><span class="p">&gt;</span><span class="w"></span>
+<span class="linenos">12</span><span class="w">   </span><span class="p">&lt;/</span><span class="n">li</span><span class="p">&gt;</span><span class="w"></span>
+<span class="linenos">13</span><span class="w">   </span><span class="p">&lt;</span><span class="n">li</span><span class="w"> </span><span class="n">class</span><span class="p">=</span><span class="s">&quot;nav-item&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="linenos">14</span><span class="w">      </span><span class="p">&lt;</span><span class="n">form</span><span class="w"> </span><span class="n">id</span><span class="p">=</span><span class="s">&quot;logoutForm&quot;</span><span class="w"> </span><span class="n">class</span><span class="p">=</span><span class="s">&quot;form-inline&quot;</span><span class="w"> </span><span class="n">asp</span><span class="p">-</span><span class="n">area</span><span class="p">=</span><span class="s">&quot;Identity&quot;</span><span class="w"> </span><span class="n">asp</span><span class="p">-</span><span class="n">page</span><span class="p">=</span><span class="s">&quot;/Account/Logout&quot;</span><span class="w"> </span><span class="n">asp</span><span class="p">-</span><span class="n">route</span><span class="p">-</span><span class="n">returnUrl</span><span class="p">=</span><span class="s">&quot;@Url.Action(&quot;</span><span class="n">Index</span><span class="s">&quot;, &quot;</span><span class="n">Home</span><span class="s">&quot;, new { area = &quot;&quot; })&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="linenos">15</span><span class="w">         </span><span class="p">&lt;</span><span class="n">button</span><span class="w"> </span><span class="n">id</span><span class="p">=</span><span class="s">&quot;logout&quot;</span><span class="w"> </span><span class="n">type</span><span class="p">=</span><span class="s">&quot;submit&quot;</span><span class="w"> </span><span class="n">class</span><span class="p">=</span><span class="s">&quot;nav-link btn btn-link text-dark&quot;</span><span class="p">&gt;</span><span class="n">Logout</span><span class="p">&lt;/</span><span class="n">button</span><span class="p">&gt;</span><span class="w"></span>
+<span class="linenos">16</span><span class="w">      </span><span class="p">&lt;/</span><span class="n">form</span><span class="p">&gt;</span><span class="w"></span>
+<span class="linenos">17</span><span class="w">   </span><span class="p">&lt;/</span><span class="n">li</span><span class="p">&gt;</span><span class="w"></span>
+<span class="linenos">18</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">19</span><span class="k">else</span><span class="w"></span>
+<span class="linenos">20</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">21</span><span class="w">   </span><span class="p">&lt;</span><span class="n">li</span><span class="w"> </span><span class="n">class</span><span class="p">=</span><span class="s">&quot;nav-item&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="linenos">22</span><span class="w">      </span><span class="p">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">class</span><span class="p">=</span><span class="s">&quot;nav-link text-dark&quot;</span><span class="w"> </span><span class="n">id</span><span class="p">=</span><span class="s">&quot;register&quot;</span><span class="w"> </span><span class="n">asp</span><span class="p">-</span><span class="n">area</span><span class="p">=</span><span class="s">&quot;Identity&quot;</span><span class="w"> </span><span class="n">asp</span><span class="p">-</span><span class="n">page</span><span class="p">=</span><span class="s">&quot;Account/Register&quot;</span><span class="p">&gt;</span><span class="n">Register</span><span class="p">&lt;/</span><span class="n">a</span><span class="p">&gt;</span><span class="w"></span>
+<span class="linenos">23</span><span class="w">   </span><span class="p">&lt;/</span><span class="n">li</span><span class="p">&gt;</span><span class="w"></span>
+<span class="linenos">24</span><span class="w">   </span><span class="p">&lt;</span><span class="n">li</span><span class="w"> </span><span class="n">class</span><span class="p">=</span><span class="s">&quot;nav-item&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="linenos">25</span><span class="w">      </span><span class="p">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">class</span><span class="p">=</span><span class="s">&quot;nav-link text-dark&quot;</span><span class="w"> </span><span class="n">id</span><span class="p">=</span><span class="s">&quot;login&quot;</span><span class="w"> </span><span class="n">asp</span><span class="p">-</span><span class="n">area</span><span class="p">=</span><span class="s">&quot;Identity&quot;</span><span class="w"> </span><span class="n">asp</span><span class="p">-</span><span class="n">page</span><span class="p">=</span><span class="s">&quot;/Account/Login&quot;</span><span class="p">&gt;</span><span class="n">Login</span><span class="p">&lt;/</span><span class="n">a</span><span class="p">&gt;</span><span class="w"></span>
+<span class="linenos">26</span><span class="w">   </span><span class="p">&lt;/</span><span class="n">li</span><span class="p">&gt;</span><span class="w"></span>
+<span class="linenos">27</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">28</span><span class="p">&lt;/</span><span class="n">ul</span><span class="p">&gt;</span><span class="w"></span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.identity.usermanager-1?view=aspnetcore-3.1" target="_blank">UserManager<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> deals with the user information in the database. We can use the properties and methods to perform operations on user objects such as adding a new user or fetching user information.
+On line 11 in the code above, <code class="docutils literal notranslate"><span class="pre">UserManager</span></code> is used to fetch the signed-in user’s username so we greet them by name!
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.identity.signinmanager-1?view=aspnetcore-3.1" target="_blank">SignInManager<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> deals with users signing in.
+On line 8, <code class="docutils literal notranslate"><span class="pre">SignInManager</span></code> is used to check if the user is signed in. If the user is signed in, then the links that will be displayed are to manage the account or log out of the account.
+If the user is not signed in, then the links are to either log in or register for an account on the site.</p>
+<p>This partial view can be placed anywhere you need it, but we recommend starting with placing it in <code class="docutils literal notranslate"><span class="pre">_Layout.cshtml</span></code> so that a signed-in user can easily access the necessary links from any page.
+To add it to the navbar, use the following syntax:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>&lt;partial name=&quot;_LoginPartial&quot; /&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="final-steps">
+<h3><span class="section-number">19.3.2.5. </span>Final Steps<a class="headerlink" href="#final-steps" title="Permalink to this headline"></a></h3>
+<p>No matter which approach you took for the initial steps in scaffolding, you need to run a new migration and update your database.
+Once you update the database, your database will contain a number of tables related to Identity such as <code class="docutils literal notranslate"><span class="pre">AspNetUsers</span></code> and <code class="docutils literal notranslate"><span class="pre">AspNetRoles</span></code>.</p>
+<p>To test that you are on the right track, run the application. Click on the link to register and create a new account.
+Query the <code class="docutils literal notranslate"><span class="pre">AspNetUsers</span></code> table in the database to make sure that the newly added account is there.</p>
+<p>Now that we have successfully added Identity to our project, we are ready to start coding!</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="hashing-passwords.html" class="btn btn-neutral float-left" title="19.2. Hashing Passwords" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="users.html" class="btn btn-neutral float-right" title="19.4. Registrations and Logins" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>12.4. Studio: If It Ain’t Broke, Add a Breakpoint! &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="13. Razor Views" href="../razor-views/index.html" />
+    <link rel="prev" title="12.3. Debugger" href="debugger.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">12. Tools in Visual Studio</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="msbuild.html">12.1. MSBuild</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nuget.html">12.2. NuGet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debugger.html">12.3. Debugger</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">12.4. Studio: If It Ain’t Broke, Add a Breakpoint!</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">12. </span>Tools in Visual Studio</a> &raquo;</li>
+      <li><span class="section-number">12.4. </span>Studio: If It Ain’t Broke, Add a Breakpoint!</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/vstools/studio.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="studio-if-it-ain-t-broke-add-a-breakpoint">
+<h1><span class="section-number">12.4. </span>Studio: If It Ain’t Broke, Add a Breakpoint!<a class="headerlink" href="#studio-if-it-ain-t-broke-add-a-breakpoint" title="Permalink to this headline"></a></h1>
+<p>On your machine, open up your copy of <code class="docutils literal notranslate"><span class="pre">csharp-web-dev-interfaces-studio</span></code> in Visual Studio.
+The purpose of this studio is to talk about your current debugging strategies and how to make the most of the debugger tools discussed in this chapter.</p>
+<p>Before we start practicing with debugging tools, go over with the group one error you encountered when working on your own version of last lesson’s studio.
+This could be the result of a typo or a logical error.</p>
+<ol class="arabic simple">
+<li><p>What was the error?</p></li>
+<li><p>How did you solve this error? What have been the strategies and tools you have been using so far to debug your code?</p></li>
+<li><p>Could one of the debugging tools help you when addressing this error?
+For example, if you encountered an error where data was not being written onto a disc object, could you track the properties of the object with a debugging tool?</p></li>
+</ol>
+<p>Now, checkout the <a class="reference external" href="https://github.com/LaunchCodeEducation/csharp-web-dev-interfaces-studio/tree/debugging" target="_blank">debugging branch<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> of
+the studio repo. Review the code and use the debugging tools in Visual Studio to practice assessing the program.</p>
+<p>To get started, try the following:</p>
+<ol class="arabic simple">
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">cd.Name</span></code> to the <em>Watch</em> pane to track the value of that property. Does it change?</p></li>
+<li><p>Add a few breakpoints inside of <code class="docutils literal notranslate"><span class="pre">Program.cs</span></code> and make note of where you expect the program to break its execution.</p></li>
+<li><dl class="simple">
+<dt>Add a breakpoint inside of some of the methods in <code class="docutils literal notranslate"><span class="pre">BaseDisc.cs</span></code>. Anticipate what you expect to see as the last line in the</dt><dd><p><em>Call Stack</em> pane when the debugger stops.</p>
+</dd>
+</dl>
+</li>
+</ol>
+<p>After you look through the code and try out these tasks, take it one step further by answering these questions.</p>
+<ol class="arabic simple">
+<li><p>When would you use the <em>Call Stack</em> pane? If you run the app and it is already functioning, what shows up there?</p></li>
+<li><p>Would a conditional breakpoint make sense to use in the context of this app? Try changing one of the breakpoints you have already added to a conditional breakpoint and run your app!</p></li>
+</ol>
+<p>Once you have gone through the code, open up a piece of code you have been struggling with.
+In what ways could making use of debugging tools help you figure out what is going on with the code?</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="debugger.html" class="btn btn-neutral float-left" title="12.3. Debugger" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../razor-views/index.html" class="btn btn-neutral float-right" title="13. Razor Views" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

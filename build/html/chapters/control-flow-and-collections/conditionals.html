@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.1. Conditionals &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3.2. Loops" href="loops.html" />
+    <link rel="prev" title="3. Control Flow and Collections" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">3. Control Flow and Collections</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.1. Conditionals</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#operators">3.1.1. Operators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#if-statements">3.1.2. <code class="docutils literal notranslate"><span class="pre">if</span></code> Statements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#if-else">3.1.3. <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">else</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#else-if">3.1.4. <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#switch-statements">3.1.5. <code class="docutils literal notranslate"><span class="pre">switch</span></code> Statements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-your-understanding">3.1.6. Check Your Understanding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="loops.html">3.2. Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collections.html">3.3. Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">3.4. List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html">3.5. Array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionary.html">3.6. Dictionary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html">3.7. Exercises: Control Flow and Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html">3.8. Studio: Counting Characters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">3. </span>Control Flow and Collections</a> &raquo;</li>
+      <li><span class="section-number">3.1. </span>Conditionals</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/control-flow-and-collections/conditionals.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="conditionals">
+<h1><span class="section-number">3.1. </span>Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this headline"></a></h1>
+<p>Control flow statements in C#, conditionals and loops, are very
+straightforward.</p>
+<div class="section" id="operators">
+<h2><span class="section-number">3.1.1. </span>Operators<a class="headerlink" href="#operators" title="Permalink to this headline"></a></h2>
+<p>Before we review the syntax for conditionals, let’s go over the comparison and logical operators that we need to use in control flow statements.</p>
+<div class="section" id="comparison-operators">
+<h3><span class="section-number">3.1.1.1. </span>Comparison Operators<a class="headerlink" href="#comparison-operators" title="Permalink to this headline"></a></h3>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Comparison Operators</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">==</span></code></p></td>
+<td><p>Checks if two items are equal</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">!=</span></code></p></td>
+<td><p>Checks if two items are not equal</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
+<td><p>Checks if item on left is lesser than item on right</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></td>
+<td><p>Checks if item on left is lesser than or equal to item on right</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
+<td><p>Checks if item on left is greater than item on right</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></td>
+<td><p>Checks if item on left is greater than or equal to item on right</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="logical-operators">
+<h3><span class="section-number">3.1.1.2. </span>Logical Operators<a class="headerlink" href="#logical-operators" title="Permalink to this headline"></a></h3>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Logical Operators</span><a class="headerlink" href="#id4" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">!</span></code></p></td>
+<td><p>Reverses the evaluation of the operand</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">||</span></code></p></td>
+<td><p>Combines two expressions with OR</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code></p></td>
+<td><p>Combines two expressions with AND</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="if-statements">
+<span id="index-0"></span><h2><span class="section-number">3.1.2. </span><code class="docutils literal notranslate"><span class="pre">if</span></code> Statements<a class="headerlink" href="#if-statements" title="Permalink to this headline"></a></h2>
+<p>Let’s consider an <strong>if statement</strong> with no <code class="docutils literal notranslate"><span class="pre">else</span></code> clause.</p>
+<p>In C#, this pattern is simply written as:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">2</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">3</span><span class="w">   </span><span class="n">statement1</span><span class="w"></span>
+<span class="linenos">4</span><span class="w">   </span><span class="n">statement2</span><span class="w"></span>
+<span class="linenos">5</span><span class="w">   </span><span class="p">...</span><span class="w"></span>
+<span class="linenos">6</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>You can see that in C#, the curly braces define a block.
+Parentheses around the condition are required.</p>
+</div>
+<div class="section" id="if-else">
+<span id="index-1"></span><h2><span class="section-number">3.1.3. </span><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">else</span></code><a class="headerlink" href="#if-else" title="Permalink to this headline"></a></h2>
+<p>Adding an <strong>else clause</strong>, we have:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="w">   </span><span class="n">statement1</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="w">   </span><span class="n">statement2</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">   </span><span class="p">...</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="k">else</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">   </span><span class="n">statement1</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">   </span><span class="n">statement2</span><span class="w"></span>
+<span class="linenos">11</span><span class="w">   </span><span class="p">...</span><span class="w"></span>
+<span class="linenos">12</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="else-if">
+<span id="index-2"></span><h2><span class="section-number">3.1.4. </span><code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code><a class="headerlink" href="#else-if" title="Permalink to this headline"></a></h2>
+<p>An <strong>else if</strong> construction in C#:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Enter a grade: &quot;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="kt">string</span><span class="w"> </span><span class="n">gradeString</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="kt">int</span><span class="w"> </span><span class="n">grade</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kt">int</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">gradeString</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">grade</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="m">60</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">      </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="sc">&#39;F&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">grade</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="m">70</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">      </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="sc">&#39;D&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">11</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">12</span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">grade</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="m">80</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">13</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">14</span><span class="w">      </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="sc">&#39;C&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">15</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">16</span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">grade</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="m">90</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">17</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">18</span><span class="w">      </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="sc">&#39;B&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">19</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">20</span><span class="k">else</span><span class="w"></span>
+<span class="linenos">21</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">22</span><span class="w">      </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="sc">&#39;A&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">23</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="switch-statements">
+<span id="index-3"></span><span id="id1"></span><h2><span class="section-number">3.1.5. </span><code class="docutils literal notranslate"><span class="pre">switch</span></code> Statements<a class="headerlink" href="#switch-statements" title="Permalink to this headline"></a></h2>
+<p>C# also supports a <strong>switch</strong> statement that acts something like an
+<code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> statement under certain conditions, called <strong>cases</strong>. The
+<code class="docutils literal notranslate"><span class="pre">switch</span></code> statement is not used very often, and we generally recommend you
+avoid using it. It is not as powerful as the <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> model because the
+<code class="docutils literal notranslate"><span class="pre">switch</span></code> variable can only be compared for equality with a very small class
+of types.</p>
+<p>Here is a quick example of a <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Enter an integer: &quot;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="kt">string</span><span class="w"> </span><span class="n">dayString</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="kt">int</span><span class="w"> </span><span class="n">dayNum</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kt">int</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">dayString</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="kt">string</span><span class="w"> </span><span class="n">day</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">dayNum</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="m">0</span><span class="p">:</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">      </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Sunday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="m">1</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">11</span><span class="w">      </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Monday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">12</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">13</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="m">2</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">14</span><span class="w">      </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Tuesday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">15</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">16</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="m">3</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">17</span><span class="w">      </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Wednesday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">18</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">19</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="m">4</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">20</span><span class="w">      </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Thursday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">21</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">22</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="m">5</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">23</span><span class="w">      </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Friday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">24</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">25</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="m">6</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">26</span><span class="w">      </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Saturday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">27</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">28</span><span class="w">   </span><span class="k">default</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">29</span><span class="w">      </span><span class="c1">// in this example, this block runs if none of the above blocks match</span>
+<span class="linenos">30</span><span class="w">      </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Int does not correspond to a day of the week&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">31</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">32</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">33</span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">day</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Note that each case ends with a <code class="docutils literal notranslate"><span class="pre">break</span></code> statement.
+We will look at why this is in the following section.</p>
+<p>In the example above, here’s the output if a user enters the number <code class="docutils literal notranslate"><span class="pre">4</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">an</span> <span class="n">integer</span><span class="p">:</span>
+<span class="mi">4</span>
+<span class="n">Thursday</span>
+</pre></div>
+</div>
+<p>And the output if that user enters <code class="docutils literal notranslate"><span class="pre">10</span></code>? Below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">an</span> <span class="n">integer</span><span class="p">:</span>
+<span class="mi">10</span>
+<span class="n">Int</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">correspond</span> <span class="n">to</span> <span class="n">a</span> <span class="n">day</span> <span class="n">of</span> <span class="n">the</span> <span class="n">week</span>
+</pre></div>
+</div>
+<p>Here’s how the above example looks using the <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> construction:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Enter an integer: &quot;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="kt">string</span><span class="w"> </span><span class="n">dayString</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="kt">int</span><span class="w"> </span><span class="n">dayNum</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kt">int</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">dayString</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="kt">string</span><span class="w"> </span><span class="n">day</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dayNum</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">   </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Sunday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">10</span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">dayNum</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">11</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">12</span><span class="w">   </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Monday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">13</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">14</span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">dayNum</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">15</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">16</span><span class="w">   </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Tuesday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">17</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">18</span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">dayNum</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">19</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">20</span><span class="w">   </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Wednesday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">21</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">22</span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">dayNum</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="m">4</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">23</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">24</span><span class="w">   </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Thursday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">25</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">26</span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">dayNum</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="m">5</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">27</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">28</span><span class="w">   </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Friday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">29</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">30</span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">dayNum</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="m">6</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">31</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">32</span><span class="w">   </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Saturday&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">33</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">34</span><span class="k">else</span><span class="w"></span>
+<span class="linenos">35</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">36</span><span class="w">   </span><span class="n">day</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Int does not correspond to a day of the week&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">37</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">38</span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">day</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="section" id="fallthrough">
+<span id="index-4"></span><h3><span class="section-number">3.1.5.1. </span>Fallthrough<a class="headerlink" href="#fallthrough" title="Permalink to this headline"></a></h3>
+<p>Many C-based languages utilize switch statements.
+However, not all languages share the same behavior when it comes to <strong>fallthrough</strong>.
+Fallthrough is what happens when a <code class="docutils literal notranslate"><span class="pre">break</span></code> statement is omitted and is described in detail in this article on <a class="reference external" href="https://en.wikipedia.org/wiki/Switch_statement#Fallthrough" target="_blank">switch statements<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
+In C#, you can take advantage of fallthrough behavior in specific circumstances with blank cases.
+If the behavior we want matches for two cases, then we can take advantage of this fallthrough action.</p>
+<div class="admonition-example admonition">
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>We want to use a switch statement to tell us if it is the weekend or a weekday. Here is how we might modify the switch statement from above and make use of fallthrough.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Enter an integer: &quot;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="kt">string</span><span class="w"> </span><span class="n">dayString</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="kt">int</span><span class="w"> </span><span class="n">dayNum</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kt">int</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">dayString</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="kt">string</span><span class="w"> </span><span class="n">weekZone</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">dayNum</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="m">0</span><span class="p">:</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">      </span><span class="n">weekZone</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Weekend&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="m">1</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">11</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="m">2</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">12</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="m">3</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">13</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="m">4</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">14</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="m">5</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">15</span><span class="w">      </span><span class="n">weekZone</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Week Day&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">16</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">17</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="m">6</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">18</span><span class="w">      </span><span class="n">weekZone</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Weekend&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">19</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">20</span><span class="w">   </span><span class="k">default</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">21</span><span class="w">      </span><span class="c1">// in this example, this block runs if none of the above blocks match</span>
+<span class="linenos">22</span><span class="w">      </span><span class="n">weekZone</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Int does not correspond to a day of the week&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">23</span><span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">24</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">25</span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">day</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Because we want to set the value of <code class="docutils literal notranslate"><span class="pre">weekZone</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;Week</span> <span class="pre">Day&quot;</span></code> for cases 1-5, we omit the <code class="docutils literal notranslate"><span class="pre">break</span></code> statements and any other code.</p>
+</div>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">3.1.6. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline"></a></h2>
+<div class="admonition-question admonition">
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>When does fallthrough occur in C#?</p>
+<ol class="arabic simple">
+<li><p>Omitting an <code class="docutils literal notranslate"><span class="pre">else</span></code> clause from a conditional.</p></li>
+<li><p>Omitting an <code class="docutils literal notranslate"><span class="pre">else</span></code> clause from switch statement.</p></li>
+<li><p>Omitting a <code class="docutils literal notranslate"><span class="pre">default</span></code> case from a <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement.</p></li>
+<li><p>Omitting a <code class="docutils literal notranslate"><span class="pre">break</span></code> line from a <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement.</p></li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Are you a space cadet? yes or no&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="kt">string</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span><span class="w"></span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="s">&quot;yes&quot;</span><span class="p">:</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">      </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Greetings cadet.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="s">&quot;no&quot;</span><span class="p">:</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">      </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Greetings normie.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">   </span><span class="k">default</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">      </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Are you an alien?&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">11</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Given the code above, what prints if the user enters <code class="docutils literal notranslate"><span class="pre">no</span></code> after the prompt?</p>
+<ol class="arabic">
+<li><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Greetings cadet.
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Greetings normie.
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Greetings normie.
+Are you an alien?
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Greetings cadet.
+Greetings normie.
+</pre></div>
+</div>
+</li>
+<li><p>The program doesn’t work as written.</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="3. Control Flow and Collections" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="loops.html" class="btn btn-neutral float-right" title="3.2. Loops" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

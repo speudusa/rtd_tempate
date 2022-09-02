@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>19.4. Registrations and Logins &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="19.5. Configuring Identity" href="configuration.html" />
+    <link rel="prev" title="19.3. Getting Started with Identity" href="scaffolding.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">19. Authentication</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">19.1. Introduction to Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hashing-passwords.html">19.2. Hashing Passwords</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scaffolding.html">19.3. Getting Started with Identity</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">19.4. Registrations and Logins</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#registration">19.4.1. Registration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#login">19.4.2. Login</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logout">19.4.3. Logout</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">19.5. Configuring Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authorization.html">19.6. Identity and Authorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="identity-management.html">19.7. Identity Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html">19.8. Studio: TechJobs Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">19. </span>Authentication</a> &raquo;</li>
+      <li><span class="section-number">19.4. </span>Registrations and Logins</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/auth/users.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="registrations-and-logins">
+<h1><span class="section-number">19.4. </span>Registrations and Logins<a class="headerlink" href="#registrations-and-logins" title="Permalink to this headline"></a></h1>
+<p>In order for users to successfully navigate through the application, Identity will handle a number of functions related to both authentication and authorization.
+For the purposes of this book, we will focus on just two: registering for a new account and logging in.</p>
+<div class="admonition-note admonition">
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Razor Class Libraries do not have separate controllers like in the traditional MVC design pattern.
+The logic that we might be inclined to put in a controller for each of the actions that we look at is actually contained within a Razor page.
+Our goal is to locate the correct page and understand what is going on.</p>
+<p>The pages we are looking at end with the file extension <code class="docutils literal notranslate"><span class="pre">.cshtml.cs</span></code>.
+Some Mac users may have to click on a small arrow on to expand the <code class="docutils literal notranslate"><span class="pre">.cshtml</span></code> pages to find the <code class="docutils literal notranslate"><span class="pre">cshtml.cs</span></code> files.</p>
+</div>
+<div class="section" id="registration">
+<h2><span class="section-number">19.4.1. </span>Registration<a class="headerlink" href="#registration" title="Permalink to this headline"></a></h2>
+<p>Open up <code class="docutils literal notranslate"><span class="pre">Register.cshtml.cs</span></code> in <code class="docutils literal notranslate"><span class="pre">Areas/Identity/Pages/Account</span></code> and inspect it.
+Here are some things to note:</p>
+<ol class="arabic simple">
+<li><p>The return type of the action to register a new user is <code class="docutils literal notranslate"><span class="pre">Task&lt;IActionResult&gt;</span></code>.
+We have encountered <code class="docutils literal notranslate"><span class="pre">IActionResult</span></code> before.
+<code class="docutils literal notranslate"><span class="pre">Task&lt;IActionResult&gt;</span></code> is an asynchronous return type.
+The action of adding a new user to a database is asynchronous so our function must return an asynchronous action.</p></li>
+<li><p>We can still use <code class="docutils literal notranslate"><span class="pre">ModelState.IsValid</span></code> to make sure that the user’s input matches our validation requirements.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UserManager</span></code> comes back into play here for the addition of the new user to the database.
+The method used for that action is called <code class="docutils literal notranslate"><span class="pre">CreateAsync()</span></code>. The new user’s password is hashed as part of this method, so there aren’t any additional method calls here.</p></li>
+<li><p>If the new user row in the database is successfully created, then we want to direct the user to a page to start working.
+If not, the user registration form is reloaded, just as when the validation requirements are not met.</p></li>
+</ol>
+</div>
+<div class="section" id="login">
+<h2><span class="section-number">19.4.2. </span>Login<a class="headerlink" href="#login" title="Permalink to this headline"></a></h2>
+<p>Open up <code class="docutils literal notranslate"><span class="pre">Login.cshtml.cs</span></code> in <code class="docutils literal notranslate"><span class="pre">Areas/Identity/Pages/Account</span></code>.
+Here are some things to note:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Task&lt;IActionResult&gt;</span></code> is back meaning the action of signing in is asynchronous.</p></li>
+<li><p>If the form input is valid, then we want to try and sign in the user.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SignInManager</span></code> has a method called <code class="docutils literal notranslate"><span class="pre">PasswordSignInAsync()</span></code> which takes in parameters like the inputted email and password and compares those values to the values stored in the database.</p></li>
+<li><p>If the action of signing in is successful, the user is directed on to a new page.
+If the action is not successful, then the user is redirected back to the login form with an error message explaining that they could not log in.</p></li>
+</ol>
+</div>
+<div class="section" id="logout">
+<h2><span class="section-number">19.4.3. </span>Logout<a class="headerlink" href="#logout" title="Permalink to this headline"></a></h2>
+<p>There are two main things to note about <code class="docutils literal notranslate"><span class="pre">Logout.cshtml.cs</span></code> in <code class="docutils literal notranslate"><span class="pre">Areas/Identity/Pages/Account</span></code>:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Task&lt;IActionResult&gt;</span></code> is the return type.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SignInManager</span></code> has a method called <code class="docutils literal notranslate"><span class="pre">SignOutAsync()</span></code> which ends the session. Once that action is completed, the user is redirected to an unrestricted page.</p></li>
+</ol>
+<p>These are the three main actions we want to focus on when it comes to authentication with user accounts.
+We could additional elements to these three actions such as 2FA or two factor authentication on log in as the authentication requirements of our project grow.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="scaffolding.html" class="btn btn-neutral float-left" title="19.3. Getting Started with Identity" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="configuration.html" class="btn btn-neutral float-right" title="19.5. Configuring Identity" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

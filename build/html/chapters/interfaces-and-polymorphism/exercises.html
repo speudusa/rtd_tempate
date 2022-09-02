@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>8.6. Exercises: Interfaces and Polymorphism &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="8.7. Studio: Spinning the Discs" href="studio.html" />
+    <link rel="prev" title="8.5. Unit Testing and Interfaces" href="testing-interfaces.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">8. Interfaces and Polymorphism</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">8.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfaces.html">8.2. Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfaces-and-abstract-classes.html">8.3. Interfaces and Abstract Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="given-interfaces.html">8.4. Interfaces In The Wild</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing-interfaces.html">8.5. Unit Testing and Interfaces</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8.6. Exercises: Interfaces and Polymorphism</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getting-started">8.6.1. Getting Started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sorting-flavors-by-name">8.6.2. Sorting Flavors by Name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sorting-cones-by-cost">8.6.3. Sorting Cones by Cost</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bonus-mission">8.6.4. Bonus Mission</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#next-steps">8.6.5. Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html">8.7. Studio: Spinning the Discs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">8. </span>Interfaces and Polymorphism</a> &raquo;</li>
+      <li><span class="section-number">8.6. </span>Exercises: Interfaces and Polymorphism</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/interfaces-and-polymorphism/exercises.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="exercises-interfaces-and-polymorphism">
+<span id="interfaces-exercises"></span><h1><span class="section-number">8.6. </span>Exercises: Interfaces and Polymorphism<a class="headerlink" href="#exercises-interfaces-and-polymorphism" title="Permalink to this headline"></a></h1>
+<p>As a new C# coder, it might take you some time to recognize when to use interfaces.</p>
+<p>To help overcome this, let’s consider a common occurrence—sorting a
+<code class="docutils literal notranslate"><span class="pre">List</span></code> of objects.</p>
+<ol class="arabic">
+<li><p>If the list contains <code class="docutils literal notranslate"><span class="pre">string</span></code> or numerical entries, then sorting the list
+is <a class="reference internal" href="../control-flow-and-collections/list.html#listsort"><span class="std std-ref">trivial</span></a>:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">listName</span><span class="p">.</span><span class="n">Sort</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>However, if the elements are custom objects (like <code class="docutils literal notranslate"><span class="pre">Cat</span></code>), then sorting the
+list becomes more complicated. This is because the objects may contain
+multiple fields, any of which could be used as a sorting option. For
+<code class="docutils literal notranslate"><span class="pre">Cat</span></code> objects, this could include <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">age</span></code>, or <code class="docutils literal notranslate"><span class="pre">mass</span></code>.</p></li>
+</ol>
+<div class="section" id="getting-started">
+<h2><span class="section-number">8.6.1. </span>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline"></a></h2>
+<p>Fork and clone the <a class="reference external" href="https://github.com/LaunchCodeEducation/csharp-web-dev-interfaces" target="_blank">starter code<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and open up Visual Studio to get started!</p>
+<p>You will practice implementing interfaces by playing around with a small ice
+cream store. It consists of a refrigerated display <code class="docutils literal notranslate"><span class="pre">Case</span></code>, which contains
+a collection of ice cream <code class="docutils literal notranslate"><span class="pre">Flavor</span></code> objects and a selection of <code class="docutils literal notranslate"><span class="pre">Cone</span></code>
+objects.</p>
+<div class="admonition-tip admonition">
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Did you notice the abstract <code class="docutils literal notranslate"><span class="pre">Ingredient</span></code> class? This gets extended by
+<code class="docutils literal notranslate"><span class="pre">Flavor</span></code> and <code class="docutils literal notranslate"><span class="pre">Cone</span></code> to help streamline the code.</p>
+</div>
+</div>
+<div class="section" id="sorting-flavors-by-name">
+<h2><span class="section-number">8.6.2. </span>Sorting Flavors by Name<a class="headerlink" href="#sorting-flavors-by-name" title="Permalink to this headline"></a></h2>
+<p>To display a menu for your customers, you need to sort the ice cream flavors
+alphabetically by the <code class="docutils literal notranslate"><span class="pre">name</span></code> field. Fortunately, the <code class="docutils literal notranslate"><span class="pre">IComparer</span></code>
+interface helps you solve the sorting-objects-by-field problem.</p>
+<div class="admonition-tip admonition">
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Before proceeding, make sure you have read the section on the <a class="reference internal" href="given-interfaces.html#icomparer"><span class="std std-ref">IComparer interface</span></a>!</p>
+</div>
+<div class="section" id="create-a-sorting-class">
+<h3><span class="section-number">8.6.2.1. </span>Create a Sorting Class<a class="headerlink" href="#create-a-sorting-class" title="Permalink to this headline"></a></h3>
+<ol class="arabic">
+<li><p>Create a new class called <code class="docutils literal notranslate"><span class="pre">FlavorComparer</span></code> and have it implement the
+<code class="docutils literal notranslate"><span class="pre">IComparer</span></code> interface:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">FlavorComparer</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IComparer</span><span class="p">&lt;</span><span class="n">Flavor</span><span class="p">&gt;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>Notice that Visual Studio flags a couple of errors that you need to fix:</p>
+<ol class="loweralpha simple">
+<li><p>Add the namespace <code class="docutils literal notranslate"><span class="pre">System.Collections.Generic</span></code>.</p></li>
+</ol>
+</li>
+<li><p>To start sorting, we need a <code class="docutils literal notranslate"><span class="pre">Compare()</span></code> method. Add the following code to create one:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">Compare</span><span class="p">(</span><span class="n">Flavor</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">Flavor</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">2</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">3</span><span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="kt">string</span><span class="p">.</span><span class="n">Compare</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="n">Name</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">4</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This returns an integer (-1, 1, or 0) depending on
+which <code class="docutils literal notranslate"><span class="pre">Flavor</span></code> object <code class="docutils literal notranslate"><span class="pre">x</span></code> or <code class="docutils literal notranslate"><span class="pre">y</span></code> comes first, alphabetically.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="sorting-the-flavors-list">
+<h3><span class="section-number">8.6.2.2. </span>Sorting the <code class="docutils literal notranslate"><span class="pre">Flavors</span></code> List<a class="headerlink" href="#sorting-the-flavors-list" title="Permalink to this headline"></a></h3>
+<p>In the <code class="docutils literal notranslate"><span class="pre">Main</span></code> method in <code class="docutils literal notranslate"><span class="pre">Program.cs</span></code>, we declare <code class="docutils literal notranslate"><span class="pre">menu</span></code> that contains everything in the <code class="docutils literal notranslate"><span class="pre">Case</span></code>
+as well as specific <code class="docutils literal notranslate"><span class="pre">availableFlavors</span></code> and <code class="docutils literal notranslate"><span class="pre">availableCones</span></code> collections.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos">10</span><span class="n">Case</span><span class="w"> </span><span class="n">menu</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Case</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">11</span><span class="n">List</span><span class="p">&lt;</span><span class="n">Flavor</span><span class="p">&gt;</span><span class="w"> </span><span class="n">availableFlavors</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">menu</span><span class="p">.</span><span class="n">Flavors</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">12</span><span class="n">List</span><span class="p">&lt;</span><span class="n">Cone</span><span class="p">&gt;</span><span class="w"> </span><span class="n">availableCones</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">menu</span><span class="p">.</span><span class="n">Cones</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p>To sort the <code class="docutils literal notranslate"><span class="pre">availableFlavors</span></code> list, first create a new <code class="docutils literal notranslate"><span class="pre">FlavorComparer</span></code>
+object.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos">13</span><span class="n">FlavorComparer</span><span class="w"> </span><span class="n">comparer</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FlavorComparer</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>Next, call the <code class="docutils literal notranslate"><span class="pre">Sort</span></code> method on <code class="docutils literal notranslate"><span class="pre">availableFlavors</span></code> and pass the <code class="docutils literal notranslate"><span class="pre">comparer</span></code>
+object as the argument.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos">15</span><span class="n">availableFlavors</span><span class="p">.</span><span class="n">Sort</span><span class="p">(</span><span class="n">comparer</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>Iterating through the <code class="docutils literal notranslate"><span class="pre">availableFlavors</span></code> list with a loop before and after the sort shows
+the results. (The output below displays just the <code class="docutils literal notranslate"><span class="pre">name</span></code> fields).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Before</span><span class="p">:</span>                 <span class="n">After</span><span class="p">:</span>
+
+<span class="n">Vanilla</span>                 <span class="n">Chocolate</span>
+<span class="n">Chocolate</span>               <span class="n">Red</span> <span class="n">Velvet</span>
+<span class="n">Red</span> <span class="n">Velvet</span>              <span class="n">Rocky</span> <span class="n">Road</span>
+<span class="n">Rocky</span> <span class="n">Road</span>              <span class="n">Strawberry</span> <span class="n">Sorbet</span>
+<span class="n">Strawberry</span> <span class="n">Sorbet</span>       <span class="n">Vanilla</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition-tip admonition">
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Instead of declaring and initializing the <code class="docutils literal notranslate"><span class="pre">comparer</span></code> object, we could
+combine steps 1 and 2 by using a single statement:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">availableFlavors</span><span class="p">.</span><span class="n">Sort</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FlavorComparer</span><span class="p">());</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sorting-cones-by-cost">
+<span id="cones"></span><h2><span class="section-number">8.6.3. </span>Sorting Cones by Cost<a class="headerlink" href="#sorting-cones-by-cost" title="Permalink to this headline"></a></h2>
+<p>Now let’s sort our <code class="docutils literal notranslate"><span class="pre">availableCones</span></code> list by cost, from least expensive to most
+expensive.</p>
+<ol class="arabic">
+<li><p>Create the new class <code class="docutils literal notranslate"><span class="pre">ConeComparer</span></code>.</p></li>
+<li><p>Follow the example above to implement the <code class="docutils literal notranslate"><span class="pre">IComparer</span></code> interface and
+evaluate <code class="docutils literal notranslate"><span class="pre">Cone</span></code> objects by cost.
+Since comparing two numbers is different from comparing strings, try getting the difference between the two numbers. If the difference is positive, then we know the first number is greater. If the difference is negative, then we know that the second number is greater.</p>
+<p><a class="reference internal" href="../../appendices/exercise-solutions/interfaces.html#interfaces-cones"><span class="std std-ref">Check your solution</span></a></p>
+</li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">Main()</span></code> method, sort the <code class="docutils literal notranslate"><span class="pre">availableCones</span></code> list, then print the elements to the screen
+to verify the results.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Before:           After:
+
+Waffle: $1.25        Bowl: $0.05
+Sugar: $0.75         Wafer: $0.50
+Wafer: $0.50         Sugar: $0.75
+Bowl: $0.05          Waffle: $1.25
+</pre></div>
+</div>
+</li>
+</ol>
+<p><a class="reference internal" href="../../appendices/exercise-solutions/interfaces.html#interfaces-sort"><span class="std std-ref">Check your solutions</span></a></p>
+<div class="admonition-tip admonition">
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Remember that the <code class="docutils literal notranslate"><span class="pre">cost</span></code> field is of type <code class="docutils literal notranslate"><span class="pre">double</span></code> and <code class="docutils literal notranslate"><span class="pre">Compare()</span></code> has a return type of type <code class="docutils literal notranslate"><span class="pre">int</span></code>!</p>
+</div>
+</div>
+<div class="section" id="bonus-mission">
+<span id="bonus"></span><h2><span class="section-number">8.6.4. </span>Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline"></a></h2>
+<p>Modify <code class="docutils literal notranslate"><span class="pre">FlavorComparer</span></code> to sort <code class="docutils literal notranslate"><span class="pre">Flavor</span></code> objects by the number of allergens, from lowest to highest.</p>
+</div>
+<div class="section" id="next-steps">
+<h2><span class="section-number">8.6.5. </span>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline"></a></h2>
+<p>In these exercises, you practiced implementing existing interfaces. In the
+studio activity, you will design and implement your own.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="testing-interfaces.html" class="btn btn-neutral float-left" title="8.5. Unit Testing and Interfaces" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="studio.html" class="btn btn-neutral float-right" title="8.7. Studio: Spinning the Discs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

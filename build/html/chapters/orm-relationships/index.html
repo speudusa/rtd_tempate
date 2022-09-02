@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>18. Relationships in Object-Relational Mapping &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="18.1. Types of Relationships" href="types-of-relationships.html" />
+    <link rel="prev" title="17.5. Studio: OMG More ORM!" href="../orm-intro/studio.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">18. Relationships in Object-Relational Mapping</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="types-of-relationships.html">18.1. Types of Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lambda-expressions.html">18.2. A Primer on Lambda Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="one-to-many.html">18.3. Creating a One-to-Many Relationship</a></li>
+<li class="toctree-l2"><a class="reference internal" href="some-setup.html">18.4. Some Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="many-to-many.html">18.5. Creating a Many-to-Many Relationship</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html">18.6. Exercises: The Early Bird Gets the ORM.</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">18. </span>Relationships in Object-Relational Mapping</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/orm-relationships/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="relationships-in-object-relational-mapping">
+<h1><span class="section-number">18. </span>Relationships in Object-Relational Mapping<a class="headerlink" href="#relationships-in-object-relational-mapping" title="Permalink to this headline"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="types-of-relationships.html">18.1. Types of Relationships</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="types-of-relationships.html#one-to-one">18.1.1. One-to-One</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types-of-relationships.html#one-to-many-and-many-to-one">18.1.2. One-to-Many and Many-to-One</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types-of-relationships.html#many-to-many">18.1.3. Many-to-Many</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types-of-relationships.html#check-your-understanding">18.1.4. Check Your Understanding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lambda-expressions.html">18.2. A Primer on Lambda Expressions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lambda-expressions.html#select-example">18.2.1. <code class="docutils literal notranslate"><span class="pre">Select</span></code> Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lambda-expressions.html#where-example">18.2.2. <code class="docutils literal notranslate"><span class="pre">Where</span></code> Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lambda-expressions.html#check-your-understanding">18.2.3. Check Your Understanding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="one-to-many.html">18.3. Creating a One-to-Many Relationship</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="one-to-many.html#setting-up-the-relationship-video">18.3.1. Setting Up the Relationship - Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="one-to-many.html#setting-up-the-relationship-text">18.3.2. Setting Up the Relationship - Text</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="one-to-many.html#replacing-eventtype-with-eventcategory">18.3.2.1. Replacing <code class="docutils literal notranslate"><span class="pre">EventType</span></code> With <code class="docutils literal notranslate"><span class="pre">EventCategory</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="one-to-many.html#defining-the-inverse-relationship">18.3.2.2. Defining the Inverse Relationship</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="one-to-many.html#refactoring-the-controller-and-view-video">18.3.3. Refactoring the Controller and View - Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="one-to-many.html#refactoring-the-controller-and-view-text">18.3.4. Refactoring the Controller and View - Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="one-to-many.html#database-migration-and-testing-video">18.3.5. Database Migration and Testing - Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="one-to-many.html#database-migration-and-testing-text">18.3.6. Database Migration and Testing - Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="one-to-many.html#check-your-understanding">18.3.7. Check Your Understanding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="some-setup.html">18.4. Some Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="some-setup.html#the-tag-model-class">18.4.1. The <code class="docutils literal notranslate"><span class="pre">Tag</span></code> Model Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="some-setup.html#the-detail-view-video">18.4.2. The <code class="docutils literal notranslate"><span class="pre">Detail</span></code> View - Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="some-setup.html#the-detail-view-text">18.4.3. The <code class="docutils literal notranslate"><span class="pre">Detail</span></code> View - Text</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="many-to-many.html">18.5. Creating a Many-to-Many Relationship</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="many-to-many.html#join-tables">18.5.1. Join Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="many-to-many.html#the-eventtag-model-video">18.5.2. The <code class="docutils literal notranslate"><span class="pre">EventTag</span></code> Model - Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="many-to-many.html#the-eventtag-model-text">18.5.3. The <code class="docutils literal notranslate"><span class="pre">EventTag</span></code> Model - Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="many-to-many.html#adding-a-tag-to-an-event-video">18.5.4. Adding a <code class="docutils literal notranslate"><span class="pre">Tag</span></code> to an <code class="docutils literal notranslate"><span class="pre">Event</span></code> - Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="many-to-many.html#adding-a-tag-to-an-event-text">18.5.5. Adding a <code class="docutils literal notranslate"><span class="pre">Tag</span></code> to an <code class="docutils literal notranslate"><span class="pre">Event</span></code> - Text</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="many-to-many.html#viewmodels-addeventtagviewmodel">18.5.5.1. <code class="docutils literal notranslate"><span class="pre">ViewModels/AddEventTagViewModel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="many-to-many.html#views-tag-addevent-cshtml">18.5.5.2. <code class="docutils literal notranslate"><span class="pre">Views/Tag/AddEvent.cshtml</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="many-to-many.html#get-and-post-handlers">18.5.5.3. <code class="docutils literal notranslate"><span class="pre">GET</span></code> and <code class="docutils literal notranslate"><span class="pre">POST</span></code> Handlers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="many-to-many.html#displaying-tags-in-the-detail-view-video">18.5.6. Displaying Tags in the Detail View - Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="many-to-many.html#displaying-tags-in-the-detail-view-text">18.5.7. Displaying Tags in the Detail View - Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="many-to-many.html#preventing-errors-when-adding-a-tag-video">18.5.8. Preventing Errors When Adding a Tag - Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="many-to-many.html#preventing-errors-when-adding-a-tag-text">18.5.9. Preventing Errors When Adding a Tag - Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="many-to-many.html#display-items-with-a-given-tag-video">18.5.10. Display Items With a Given Tag - Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="many-to-many.html#display-items-with-a-given-tag-text">18.5.11. Display Items With a Given Tag - Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="many-to-many.html#check-your-understanding">18.5.12. Check Your Understanding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exercises.html">18.6. Exercises: The Early Bird Gets the ORM.</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../orm-intro/studio.html" class="btn btn-neutral float-left" title="17.5. Studio: OMG More ORM!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="types-of-relationships.html" class="btn btn-neutral float-right" title="18.1. Types of Relationships" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>8.5. Unit Testing and Interfaces &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="8.6. Exercises: Interfaces and Polymorphism" href="exercises.html" />
+    <link rel="prev" title="8.4. Interfaces In The Wild" href="given-interfaces.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">8. Interfaces and Polymorphism</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">8.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfaces.html">8.2. Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfaces-and-abstract-classes.html">8.3. Interfaces and Abstract Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="given-interfaces.html">8.4. Interfaces In The Wild</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8.5. Unit Testing and Interfaces</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#check-your-understanding">8.5.1. Check Your Understanding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html">8.6. Exercises: Interfaces and Polymorphism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html">8.7. Studio: Spinning the Discs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">8. </span>Interfaces and Polymorphism</a> &raquo;</li>
+      <li><span class="section-number">8.5. </span>Unit Testing and Interfaces</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/interfaces-and-polymorphism/testing-interfaces.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="unit-testing-and-interfaces">
+<h1><span class="section-number">8.5. </span>Unit Testing and Interfaces<a class="headerlink" href="#unit-testing-and-interfaces" title="Permalink to this headline"></a></h1>
+<p>After all that we have learned about interfaces, perhaps you are wondering, <em>how do I write my unit tests with interfaces?</em></p>
+<p>The best practices to testing interfaces are very similar to those of <a class="reference internal" href="../inheritance/testing-inheritance.html#testinginheritance"><span class="std std-ref">testing inheritance</span></a>. You want to focus on testing the contract
+that the interface is supposed to be upholding as opposed to the interface itself.</p>
+<div class="admonition-example admonition">
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>We have an <code class="docutils literal notranslate"><span class="pre">IFeedable</span></code> interface and a <code class="docutils literal notranslate"><span class="pre">HouseCat</span></code> class.</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IFeedable</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="w">   </span><span class="kt">string</span><span class="w"> </span><span class="nf">Eat</span><span class="p">()</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;the feedable is eating&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">HouseCat</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IFeedable</span><span class="w"></span>
+<span class="linenos">10</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">11</span><span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">12</span><span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="nf">HouseCat</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">13</span><span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">14</span><span class="w">      </span><span class="n">Name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">15</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">16</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Based on the class above and the interface it implements, we should expect that a call to <code class="docutils literal notranslate"><span class="pre">.Eat()</span></code> on an instance of
+a <code class="docutils literal notranslate"><span class="pre">HouseCat</span></code> will return the default implementation.</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="na">[TestClass]</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CatTests</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="w">   </span><span class="na">[TestMethod]</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">TestHouseCatImplementsEatMethod</span><span class="p">()</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">      </span><span class="n">IFeedable</span><span class="w"> </span><span class="n">test_cat</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HouseCat</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">      </span><span class="n">Assert</span><span class="p">.</span><span class="n">AreEqual</span><span class="p">(</span><span class="s">&quot;the feedable is eating&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">test_cat</span><span class="p">.</span><span class="n">Eat</span><span class="p">());</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">      </span><span class="c1">// This test passes. Don&#39;t believe us? Try it yourself!</span>
+<span class="linenos">10</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">11</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>In this situation, we test the contract that the interface is supposed to be upholding, but not the interface itself.
+While there are strategies to test interface code itself using <em>mock objects</em>, we won’t approach those tactics in this course.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">8.5.1. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline"></a></h2>
+<div class="admonition-question admonition">
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>True or False: A class <code class="docutils literal notranslate"><span class="pre">PetDog</span></code> also implements <code class="docutils literal notranslate"><span class="pre">IFeedable</span></code> and contains its own <code class="docutils literal notranslate"><span class="pre">Eat()</span></code> method. Should we test that method’s results?</p>
+<ol class="arabic simple">
+<li><p>No, the interface contract will not be tested in this scenario.</p></li>
+<li><p>Yes, testing the class’s custom methods is always a worthy endeavor.</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="given-interfaces.html" class="btn btn-neutral float-left" title="8.4. Interfaces In The Wild" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="exercises.html" class="btn btn-neutral float-right" title="8.6. Exercises: Interfaces and Polymorphism" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7.8. Exercises: Inheritance &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="7.9. Studio: Fun with Quizzes" href="studio.html" />
+    <link rel="prev" title="7.7. Class Diagrams" href="class-diagrams.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">7. Inheritance</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="oop-inheritance.html">7.1. Inheritance in OOP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="csharp-inheritance.html">7.2. Inheritance in C#</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cat-classes.html">7.3. A Tale of Two Cats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abstract-inheritance.html">7.4. Inheriting from Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="casting.html">7.5. Casting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing-inheritance.html">7.6. Testing Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class-diagrams.html">7.7. Class Diagrams</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.8. Exercises: Inheritance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#class-design">7.8.1. Class design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#class-implementation">7.8.2. Class implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#abstract-class-design">7.8.3. Abstract class design</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html">7.9. Studio: Fun with Quizzes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">7. </span>Inheritance</a> &raquo;</li>
+      <li><span class="section-number">7.8. </span>Exercises: Inheritance</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/inheritance/exercises.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="exercises-inheritance">
+<span id="inheritance-exercises"></span><h1><span class="section-number">7.8. </span>Exercises: Inheritance<a class="headerlink" href="#exercises-inheritance" title="Permalink to this headline"></a></h1>
+<p>Work on these exercises in a new Visual Studio .NET Core console app.
+Name your solution <code class="docutils literal notranslate"><span class="pre">Technology</span></code> and make a project inside of it with the same name.</p>
+<div class="section" id="class-design">
+<h2><span class="section-number">7.8.1. </span>Class design<a class="headerlink" href="#class-design" title="Permalink to this headline"></a></h2>
+<p>Create three classes inside your solution: <code class="docutils literal notranslate"><span class="pre">Computer</span></code>, <code class="docutils literal notranslate"><span class="pre">Laptop</span></code>, and <code class="docutils literal notranslate"><span class="pre">SmartPhone</span></code></p>
+<p>Before you start coding anything inside these classes, <a class="reference internal" href="csharp-inheritance.html#inheritance-diagram"><span class="std std-ref">diagram</span></a> how the three classes are going to be related
+to each other.</p>
+<p>Remember to add properties and methods to your diagram.</p>
+<ol class="arabic simple">
+<li><p>For a <strong>parent</strong> class: add 3 fields, 2 methods, and a constructor.</p></li>
+<li><p>For a <strong>child</strong> class: add <em>at least</em> 1 additional field and 1 additional method.</p></li>
+<li><p><em>At least one</em> of your fields should be either <code class="docutils literal notranslate"><span class="pre">static</span></code>, <code class="docutils literal notranslate"><span class="pre">readonly</span></code>, or a <code class="docutils literal notranslate"><span class="pre">const</span></code>.</p></li>
+</ol>
+<p><a class="reference internal" href="../../appendices/exercise-solutions/inheritance.html#inheritance-solution-1"><span class="std std-ref">Check your solution</span></a></p>
+</div>
+<div class="section" id="class-implementation">
+<h2><span class="section-number">7.8.2. </span>Class implementation<a class="headerlink" href="#class-implementation" title="Permalink to this headline"></a></h2>
+<p>Implement your design and add unit tests to a new <code class="docutils literal notranslate"><span class="pre">TechnologyTests</span></code> MSTest project.</p>
+<ol class="arabic simple">
+<li><p>Add a new MSTest project to your solution.</p></li>
+<li><p>Try to add three MSTests tests per class.</p></li>
+</ol>
+<p><a class="reference internal" href="../../appendices/exercise-solutions/inheritance.html#inheritance-solution-2"><span class="std std-ref">Check your solution</span></a></p>
+</div>
+<div class="section" id="abstract-class-design">
+<h2><span class="section-number">7.8.3. </span>Abstract class design<a class="headerlink" href="#abstract-class-design" title="Permalink to this headline"></a></h2>
+<p>Consider the group of classes that you designed. Suppose you have a web program
+that uses these classes and you need to assign a unique ID to every object created from them.
+Each class should have an <code class="docutils literal notranslate"><span class="pre">id</span></code> field, and no two objects created from any of the classes may have the
+same value for <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+<ol class="arabic simple">
+<li><p>Create an abstract class, <code class="docutils literal notranslate"><span class="pre">AbstractEntity</span></code>, that contains the behavior for assigning and accessing such a unique ID for each class that extends it.</p></li>
+<li><p>Add this class to your <code class="docutils literal notranslate"><span class="pre">Technology</span></code> project above, and add <code class="docutils literal notranslate"><span class="pre">AbstractEntity</span></code> to the class hierarchy in the correct place.</p></li>
+</ol>
+<p><a class="reference internal" href="../../appendices/exercise-solutions/inheritance.html#inheritance-solution-3"><span class="std std-ref">Check your solution</span></a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="class-diagrams.html" class="btn btn-neutral float-left" title="7.7. Class Diagrams" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="studio.html" class="btn btn-neutral float-right" title="7.9. Studio: Fun with Quizzes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>13.10. Exercises: Razor Views &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="13.11. Studio: Spa Day!" href="studio.html" />
+    <link rel="prev" title="13.9. Bootstrap" href="bootstrap.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">13. Razor Views</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="why-templates.html">13.1. Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create-template.html">13.2. Creating a Template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-templates.html">13.3. Using a Template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template-iteration.html">13.4. Iterating in a Template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template-conditionals.html">13.5. Conditionals in a Template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template-forms.html">13.6. Razor Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="layout-pages.html">13.7. The Shared Directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="static-resources.html">13.8. Static Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bootstrap.html">13.9. Bootstrap</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">13.10. Exercises: Razor Views</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getting-started">13.10.1. Getting Started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#expanding-our-events-schedule">13.10.2. Expanding our Events Schedule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html">13.11. Studio: Spa Day!</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">13. </span>Razor Views</a> &raquo;</li>
+      <li><span class="section-number">13.10. </span>Exercises: Razor Views</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/razor-views/exercises.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="exercises-razor-views">
+<h1><span class="section-number">13.10. </span>Exercises: Razor Views<a class="headerlink" href="#exercises-razor-views" title="Permalink to this headline"></a></h1>
+<p>In this chapter, we started working on an application for tracking various
+coding events around town.</p>
+<div class="section" id="getting-started">
+<h2><span class="section-number">13.10.1. </span>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline"></a></h2>
+<p>Open up your <code class="docutils literal notranslate"><span class="pre">CodingEvents</span></code> project in Visual Studio. Create and checkout a new branch to
+complete these exercises.</p>
+<p>The code you start with should roughly resemble
+<a class="reference external" href="https://github.com/LaunchCodeEducation/CodingEventsDemo" target="_blank">this branch<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
+If you have been coding along with the video lessons, you’re probably in good shape.</p>
+<p>As always, give the branch a useful name, like <code class="docutils literal notranslate"><span class="pre">view-exercises</span></code>.</p>
+<p>Now, let’s add descriptions to our events.</p>
+</div>
+<div class="section" id="expanding-our-events-schedule">
+<span id="ex-part-1"></span><h2><span class="section-number">13.10.2. </span>Expanding our Events Schedule<a class="headerlink" href="#expanding-our-events-schedule" title="Permalink to this headline"></a></h2>
+<ol class="arabic">
+<li><p>In the video lessons, we learned how to use templates to display the elements in a
+static list called <code class="docutils literal notranslate"><span class="pre">Events</span></code>. Let’s convert our <code class="docutils literal notranslate"><span class="pre">Events</span></code> list to a <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code>.
+The structure of a dictionary enables us to add descriptions to our events. You’ll
+need to think about what data types the event name and description will be.</p>
+<div class="admonition-tip admonition">
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>If you need to refresh your memory on dictionaries, refer to <a class="reference internal" href="../control-flow-and-collections/dictionary.html#dictionary"><span class="std std-ref">this page</span></a>.</p>
+</div>
+</li>
+<li><p>Update the <code class="docutils literal notranslate"><span class="pre">Events/Add.cshtml</span></code> template with a new field for a user to submit an event
+description.</p>
+<div class="admonition-tip admonition">
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>You’ll want to also add some <code class="docutils literal notranslate"><span class="pre">label</span></code> tags to your form to let the user know what
+data they are entering.</p>
+</div>
+<p><a class="reference internal" href="../../appendices/exercise-solutions/razor-views.html#view-dictionary"><span class="std std-ref">Check your solution</span></a></p>
+</li>
+<li><p>Back in <code class="docutils literal notranslate"><span class="pre">EventsController.cs</span></code>, add the description parameter to the <code class="docutils literal notranslate"><span class="pre">NewEvent</span></code> action method
+and within the method, add the new event key/value pair to the <code class="docutils literal notranslate"><span class="pre">Events</span></code> dictionary.</p>
+<div class="admonition-tip admonition">
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Whatever value you provided in the <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute of your new description field
+is the name of the parameter.</p>
+</div>
+<p><a class="reference internal" href="../../appendices/exercise-solutions/razor-views.html#view-kvp"><span class="std std-ref">Check your solution</span></a></p>
+</li>
+<li><p>Now to <code class="docutils literal notranslate"><span class="pre">Events/Index.cshtml</span></code>. Replace the <code class="docutils literal notranslate"><span class="pre">ul</span></code> with a <code class="docutils literal notranslate"><span class="pre">table</span></code> to display event names
+and descriptions.</p>
+<p><a class="reference internal" href="../../appendices/exercise-solutions/razor-views.html#view-table"><span class="std std-ref">Check your solution</span></a></p>
+</li>
+<li><p>Lastly, modify <code class="docutils literal notranslate"><span class="pre">_Layout.cshtml</span></code> to display links for the Coding Events app (only <code class="docutils literal notranslate"><span class="pre">Events/Index</span></code> and <code class="docutils literal notranslate"><span class="pre">Events/Add</span></code> for now).</p></li>
+</ol>
+<p><a class="reference internal" href="../../appendices/exercise-solutions/razor-views.html#view-layout"><span class="std std-ref">Check your solution</span></a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="bootstrap.html" class="btn btn-neutral float-left" title="13.9. Bootstrap" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="studio.html" class="btn btn-neutral float-right" title="13.11. Studio: Spa Day!" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

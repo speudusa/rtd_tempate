@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>11.4. Exercises: Exceptions &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="12. Tools in Visual Studio" href="../vstools/index.html" />
+    <link rel="prev" title="11.3. Common Exception Objects" href="common-exceptions.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">11. Rules to the Exceptions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">11.1. Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="handling.html">11.2. Handling Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-exceptions.html">11.3. Common Exception Objects</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">11.4. Exercises: Exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#divide-by-zero">11.4.1. Divide By Zero!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-student-labs">11.4.2. Test Student Labs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">11. </span>Rules to the Exceptions</a> &raquo;</li>
+      <li><span class="section-number">11.4. </span>Exercises: Exceptions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/exceptions/exercises.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="exercises-exceptions">
+<h1><span class="section-number">11.4. </span>Exercises: Exceptions<a class="headerlink" href="#exercises-exceptions" title="Permalink to this headline"></a></h1>
+<p>To get started, fork and clone this <a class="reference external" href="https://github.com/LaunchCodeEducation/csharp-web-dev-exceptions" target="_blank">repo<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> from Github.</p>
+<div class="section" id="divide-by-zero">
+<h2><span class="section-number">11.4.1. </span>Divide By Zero!<a class="headerlink" href="#divide-by-zero" title="Permalink to this headline"></a></h2>
+<p id="exercise-1">The professor you TA for, Professor Jackson, shared with you the code she uses to auto-grade students’ work.
+She and the other TAs have encountered some problems with the code in the past when they enter the total possible point value for an assignment.
+Occasionally, they accidentally enter <code class="docutils literal notranslate"><span class="pre">0</span></code> for the total number of possible points and the program encounters a fatal error when trying to divide by 0.</p>
+<p>To help out with this issue, complete a function called <code class="docutils literal notranslate"><span class="pre">Divide()</span></code> in <code class="docutils literal notranslate"><span class="pre">Program.cs</span></code>.</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Divide()</span></code> method takes in two parameters: <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p></li>
+<li><p>Your function should return the result of <code class="docutils literal notranslate"><span class="pre">x/y</span></code>.</p></li>
+<li><p>However, if <code class="docutils literal notranslate"><span class="pre">y</span></code> is zero, you should throw an exception, such as <code class="docutils literal notranslate"><span class="pre">ArgumentOutOfRangeException</span></code>.</p></li>
+</ul>
+<p><a class="reference internal" href="../../appendices/exercise-solutions/exceptions.html#id1"><span class="std std-ref">Check your solutions</span></a></p>
+<ul class="simple">
+<li><p>Put your <code class="docutils literal notranslate"><span class="pre">try/catch</span></code> block in <code class="docutils literal notranslate"><span class="pre">Main()</span></code> to test out your error-handling skills.  If an exception is caught, make sure to print out the error message.</p></li>
+</ul>
+<p><a class="reference internal" href="../../appendices/exercise-solutions/exceptions.html#try-catch"><span class="std std-ref">Check your solutions</span></a></p>
+</div>
+<div class="section" id="test-student-labs">
+<span id="exercise-2"></span><h2><span class="section-number">11.4.2. </span>Test Student Labs<a class="headerlink" href="#test-student-labs" title="Permalink to this headline"></a></h2>
+<p>After mentioning to Professor Jackson that you would like to get some more practice with exceptions, she offered to let you write some grading software!
+Before she gives you full control over auto-grading students’ work, she asked if you could write a function called <code class="docutils literal notranslate"><span class="pre">CheckFileExtension()</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">CheckFileExtension()</span></code> function should do the following:</p>
+<ul class="simple">
+<li><p>Take in one parameter: <code class="docutils literal notranslate"><span class="pre">fileName</span></code>.</p></li>
+<li><p>Return an integer representing the number of points a student receives for properly submitting a file in C#.</p></li>
+<li><p>If a student’s submitted file ends in <code class="docutils literal notranslate"><span class="pre">.cs</span></code>, they get 1 point.</p></li>
+<li><p>If a student’s submitted file doesn’t end in <code class="docutils literal notranslate"><span class="pre">.cs</span></code>, they get 0 points.</p></li>
+<li><p>If the file submitted is <code class="docutils literal notranslate"><span class="pre">null</span></code> or an empty string, an exception should be thrown. What kind of exception is up to you!</p></li>
+</ul>
+<p><a class="reference internal" href="../../appendices/exercise-solutions/exceptions.html#test-student-labs"><span class="std std-ref">Check your solution</span></a></p>
+<p>In <code class="docutils literal notranslate"><span class="pre">Main()</span></code>, Professor Jackson has provided a dictionary of students and the names of their submitted files for you to test out your work.
+If an exception is caught, make sure to print out the error message.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="common-exceptions.html" class="btn btn-neutral float-left" title="11.3. Common Exception Objects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../vstools/index.html" class="btn btn-neutral float-right" title="12. Tools in Visual Studio" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

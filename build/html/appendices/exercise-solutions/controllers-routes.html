@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercise Solutions: Controllers and Routes &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Exercise Solutions: Exceptions" href="exceptions.html" />
+    <link rel="prev" title="Exercise Solutions: Interfaces and Polymorphism" href="interfaces.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Exercise Solutions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="data-types.html">Exercise Solutions: Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control-flow.html">Exercise Solutions: Control Flow &amp; Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classes-part1.html">Exercise Solutions: Classes and Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classes-2.html">Exercise Solutions: Classes Part 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unit-testing.html">Exercise Solutions: Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inheritance.html">Exercise Solutions: Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfaces.html">Exercise Solutions: Interfaces and Polymorphism</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Exercise Solutions: Controllers and Routes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#part-1-get-request">Part 1: <code class="docutils literal notranslate"><span class="pre">GET</span></code> Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#part-2-post-request">Part 2: <code class="docutils literal notranslate"><span class="pre">POST</span></code> Request</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html">Exercise Solutions: Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="razor-views.html">Exercise Solutions: Razor Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">Exercises Solutions: Edit Model Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model-validation.html">Exercises Solutions:  ViewModels and Model Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orm-1.html">Exercise Solutions: OMG the ORM!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web-api.html">Exercise Solutions:  Web APIs and REST</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Exercise Solutions</a> &raquo;</li>
+      <li>Exercise Solutions: Controllers and Routes</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/appendices/exercise-solutions/controllers-routes.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="exercise-solutions-controllers-and-routes">
+<h1>Exercise Solutions: Controllers and Routes<a class="headerlink" href="#exercise-solutions-controllers-and-routes" title="Permalink to this headline"></a></h1>
+<p>Line numbers are for reference. They may not match your code exactly.</p>
+<div class="section" id="part-1-get-request">
+<h2>Part 1: <code class="docutils literal notranslate"><span class="pre">GET</span></code> Request<a class="headerlink" href="#part-1-get-request" title="Permalink to this headline"></a></h2>
+<p id="modify-controller">Modify your <code class="docutils literal notranslate"><span class="pre">HelloController</span></code> class to display a form on a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request
+that asks the user for both their name and the language they would like to be greeted in.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="w">   </span><span class="c1">//GET: /&lt;controller&gt;/</span>
+<span class="linenos"> 2</span><span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="n">IActionResult</span><span class="w"> </span><span class="nf">Index</span><span class="p">()</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="w">      </span><span class="kt">string</span><span class="w"> </span><span class="n">html</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;&lt;form method=&#39;post&#39;&gt;&quot;</span><span class="w"> </span><span class="p">+</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">         </span><span class="s">&quot;&lt;input type=&#39;text&#39; name=&#39;name&#39; /&gt;&quot;</span><span class="w"> </span><span class="p">+</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">         </span><span class="s">&quot;&lt;select name=&#39;language&#39;&gt;&quot;</span><span class="w"> </span><span class="p">+</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">         </span><span class="s">&quot;&lt;option value=&#39;english&#39; selected&gt;English&lt;/option&gt;&quot;</span><span class="w"> </span><span class="p">+</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">         </span><span class="s">&quot;&lt;option value=&#39;french&#39;&gt;French&lt;/option&gt;&lt;/select&gt;&quot;</span><span class="w"> </span><span class="p">+</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">         </span><span class="c1">// ... add any other languages here ...</span>
+<span class="linenos">10</span><span class="w">         </span><span class="s">&quot;&lt;input type=&#39;submit&#39; value=&#39;Greet Me!&#39;/&gt;&quot;</span><span class="w"> </span><span class="p">+</span><span class="w"></span>
+<span class="linenos">11</span><span class="w">         </span><span class="s">&quot;&lt;/form&gt;&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nf">Content</span><span class="p">(</span><span class="n">html</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;text/html&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">14</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="../../chapters/aspdotnet-controllers-and-routes/exercises.html#controller-routes-exercises-1"><span class="std std-ref">Return to exercises</span></a></p>
+</div>
+<div class="section" id="part-2-post-request">
+<h2>Part 2: <code class="docutils literal notranslate"><span class="pre">POST</span></code> Request<a class="headerlink" href="#part-2-post-request" title="Permalink to this headline"></a></h2>
+<ol class="arabic simple" id="modify-post" start="2">
+<li><p>Include a new <code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">static</span></code> method, <code class="docutils literal notranslate"><span class="pre">CreateMessage</span></code>, in the <code class="docutils literal notranslate"><span class="pre">HelloController</span></code> that takes a name as well as a language string.
+Based on the language string, you’ll display the proper greeting.</p></li>
+</ol>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">CreateMessage</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">language</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="w">      </span><span class="kt">string</span><span class="w"> </span><span class="n">helloTranslation</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="w">      </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">language</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">         </span><span class="k">case</span><span class="w"> </span><span class="s">&quot;french&quot;</span><span class="p">:</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">            </span><span class="n">helloTranslation</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Bonjour &quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">         </span><span class="k">case</span><span class="w"> </span><span class="s">&quot;english&quot;</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">            </span><span class="n">helloTranslation</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Hello &quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">11</span><span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">12</span><span class="w">         </span><span class="c1">// ... add any other languages here ...</span>
+<span class="linenos">13</span><span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">14</span><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">helloTranslation</span><span class="w"> </span><span class="p">+</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">15</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="../../chapters/aspdotnet-controllers-and-routes/exercises.html#controller-routes-exercises-2"><span class="std std-ref">Return to exercises</span></a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="interfaces.html" class="btn btn-neutral float-left" title="Exercise Solutions: Interfaces and Polymorphism" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="exceptions.html" class="btn btn-neutral float-right" title="Exercise Solutions: Exceptions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

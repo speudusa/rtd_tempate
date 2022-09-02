@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.8. Studio: Restaurant Menu &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5. Classes and Objects, Part 2" href="../classes-part2/index.html" />
+    <link rel="prev" title="4.7. Exercises: Classes and Objects" href="exercises.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">4. Classes in C#, Part 1</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="background.html">4.1. Classes for C#</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modifiers.html">4.2. Modifiers in C#</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encapsulation.html">4.3. Encapsulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constructors.html">4.4. Constructors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="methods.html">4.5. Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="srp.html">4.6. Single Responsibility Principle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html">4.7. Exercises: Classes and Objects</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.8. Studio: Restaurant Menu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#design">4.8.1. Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#presenting-your-design">4.8.2. Presenting Your Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#implementation">4.8.3. Implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#commit-your-work">4.8.4. Commit Your Work</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">4. </span>Classes in C#, Part 1</a> &raquo;</li>
+      <li><span class="section-number">4.8. </span>Studio: Restaurant Menu</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/classes/studio.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="studio-restaurant-menu">
+<span id="classes-studio-part1"></span><h1><span class="section-number">4.8. </span>Studio: Restaurant Menu<a class="headerlink" href="#studio-restaurant-menu" title="Permalink to this headline"></a></h1>
+<p>Let’s practice designing classes using the following scenario. You’ve
+been hired to create a web application for a local restaurant.
+They want to both display their current menu and edit it through an admin panel.</p>
+<p>You’re not going to build an actual application in this studio. Instead,
+you will focus on the <em>design</em> of a portion of this application.
+Object-oriented programming in C# requires intentional, up-front planning.
+While this may seem tedious, outlining your ideas before you code helps reduce the errors you need to fix later.</p>
+<div class="section" id="design">
+<h2><span class="section-number">4.8.1. </span>Design<a class="headerlink" href="#design" title="Permalink to this headline"></a></h2>
+<p>You know you’ll need to create classes within the web application to
+facilitate this behavior and represent the various components of the
+menu. After talking to the owner, you have these details:</p>
+<ol class="arabic simple">
+<li><p>The menu consists of several menu items</p></li>
+<li><p>Each menu item has a price, description, and category (appetizer, main course, or dessert)</p></li>
+<li><p>It should be possible to display whether a menu item is new or not</p></li>
+<li><p>The app should know when the menu was last updated, so visitors can see that the restaurant is constantly changing and adding exciting new items</p></li>
+</ol>
+<p>Starting with pen and paper (or your favorite notes application on your
+laptop), sketch out the design for two classes, <code class="docutils literal notranslate"><span class="pre">Menu</span></code> and
+<code class="docutils literal notranslate"><span class="pre">MenuItem</span></code>. List the fields that each should have, along with the data
+type and access level for each. Also consider what constructors the classes might need.</p>
+<div class="admonition">
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>For this studio, we are focusing on class design for these two classes.
+You do not need to be concerned with how the classes would be used in an application.
+At this stage, don’t think about how the application will work or behave; you should focus on the way that data will be represented within these classes, and how they should relate to each other.</p>
+</div>
+<p>You may find it useful to use one or more of the classes provided by
+C#, such as
+<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=netframework-4.8" target="_blank">DateTime<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</div>
+<div class="section" id="presenting-your-design">
+<h2><span class="section-number">4.8.2. </span>Presenting Your Design<a class="headerlink" href="#presenting-your-design" title="Permalink to this headline"></a></h2>
+<p>Once you have sketched out your fields and properties, pair with a classmate and take turns presenting your designs.
+Class design can be subjective, so it’s important to properly think and talk through your choices before coding.</p>
+<p>While your partner is presenting their design, ask questions about why they made the decisions they did.
+Consider other use cases that might come up, and see if their design fits with those.</p>
+</div>
+<div class="section" id="implementation">
+<h2><span class="section-number">4.8.3. </span>Implementation<a class="headerlink" href="#implementation" title="Permalink to this headline"></a></h2>
+<p>In Visual Studio, create a new project, <code class="docutils literal notranslate"><span class="pre">RestaurantMenu</span></code>.
+Add the <code class="docutils literal notranslate"><span class="pre">Menu</span></code> and <code class="docutils literal notranslate"><span class="pre">MenuItem</span></code> classes and code the
+design that you created above. Be sure to add getters and setters as
+appropriate.</p>
+</div>
+<div class="section" id="commit-your-work">
+<h2><span class="section-number">4.8.4. </span>Commit Your Work<a class="headerlink" href="#commit-your-work" title="Permalink to this headline"></a></h2>
+<p>Create a repository on your Github account and push up your project.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="exercises.html" class="btn btn-neutral float-left" title="4.7. Exercises: Classes and Objects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../classes-part2/index.html" class="btn btn-neutral float-right" title="5. Classes and Objects, Part 2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

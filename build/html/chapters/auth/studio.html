@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>19.8. Studio: TechJobs Authentication &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="20. Introduction to Web APIs &amp; REST" href="../web-apis/index.html" />
+    <link rel="prev" title="19.7. Identity Management" href="identity-management.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">19. Authentication</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">19.1. Introduction to Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hashing-passwords.html">19.2. Hashing Passwords</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scaffolding.html">19.3. Getting Started with Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="users.html">19.4. Registrations and Logins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">19.5. Configuring Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authorization.html">19.6. Identity and Authorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="identity-management.html">19.7. Identity Management</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">19.8. Studio: TechJobs Authentication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-starter-code">19.8.1. The Starter Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scaffolding">19.8.2. Scaffolding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration">19.8.3. Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#authorization">19.8.4. Authorization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">19. </span>Authentication</a> &raquo;</li>
+      <li><span class="section-number">19.8. </span>Studio: TechJobs Authentication</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/auth/studio.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="studio-techjobs-authentication">
+<h1><span class="section-number">19.8. </span>Studio: TechJobs Authentication<a class="headerlink" href="#studio-techjobs-authentication" title="Permalink to this headline"></a></h1>
+<p>For this studio, you’ll be tasked with adding simple user authentication to your
+<code class="docutils literal notranslate"><span class="pre">TechJobs</span></code> application. The steps to do this will match what you have already done
+in <code class="docutils literal notranslate"><span class="pre">CodingEvents</span></code>. You should refer back to the tutorial starting
+<a class="reference internal" href="scaffolding.html#user-auth-walkthrough"><span class="std std-ref">here</span></a>.</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#auth-studio-scaffolding"><span class="std std-ref">Scaffolding</span></a></p></li>
+<li><p><a class="reference internal" href="#auth-studio-config"><span class="std std-ref">Configuration</span></a></p></li>
+<li><p><a class="reference internal" href="#auth-studio-user"><span class="std std-ref">Authorization</span></a></p></li>
+</ol>
+<div class="section" id="the-starter-code">
+<h2><span class="section-number">19.8.1. </span>The Starter Code<a class="headerlink" href="#the-starter-code" title="Permalink to this headline"></a></h2>
+<ol class="arabic">
+<li><p>Fork and clone the starter code for
+<a class="reference external" href="https://github.com/LaunchCodeEducation/TechJobsAuthentication" target="_blank">TechJobsAuthentication<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p></li>
+<li><p>You will need to do some work to ensure that the schema, user, and database password
+match your own local MySQL setup.</p>
+<ol class="arabic">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">appsettings.json</span></code> and find the following statement:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;ConnectionStrings&quot;</span><span class="p">:</span> <span class="p">{</span>
+   <span class="s2">&quot;DefaultConnection&quot;</span><span class="p">:</span> <span class="s2">&quot;server=localhost;userid=techjobs_auth;password=ILoveTechJobs;database=techjobs_auth;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>You likely do not already have a schema named <code class="docutils literal notranslate"><span class="pre">techjobs_auth</span></code> or
+this combination of username and password so you must create them.</p>
+<div class="admonition-tip admonition">
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>To create a new schema in your current connection, refer
+back to the instructions in the <a class="reference external" href="https://education.launchcode.org/SQL/chapters/mysql-part-1/exercises.html" target="_blank">SQL Part 1 Exercises<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<p>To create a new user with permissions, refresh your memory
+in <a class="reference internal" href="../orm-intro/background.html#setup-orm-database"><span class="std std-ref">Setting up a Persistent Database - Video</span></a>.</p>
+</div>
+</li>
+<li><p>Before getting started with setting up Identity, run a new migration to make sure that all of the database info is correct.</p></li>
+</ol>
+</li>
+</ol>
+<div class="admonition-note admonition">
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>We’ve greatly reduced the functionality of the app so you can focus
+on the work to set up authentication. Running the application now
+gives you a familiar-looking navbar with one menu option, <em>Add Jobs</em>.
+You can add jobs right away and an astute observer of the starter code and
+schema tables will notice that the fields on <code class="docutils literal notranslate"><span class="pre">Job</span></code> are only strings, not
+complex objects.</p>
+</div>
+</div>
+<div class="section" id="scaffolding">
+<span id="auth-studio-scaffolding"></span><h2><span class="section-number">19.8.2. </span>Scaffolding<a class="headerlink" href="#scaffolding" title="Permalink to this headline"></a></h2>
+<ol class="arabic simple">
+<li><p>In the project you have cloned, scaffold Identity onto the codebase.</p>
+<ol class="arabic simple">
+<li><p>Use the same files as the chapter content and <code class="docutils literal notranslate"><span class="pre">JobDbContext</span></code>.</p></li>
+</ol>
+</li>
+<li><p>Update <code class="docutils literal notranslate"><span class="pre">IdentityHostingStartup.cs</span></code>, <code class="docutils literal notranslate"><span class="pre">Startup.cs</span></code>, and <code class="docutils literal notranslate"><span class="pre">JobDbContext</span></code> as necessary.</p></li>
+<li><p>Add the <code class="docutils literal notranslate"><span class="pre">LoginPartial</span></code> partial view to the navbar.</p></li>
+<li><p>Run a new migration and test the application.</p></li>
+</ol>
+</div>
+<div class="section" id="configuration">
+<span id="auth-studio-config"></span><h2><span class="section-number">19.8.3. </span>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline"></a></h2>
+<ol class="arabic simple">
+<li><p>Use the appropriate methods to set the following validation conditions on the password:</p>
+<ol class="arabic simple">
+<li><p>The password must be at a minimum of 8 characters.</p></li>
+<li><p>The password does NOT need to contain an uppercase letter.</p></li>
+</ol>
+</li>
+<li><p>Complete any additional necessary configuration steps in <code class="docutils literal notranslate"><span class="pre">Startup.cs</span></code>.</p></li>
+</ol>
+</div>
+<div class="section" id="authorization">
+<span id="auth-studio-user"></span><h2><span class="section-number">19.8.4. </span>Authorization<a class="headerlink" href="#authorization" title="Permalink to this headline"></a></h2>
+<ol class="arabic simple">
+<li><p>Add the necessary attributes so only logged-in users can add jobs, but all visitors to the application can see the listing of jobs.</p></li>
+</ol>
+<p>That’s it, that’s all. You’re done. Go forth and test the auth flow by visiting the home page, registering for a new account, and logging into and out of an existing account.
+Then add this to any other ASP.NET project you’re working on!</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="identity-management.html" class="btn btn-neutral float-left" title="19.7. Identity Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../web-apis/index.html" class="btn btn-neutral float-right" title="20. Introduction to Web APIs &amp; REST" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>12.2. NuGet &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="12.3. Debugger" href="debugger.html" />
+    <link rel="prev" title="12.1. MSBuild" href="msbuild.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">12. Tools in Visual Studio</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="msbuild.html">12.1. MSBuild</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">12.2. NuGet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#check-your-understanding">12.2.1. Check Your Understanding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="debugger.html">12.3. Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html">12.4. Studio: If It Ain’t Broke, Add a Breakpoint!</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">12. </span>Tools in Visual Studio</a> &raquo;</li>
+      <li><span class="section-number">12.2. </span>NuGet</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/vstools/nuget.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="nuget">
+<h1><span class="section-number">12.2. </span>NuGet<a class="headerlink" href="#nuget" title="Permalink to this headline"></a></h1>
+<p id="index-0"><strong>NuGet</strong> is a package management tool for .NET software. To use a dependency in a C# project,
+we can rely on NuGet to connect us with third-party code. NuGet allows us to bypass downloading
+and hosting the dependency library ourselves.
+As with MSBuild, we will only scratch the surface of the utility of a .NET package manager. That
+said, it is still a good idea to get familiar with these tools. As your programs grow larger,
+MSBuild and NuGet will help to maintain a robust codebase.</p>
+<p>NuGet packages are readily available within the IDE itself. Perhaps you have noticed the
+<em>Dependencies</em> directory that is created in our projects? To browse available packages, right
+click on that directory. From there, select “Manage NuGet Packages” from the dropdown menu:</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/manage-nuget-packages.png"><img alt="User selecting &quot;Manage NuGet Packages&quot; from dependencies dropdown menu" src="../../_images/manage-nuget-packages.png" style="width: 394.0px; height: 294.0px;" /></a>
+<p class="caption"><span class="caption-text">User selecting “Manage NuGet Packages”.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</div>
+<p>The resulting window shows a catalog of software packages you may add to your project.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/browse-nuget-packages.png"><img alt="Package browsing view of the NuGet package manager window" src="../../_images/browse-nuget-packages.png" style="width: 843.0px; height: 551.0px;" /></a>
+<p class="caption"><span class="caption-text">Browse available NuGet packages</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</div>
+<p>NuGet allows you to use external code sources without including the codebase itself. You can make
+use of compiled libraries that other developers have already built. You can choose to use a
+specific version of a package hosted by NuGet, and update that version as need be.</p>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">12.2.1. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline"></a></h2>
+<div class="admonition-question admonition">
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Select which item best describes the job of NuGet.</p>
+<ol class="loweralpha simple">
+<li><p>NuGet compiles your C# programs to be deployed in different conditions.</p></li>
+<li><p>NuGet is a marshmallow-like confection found in many candy bars.</p></li>
+<li><p>NuGet is a package manager for .NET programs.</p></li>
+<li><p>NuGet allows you to download dependency library source code into your solution.</p></li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>True/False: NuGet and MSBuild share responsibilities and only one is needed to deploy a C# app.</p>
+<ol class="loweralpha simple">
+<li><p>True</p></li>
+<li><p>False</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="msbuild.html" class="btn btn-neutral float-left" title="12.1. MSBuild" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="debugger.html" class="btn btn-neutral float-right" title="12.3. Debugger" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

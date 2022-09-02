@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1.5. Creating a C# Project &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1.6. Cloning a C# Project" href="cloning-a-csharp-project.html" />
+    <link rel="prev" title="1.4. Mac Users: Visual Studio for Mac" href="mac-setup.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">1. Introduction and Setup</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="why-csharp.html">1.1. Why Learn C#?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup.html">1.2. Setup For C#</a></li>
+<li class="toctree-l2"><a class="reference internal" href="windows-setup.html">1.3. Windows Users: Visual Studio Community Edition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mac-setup.html">1.4. Mac Users: Visual Studio for Mac</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.5. Creating a C# Project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hello-solution">1.5.1. Hello, Solution!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-your-understanding">1.5.2. Check Your Understanding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cloning-a-csharp-project.html">1.6. Cloning a C# Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="naming-conventions.html">1.7. C# Naming Conventions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">4. Classes in C#, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">1. </span>Introduction and Setup</a> &raquo;</li>
+      <li><span class="section-number">1.5. </span>Creating a C# Project</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/introduction-and-setup/creating-a-csharp-project.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="creating-a-c-project">
+<span id="create-new-csharp-project"></span><h1><span class="section-number">1.5. </span>Creating a C# Project<a class="headerlink" href="#creating-a-c-project" title="Permalink to this headline"></a></h1>
+<p>Following the “Hello World” trend, let’s create a new Visual Studio project.</p>
+<ol class="arabic">
+<li><p>Create a new folder to hold your C# practice files. Since you will be
+creating lots of small projects as you move through this course, we
+suggest that you also add sub-folders with names corresponding to the
+related chapters and projects. Something like
+<code class="docutils literal notranslate"><span class="pre">csharp-practice/chapter-name/project-name</span></code>.</p></li>
+<li><p>In Visual Studio, from the project opener window, select the
+option to create a new Visual Studio project.</p></li>
+<li><p>You next need to choose what project template to use. For this first project
+(and those in the next several lessons), select the
+<strong>.NET Core Console Application</strong> option for C#.</p>
+<p><strong>Mac Users:</strong></p>
+<div class="figure align-default" id="id1">
+<img alt="MAC: Visual Studio console application template selection." src="../../_images/vsmac-console-app-template.png" />
+<p class="caption"><span class="caption-text">MAC: Visual Studio console application template selection.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</div>
+<p><strong>Windows Users:</strong></p>
+<div class="figure align-default" id="id2">
+<img alt="WINDOWS: Visual Studio console application template selection." src="../../_images/vs-windows-console-app-template.png" />
+<p class="caption"><span class="caption-text">WINDOWS: Visual Studio console application template selection.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</div>
+</li>
+<li><p>Then, give your new project a name. Following <a class="reference internal" href="naming-conventions.html#naming-conventions"><span class="std std-ref">C# Naming Conventions</span></a>,
+call your project <code class="docutils literal notranslate"><span class="pre">HelloWorld</span></code>. The solution name will be the same. Choose
+where you want this project to be saved, ideally somewhere inside the
+directory you created in Step 1 of this tutorial.</p>
+<p><strong>Mac Users:</strong></p>
+<p>Pick the option to use Git for version control.</p>
+<div class="figure align-default" id="id3">
+<img alt="MAC: Name a new Visual Studio Project." src="../../_images/vsmac-name-project.png" />
+<p class="caption"><span class="caption-text">MAC: Name a new Visual Studio project.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</div>
+<p><strong>Windows Users:</strong></p>
+<div class="figure align-default" id="id4">
+<img alt="WINDOWS: Name a new Visual Studio Project." src="../../_images/vs-windows-name-project.png" />
+<p class="caption"><span class="caption-text">WINDOWS: Name a new Visual Studio project.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</div>
+</li>
+<li><p>Once created, Visual Studio opens a new project window.</p>
+<p><strong>Mac Users:</strong></p>
+<p>You’ll see the project file tree on the left and a file called <code class="docutils literal notranslate"><span class="pre">Program.cs</span></code>.</p>
+<div class="figure align-default" id="id5">
+<img alt="MAC: A new Visual Studio Project with run button indicated." src="../../_images/vsmac-new-project.png" />
+<p class="caption"><span class="caption-text">MAC: A new Visual Studio project with run button indicated.</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</div>
+<p><strong>Windows Users:</strong></p>
+<p>You’ll see the project file tree containing a file called <code class="docutils literal notranslate"><span class="pre">Program.cs</span></code>
+in a pane called <em>Solution Explorer</em>.</p>
+<div class="figure align-default" id="id6">
+<img alt="WINDOWS: A new Visual Studio Project with run button indicated." src="../../_images/vs-windows-new-project.png" />
+<p class="caption"><span class="caption-text">WINDOWS: A new Visual Studio project with run button indicated.</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</div>
+</li>
+<li><p>You are new to C# and we’ll go over the syntax present in <code class="docutils literal notranslate"><span class="pre">Program.cs</span></code>
+in time. For now, can you guess what line 9 accomplishes?</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="k">namespace</span><span class="w"> </span><span class="nn">HelloWorld</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">   </span><span class="k">class</span><span class="w"> </span><span class="nc">Program</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">      </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">         </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">11</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">12</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Click on the triangle button indicated in one of the images above to
+run the project and see the output.</p>
+</li>
+<li><p>A console window should pop up with the line “Hello World” printed.
+That’s it. You have created and executed your first C# application.</p>
+<div class="admonition-tip admonition">
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>The first time you run a console app in Visual Studio, you may be prompted
+to allow VS to access the terminal. This is ok.</p>
+<p>This may also take longer than a few seconds to run the very first time.</p>
+</div>
+</li>
+</ol>
+<div class="section" id="hello-solution">
+<span id="index-0"></span><h2><span class="section-number">1.5.1. </span>Hello, Solution!<a class="headerlink" href="#hello-solution" title="Permalink to this headline"></a></h2>
+<p>You’ve just created your first C# project. Congrats! In fact, you’ve also just created your own C# <strong>solution</strong>.
+Your <code class="docutils literal notranslate"><span class="pre">HelloWorld</span></code> project is nested within a solution called <code class="docutils literal notranslate"><span class="pre">HelloWorld</span></code>. A solution behaves like a container for
+related projects and other Visual Studio settings.</p>
+<p>A C# project contains all the code to run a particular application. Along with the <code class="docutils literal notranslate"><span class="pre">Program.cs</span></code> file you ran just a
+moment ago, you may have also noticed a <code class="docutils literal notranslate"><span class="pre">Dependencies</span></code> folder. Many applications require extra code like dependencies
+or other compiling configurations to execute.</p>
+<p>You can create another project inside of the <code class="docutils literal notranslate"><span class="pre">HelloWorld</span></code> solution
+very easily. Right click on the solution name to add a new project,
+another console app as above, and name it <code class="docutils literal notranslate"><span class="pre">Hello&lt;YourName&gt;</span></code>.
+Change the starter code in <code class="docutils literal notranslate"><span class="pre">Program.cs</span></code> to greet you by name.</p>
+<p>Now that you have more than one project in your solution, you need to select which one you want to run. Select
+the project name from the menu next to the <em>Run</em> button.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">1.5.2. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline"></a></h2>
+<div class="admonition-question admonition">
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Given the code below, which line is responsible for printing a message?</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">class</span><span class="w"> </span><span class="nc">HelloWorld</span><span class="w"></span>
+<span class="linenos">2</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">3</span><span class="w">   </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">4</span><span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">5</span><span class="w">      </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Hello C# Students&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">6</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">7</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Line 1</p></li>
+<li><p>Line 3</p></li>
+<li><p>Line 5</p></li>
+<li><p>None of the above</p></li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>In the sourcecode, which line is responsible for defining the class?</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">class</span><span class="w"> </span><span class="nc">HelloWorld</span><span class="w"></span>
+<span class="linenos">2</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">3</span><span class="w">   </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">4</span><span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">5</span><span class="w">      </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Hello C# Students&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">6</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">7</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>line 1</p></li>
+<li><p>line 3</p></li>
+<li><p>line 5</p></li>
+<li><p>None of the above</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mac-setup.html" class="btn btn-neutral float-left" title="1.4. Mac Users: Visual Studio for Mac" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cloning-a-csharp-project.html" class="btn btn-neutral float-right" title="1.6. Cloning a C# Project" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

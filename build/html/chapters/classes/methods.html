@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.5. Methods &mdash; Textbook Template 2022 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.6. Single Responsibility Principle" href="srp.html" />
+    <link rel="prev" title="4.4. Constructors" href="constructors.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: purple" >
+            <a href="../../index.html" class="icon icon-home"> Textbook Template
+            <img src="../../_static/lc-ed-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction-and-setup/index.html">1. Introduction and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-types/index.html">2. Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control-flow-and-collections/index.html">3. Control Flow and Collections</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">4. Classes in C#, Part 1</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="background.html">4.1. Classes for C#</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modifiers.html">4.2. Modifiers in C#</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encapsulation.html">4.3. Encapsulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constructors.html">4.4. Constructors</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.5. Methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#calling-methods-on-objects">4.5.1. Calling Methods on Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#instance-methods">4.5.2. Instance Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-your-understanding">4.5.3. Check Your Understanding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="srp.html">4.6. Single Responsibility Principle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html">4.7. Exercises: Classes and Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html">4.8. Studio: Restaurant Menu</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../classes-part2/index.html">5. Classes and Objects, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inheritance/index.html">7. Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces-and-polymorphism/index.html">8. Interfaces and Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-intro/index.html">9. Introduction to ASP.NET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-controllers-and-routes/index.html">10. Controllers and Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/index.html">11. Rules to the Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vstools/index.html">12. Tools in Visual Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../razor-views/index.html">13. Razor Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-classes/index.html">14. Models and Model Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aspdotnet-model-validation/index.html">15. ViewModels and Model Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">16. Enumeration Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-intro/index.html">17. Introduction to Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orm-relationships/index.html">18. Relationships in Object-Relational Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auth/index.html">19. Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web-apis/index.html">20. Introduction to Web APIs &amp; REST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/sql-install.html">Installing SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/vs-troubleshooting.html">Visual Studio Operational Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/postman-install.html">Installing Postman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/exercise-solutions/index.html">Exercise Solutions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: purple" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Textbook Template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">4. </span>Classes in C#, Part 1</a> &raquo;</li>
+      <li><span class="section-number">4.5. </span>Methods</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/chapters/classes/methods.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="methods">
+<h1><span class="section-number">4.5. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline"></a></h1>
+<div class="section" id="calling-methods-on-objects">
+<h2><span class="section-number">4.5.1. </span>Calling Methods on Objects<a class="headerlink" href="#calling-methods-on-objects" title="Permalink to this headline"></a></h2>
+<p id="index-0">A <strong>method</strong> is a function that belongs to a class. In C#, all procedures
+must be part of a class. Let’s revisit our <code class="docutils literal notranslate"><span class="pre">HelloWorld</span></code> class.</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">HelloWorld</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="w">   </span><span class="k">private</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SayHello</span><span class="p">()</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">      </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">message</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>There is one method in this class, <code class="docutils literal notranslate"><span class="pre">SayHello()</span></code>. In order to call this
+method, we must have an object created from the <code class="docutils literal notranslate"><span class="pre">HelloWorld</span></code> class
+template. In other words, we must have an instance of <code class="docutils literal notranslate"><span class="pre">HelloWorld</span></code>.</p>
+<p>Here’s how you call methods on an object.</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="n">HelloWorld</span><span class="w"> </span><span class="n">hello</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HelloWorld</span><span class="p">();</span><span class="w"></span>
+<span class="n">hello</span><span class="p">.</span><span class="n">SayHello</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<p>It is not possible to call <code class="docutils literal notranslate"><span class="pre">SayHello()</span></code> without having a <code class="docutils literal notranslate"><span class="pre">HelloWorld</span></code>
+object. This begins to make more sense when you note that the
+<code class="docutils literal notranslate"><span class="pre">message</span></code> field is used within <code class="docutils literal notranslate"><span class="pre">SayHello()</span></code>, and unless we are calling
+<code class="docutils literal notranslate"><span class="pre">SayHello()</span></code> on an instantiated object, there will be no <code class="docutils literal notranslate"><span class="pre">message</span></code>
+field available to print.</p>
+<div class="admonition">
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>As mentioned before, class members should have the most restrictive
+level of access possible. This goes for methods as well as fields. For
+example, if you create a utility method that should only be used within
+your class, then it should be <code class="docutils literal notranslate"><span class="pre">private</span></code>. You can think of <code class="docutils literal notranslate"><span class="pre">private</span></code>
+methods as those that are not useful <em>outside</em> of the class, but that
+can contribute internally to helping the class behave as desired or
+expected.</p>
+</div>
+</div>
+<div class="section" id="instance-methods">
+<span id="instance-methods-part1"></span><span id="index-1"></span><h2><span class="section-number">4.5.2. </span>Instance Methods<a class="headerlink" href="#instance-methods" title="Permalink to this headline"></a></h2>
+<p>So far, we’ve only looked at examples of methods that are relatively
+specialized: constructors, getters, and setters. Every class you create
+will have these methods. What will make your classes different from each
+other, and thus fulfill the purpose of creating each class, are the
+specific behaviors that are unique to your classes.</p>
+<p>Let’s say we want to add a method in our <code class="docutils literal notranslate"><span class="pre">Student</span></code> class that reports the GPA
+of a student. This method is an <strong>instance method</strong> since it will belong to
+each <code class="docutils literal notranslate"><span class="pre">Student</span></code> object created, and will use the data of each such object.</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Student</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="w">   </span><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">nextStudentId</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">StudentId</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">NumberOfCredits</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">Gpa</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="nf">Student</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">studentId</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">11</span><span class="w">         </span><span class="kt">int</span><span class="w"> </span><span class="n">numberOfCredits</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">gpa</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">12</span><span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">13</span><span class="w">      </span><span class="n">Name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">14</span><span class="w">      </span><span class="n">StudentId</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">studentId</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">15</span><span class="w">      </span><span class="n">NumberOfCredits</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">numberOfCredits</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">16</span><span class="w">      </span><span class="n">Gpa</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">gpa</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">17</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="nf">Student</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">studentId</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">20</span><span class="w">     </span><span class="p">:</span><span class="w"> </span><span class="k">this</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">studentId</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="nf">Student</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">23</span><span class="w">      </span><span class="p">:</span><span class="w"> </span><span class="k">this</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">nextStudentId</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">24</span><span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">25</span><span class="w">      </span><span class="n">nextStudentId</span><span class="p">++;</span><span class="w"></span>
+<span class="linenos">26</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">27</span>
+<span class="linenos">28</span><span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">StudentInfo</span><span class="p">()</span><span class="w"></span>
+<span class="linenos">29</span><span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">30</span><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">Name</span><span class="w"> </span><span class="p">+</span><span class="w"> </span><span class="s">&quot; has a GPA of: &quot;</span><span class="w"> </span><span class="p">+</span><span class="w"> </span><span class="n">Gpa</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">31</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">32</span>
+<span class="linenos">33</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>We will make use of instance methods more in the next chapter, but now you know the basics of
+how to add additional behaviors to our classes.</p>
+<div class="admonition-note admonition">
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Above, we’ve added some functionality to increment the <code class="docutils literal notranslate"><span class="pre">studtentId</span></code> property, too.</p>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">4.5.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline"></a></h2>
+<div class="admonition-question admonition">
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Fill in the blanks with the appropriate terms.</p>
+<ul class="simple">
+<li><p>A _____________ gives a class property a field.</p></li>
+<li><p>A _____________ gives a programmer access to the value of a private class property.</p></li>
+<li><p>A _____________ creates a new instance of a class.</p></li>
+<li><p>A _____________ is a method that belongs to each occurrence of a class.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="constructors.html" class="btn btn-neutral float-left" title="4.4. Constructors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="srp.html" class="btn btn-neutral float-right" title="4.6. Single Responsibility Principle" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, LaunchCode.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
