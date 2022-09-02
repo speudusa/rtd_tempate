@@ -32,7 +32,7 @@ extensions = [
    'sphinx_rtd_theme', 
    'youtube',
    'external_links',
-   # Icons don't seem to transfer over.  check figures?
+   # Icons don't seem to transfer over.  check figures?  check html setup?
    'admonition_icons',
 ]
 
@@ -59,6 +59,8 @@ html_logo = '_static/images/lc-ed-logo.png'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+# TODO: explore these - external links and maybe html-a11y??
 
 html_theme_options = {
    'style_nav_header_background': 'purple',
